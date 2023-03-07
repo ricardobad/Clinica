@@ -29,371 +29,126 @@ namespace UI_CLINICA.Ventanas.Principal
         /// </summary>
         private void InitializeComponent()
         {
-            this.msEmpleado = new System.Windows.Forms.MenuStrip();
-            this.tsmDoctor = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Doctor_Paciente = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Doctor_Expediente = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Doctor_Alergias = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearAdiccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearPadecimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAdministrador = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Administrador_Roles = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.crearModicarDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Administrador_CrearDoctor = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Administrador_CrearEspecialidad = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_Administrador_CrearConsultorio = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMenuVertical = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_menuempleado));
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlMenuDoctor = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnDoctorMantenimiento = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.btnDoctorExpedientes = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnDoctorPacientes = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.pnlMenuAdmin = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnAdminMantenimiento = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnAdminReportes = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnAdminRoles = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnDoctor = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAdmin = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.msEmpleado.SuspendLayout();
-            this.pnlMenuVertical.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlMenuDoctor.SuspendLayout();
+            this.pnlMenuAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
-            // msEmpleado
+            // pnlTitulo
             // 
-            this.msEmpleado.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msEmpleado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmDoctor,
-            this.tsmAdministrador});
-            this.msEmpleado.Location = new System.Drawing.Point(0, 0);
-            this.msEmpleado.Name = "msEmpleado";
-            this.msEmpleado.Size = new System.Drawing.Size(1057, 33);
-            this.msEmpleado.TabIndex = 1;
-            this.msEmpleado.Text = "msEmpleado";
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.pnlTitulo.Controls.Add(this.btnCerrar);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1080, 35);
+            this.pnlTitulo.TabIndex = 3;
             // 
-            // tsmDoctor
+            // btnCerrar
             // 
-            this.tsmDoctor.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_Doctor_Paciente,
-            this.tsm_Doctor_Expediente,
-            this.tsm_Doctor_Alergias,
-            this.crearAdiccionesToolStripMenuItem,
-            this.crearPadecimientosToolStripMenuItem});
-            this.tsmDoctor.Name = "tsmDoctor";
-            this.tsmDoctor.Size = new System.Drawing.Size(101, 29);
-            this.tsmDoctor.Text = "Doctor";
-            this.tsmDoctor.Click += new System.EventHandler(this.aSToolStripMenuItem_Click);
-            // 
-            // tsm_Doctor_Paciente
-            // 
-            this.tsm_Doctor_Paciente.Name = "tsm_Doctor_Paciente";
-            this.tsm_Doctor_Paciente.Size = new System.Drawing.Size(391, 30);
-            this.tsm_Doctor_Paciente.Text = "Crear / Modificar Paciente";
-            this.tsm_Doctor_Paciente.Click += new System.EventHandler(this.crearModificarPacienteToolStripMenuItem_Click);
-            // 
-            // tsm_Doctor_Expediente
-            // 
-            this.tsm_Doctor_Expediente.Name = "tsm_Doctor_Expediente";
-            this.tsm_Doctor_Expediente.Size = new System.Drawing.Size(391, 30);
-            this.tsm_Doctor_Expediente.Text = "Expedientes";
-            // 
-            // tsm_Doctor_Alergias
-            // 
-            this.tsm_Doctor_Alergias.Name = "tsm_Doctor_Alergias";
-            this.tsm_Doctor_Alergias.Size = new System.Drawing.Size(391, 30);
-            this.tsm_Doctor_Alergias.Text = "Crear Alergias";
-            // 
-            // crearAdiccionesToolStripMenuItem
-            // 
-            this.crearAdiccionesToolStripMenuItem.Name = "crearAdiccionesToolStripMenuItem";
-            this.crearAdiccionesToolStripMenuItem.Size = new System.Drawing.Size(391, 30);
-            this.crearAdiccionesToolStripMenuItem.Text = "Crear Adicciones";
-            // 
-            // crearPadecimientosToolStripMenuItem
-            // 
-            this.crearPadecimientosToolStripMenuItem.Name = "crearPadecimientosToolStripMenuItem";
-            this.crearPadecimientosToolStripMenuItem.Size = new System.Drawing.Size(391, 30);
-            this.crearPadecimientosToolStripMenuItem.Text = "Crear padecimientos";
-            // 
-            // tsmAdministrador
-            // 
-            this.tsmAdministrador.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsm_Administrador_Roles,
-            this.reportesToolStripMenuItem,
-            this.crearModicarDoctorToolStripMenuItem,
-            this.tsm_Administrador_CrearDoctor,
-            this.tsm_Administrador_CrearEspecialidad,
-            this.tsm_Administrador_CrearConsultorio});
-            this.tsmAdministrador.Name = "tsmAdministrador";
-            this.tsmAdministrador.Size = new System.Drawing.Size(191, 29);
-            this.tsmAdministrador.Text = "Administrador";
-            // 
-            // tsm_Administrador_Roles
-            // 
-            this.tsm_Administrador_Roles.Name = "tsm_Administrador_Roles";
-            this.tsm_Administrador_Roles.Size = new System.Drawing.Size(414, 30);
-            this.tsm_Administrador_Roles.Text = "Roles";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(414, 30);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // crearModicarDoctorToolStripMenuItem
-            // 
-            this.crearModicarDoctorToolStripMenuItem.Name = "crearModicarDoctorToolStripMenuItem";
-            this.crearModicarDoctorToolStripMenuItem.Size = new System.Drawing.Size(414, 30);
-            this.crearModicarDoctorToolStripMenuItem.Text = "Mantenimiento Doctor";
-            // 
-            // tsm_Administrador_CrearDoctor
-            // 
-            this.tsm_Administrador_CrearDoctor.Name = "tsm_Administrador_CrearDoctor";
-            this.tsm_Administrador_CrearDoctor.Size = new System.Drawing.Size(414, 30);
-            this.tsm_Administrador_CrearDoctor.Text = "Mantenimiento Empleado";
-            // 
-            // tsm_Administrador_CrearEspecialidad
-            // 
-            this.tsm_Administrador_CrearEspecialidad.Name = "tsm_Administrador_CrearEspecialidad";
-            this.tsm_Administrador_CrearEspecialidad.Size = new System.Drawing.Size(414, 30);
-            this.tsm_Administrador_CrearEspecialidad.Text = "Mantenimiento Especialidad";
-            // 
-            // tsm_Administrador_CrearConsultorio
-            // 
-            this.tsm_Administrador_CrearConsultorio.Name = "tsm_Administrador_CrearConsultorio";
-            this.tsm_Administrador_CrearConsultorio.Size = new System.Drawing.Size(414, 30);
-            this.tsm_Administrador_CrearConsultorio.Text = "Mantenimiento Consultorio";
-            // 
-            // pnlMenuVertical
-            // 
-            this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(150)))), ((int)(((byte)(191)))));
-            this.pnlMenuVertical.Controls.Add(this.panel10);
-            this.pnlMenuVertical.Controls.Add(this.panel6);
-            this.pnlMenuVertical.Controls.Add(this.panel5);
-            this.pnlMenuVertical.Controls.Add(this.panel4);
-            this.pnlMenuVertical.Controls.Add(this.panel3);
-            this.pnlMenuVertical.Controls.Add(this.panel2);
-            this.pnlMenuVertical.Controls.Add(this.panel1);
-            this.pnlMenuVertical.Controls.Add(this.button5);
-            this.pnlMenuVertical.Controls.Add(this.button4);
-            this.pnlMenuVertical.Controls.Add(this.button3);
-            this.pnlMenuVertical.Controls.Add(this.button2);
-            this.pnlMenuVertical.Controls.Add(this.button1);
-            this.pnlMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenuVertical.Location = new System.Drawing.Point(0, 33);
-            this.pnlMenuVertical.Name = "pnlMenuVertical";
-            this.pnlMenuVertical.Size = new System.Drawing.Size(200, 551);
-            this.pnlMenuVertical.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button1.Location = new System.Drawing.Point(3, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Citas";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button2.Location = new System.Drawing.Point(3, 349);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Doctor";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button3.Location = new System.Drawing.Point(0, 201);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 39);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Administrador";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button4.Location = new System.Drawing.Point(3, 107);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 39);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Cajas";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button5.Location = new System.Drawing.Point(0, 152);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(197, 39);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Servicio al cliente";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1043, 7);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel1.Location = new System.Drawing.Point(0, 62);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(150)))), ((int)(((byte)(191)))));
+            this.panel1.Controls.Add(this.panel15);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pnlMenuDoctor);
+            this.panel1.Controls.Add(this.panel14);
+            this.panel1.Controls.Add(this.pnlMenuAdmin);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.btnDoctor);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.btnAdmin);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button5);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(11, 39);
-            this.panel1.TabIndex = 5;
+            this.panel1.Size = new System.Drawing.Size(200, 629);
+            this.panel1.TabIndex = 4;
             // 
-            // panel2
+            // panel15
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel2.Location = new System.Drawing.Point(0, 349);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(11, 39);
-            this.panel2.TabIndex = 6;
+            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel15.Location = new System.Drawing.Point(0, 484);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(5, 39);
+            this.panel15.TabIndex = 26;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel3.Location = new System.Drawing.Point(0, 201);
+            this.panel3.Location = new System.Drawing.Point(0, 336);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(11, 39);
-            this.panel3.TabIndex = 6;
+            this.panel3.Size = new System.Drawing.Size(5, 39);
+            this.panel3.TabIndex = 25;
             // 
-            // panel4
+            // pictureBox1
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel4.Location = new System.Drawing.Point(0, 107);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(11, 39);
-            this.panel4.TabIndex = 6;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 191);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
-            // panel5
+            // pnlMenuDoctor
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel5.Location = new System.Drawing.Point(0, 152);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(11, 39);
-            this.panel5.TabIndex = 6;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.button8);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.button7);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Controls.Add(this.button6);
-            this.panel6.Location = new System.Drawing.Point(63, 246);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(134, 97);
-            this.panel6.TabIndex = 7;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button6.Location = new System.Drawing.Point(3, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(131, 27);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Roles";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel7.Location = new System.Drawing.Point(2, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(7, 27);
-            this.panel7.TabIndex = 7;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel8.Location = new System.Drawing.Point(2, 35);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(7, 27);
-            this.panel8.TabIndex = 9;
-            // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button7.Location = new System.Drawing.Point(2, 35);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(131, 27);
-            this.button7.TabIndex = 10;
-            this.button7.Text = "Reportes";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.panel9.Location = new System.Drawing.Point(2, 68);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(7, 27);
-            this.panel9.TabIndex = 9;
-            // 
-            // button8
-            // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button8.Location = new System.Drawing.Point(3, 68);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(131, 27);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Mantenimientos";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Controls.Add(this.button9);
-            this.panel10.Controls.Add(this.panel12);
-            this.panel10.Controls.Add(this.button10);
-            this.panel10.Controls.Add(this.panel13);
-            this.panel10.Controls.Add(this.button11);
-            this.panel10.Location = new System.Drawing.Point(66, 394);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(134, 97);
-            this.panel10.TabIndex = 11;
+            this.pnlMenuDoctor.Controls.Add(this.panel11);
+            this.pnlMenuDoctor.Controls.Add(this.btnDoctorMantenimiento);
+            this.pnlMenuDoctor.Controls.Add(this.panel12);
+            this.pnlMenuDoctor.Controls.Add(this.btnDoctorExpedientes);
+            this.pnlMenuDoctor.Controls.Add(this.panel13);
+            this.pnlMenuDoctor.Controls.Add(this.btnDoctorPacientes);
+            this.pnlMenuDoctor.Location = new System.Drawing.Point(35, 529);
+            this.pnlMenuDoctor.Name = "pnlMenuDoctor";
+            this.pnlMenuDoctor.Size = new System.Drawing.Size(162, 97);
+            this.pnlMenuDoctor.TabIndex = 23;
+            this.pnlMenuDoctor.Visible = false;
             // 
             // panel11
             // 
@@ -403,18 +158,23 @@ namespace UI_CLINICA.Ventanas.Principal
             this.panel11.Size = new System.Drawing.Size(7, 27);
             this.panel11.TabIndex = 9;
             // 
-            // button9
+            // btnDoctorMantenimiento
             // 
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button9.Location = new System.Drawing.Point(3, 68);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(131, 27);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Mantenimiento";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnDoctorMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDoctorMantenimiento.FlatAppearance.BorderSize = 0;
+            this.btnDoctorMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctorMantenimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctorMantenimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDoctorMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorMantenimiento.Image")));
+            this.btnDoctorMantenimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoctorMantenimiento.Location = new System.Drawing.Point(6, 68);
+            this.btnDoctorMantenimiento.Name = "btnDoctorMantenimiento";
+            this.btnDoctorMantenimiento.Size = new System.Drawing.Size(156, 27);
+            this.btnDoctorMantenimiento.TabIndex = 10;
+            this.btnDoctorMantenimiento.Text = "Mantenimientos";
+            this.btnDoctorMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDoctorMantenimiento.UseVisualStyleBackColor = true;
+            this.btnDoctorMantenimiento.Click += new System.EventHandler(this.btnDoctorMantenimiento_Click);
             // 
             // panel12
             // 
@@ -424,18 +184,22 @@ namespace UI_CLINICA.Ventanas.Principal
             this.panel12.Size = new System.Drawing.Size(7, 27);
             this.panel12.TabIndex = 9;
             // 
-            // button10
+            // btnDoctorExpedientes
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button10.Location = new System.Drawing.Point(2, 35);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(131, 27);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "Expedientes";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnDoctorExpedientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDoctorExpedientes.FlatAppearance.BorderSize = 0;
+            this.btnDoctorExpedientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctorExpedientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctorExpedientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDoctorExpedientes.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorExpedientes.Image")));
+            this.btnDoctorExpedientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoctorExpedientes.Location = new System.Drawing.Point(6, 35);
+            this.btnDoctorExpedientes.Name = "btnDoctorExpedientes";
+            this.btnDoctorExpedientes.Size = new System.Drawing.Size(156, 27);
+            this.btnDoctorExpedientes.TabIndex = 10;
+            this.btnDoctorExpedientes.Text = "Expedientes";
+            this.btnDoctorExpedientes.UseVisualStyleBackColor = true;
+            this.btnDoctorExpedientes.Click += new System.EventHandler(this.btnDoctorExpedientes_Click);
             // 
             // panel13
             // 
@@ -445,79 +209,272 @@ namespace UI_CLINICA.Ventanas.Principal
             this.panel13.Size = new System.Drawing.Size(7, 27);
             this.panel13.TabIndex = 7;
             // 
-            // button11
+            // btnDoctorPacientes
             // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.button11.Location = new System.Drawing.Point(3, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(131, 27);
-            this.button11.TabIndex = 8;
-            this.button11.Text = "Crear Paciente";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnDoctorPacientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDoctorPacientes.FlatAppearance.BorderSize = 0;
+            this.btnDoctorPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctorPacientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctorPacientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDoctorPacientes.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorPacientes.Image")));
+            this.btnDoctorPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoctorPacientes.Location = new System.Drawing.Point(3, 3);
+            this.btnDoctorPacientes.Name = "btnDoctorPacientes";
+            this.btnDoctorPacientes.Size = new System.Drawing.Size(159, 27);
+            this.btnDoctorPacientes.TabIndex = 8;
+            this.btnDoctorPacientes.Text = "Crear Paciente";
+            this.btnDoctorPacientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDoctorPacientes.UseVisualStyleBackColor = true;
+            this.btnDoctorPacientes.Click += new System.EventHandler(this.btnDoctorPacientes_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel14.Location = new System.Drawing.Point(0, 197);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(5, 39);
+            this.panel14.TabIndex = 17;
+            // 
+            // pnlMenuAdmin
+            // 
+            this.pnlMenuAdmin.Controls.Add(this.panel9);
+            this.pnlMenuAdmin.Controls.Add(this.btnAdminMantenimiento);
+            this.pnlMenuAdmin.Controls.Add(this.panel8);
+            this.pnlMenuAdmin.Controls.Add(this.btnAdminReportes);
+            this.pnlMenuAdmin.Controls.Add(this.panel7);
+            this.pnlMenuAdmin.Controls.Add(this.btnAdminRoles);
+            this.pnlMenuAdmin.Location = new System.Drawing.Point(35, 381);
+            this.pnlMenuAdmin.Name = "pnlMenuAdmin";
+            this.pnlMenuAdmin.Size = new System.Drawing.Size(165, 97);
+            this.pnlMenuAdmin.TabIndex = 22;
+            this.pnlMenuAdmin.Visible = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel9.Location = new System.Drawing.Point(2, 68);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(7, 27);
+            this.panel9.TabIndex = 9;
+            // 
+            // btnAdminMantenimiento
+            // 
+            this.btnAdminMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminMantenimiento.FlatAppearance.BorderSize = 0;
+            this.btnAdminMantenimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminMantenimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminMantenimiento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdminMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnAdminMantenimiento.Image")));
+            this.btnAdminMantenimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminMantenimiento.Location = new System.Drawing.Point(6, 68);
+            this.btnAdminMantenimiento.Name = "btnAdminMantenimiento";
+            this.btnAdminMantenimiento.Size = new System.Drawing.Size(159, 27);
+            this.btnAdminMantenimiento.TabIndex = 10;
+            this.btnAdminMantenimiento.Text = "Mantenimientos";
+            this.btnAdminMantenimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdminMantenimiento.UseVisualStyleBackColor = true;
+            this.btnAdminMantenimiento.Click += new System.EventHandler(this.btnAdminMantenimiento_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel8.Location = new System.Drawing.Point(2, 35);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(7, 27);
+            this.panel8.TabIndex = 9;
+            // 
+            // btnAdminReportes
+            // 
+            this.btnAdminReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminReportes.FlatAppearance.BorderSize = 0;
+            this.btnAdminReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdminReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnAdminReportes.Image")));
+            this.btnAdminReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminReportes.Location = new System.Drawing.Point(6, 35);
+            this.btnAdminReportes.Name = "btnAdminReportes";
+            this.btnAdminReportes.Size = new System.Drawing.Size(159, 27);
+            this.btnAdminReportes.TabIndex = 10;
+            this.btnAdminReportes.Text = "Reportes";
+            this.btnAdminReportes.UseVisualStyleBackColor = true;
+            this.btnAdminReportes.Click += new System.EventHandler(this.btnAdminReportes_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel7.Location = new System.Drawing.Point(2, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(7, 27);
+            this.panel7.TabIndex = 7;
+            // 
+            // btnAdminRoles
+            // 
+            this.btnAdminRoles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminRoles.FlatAppearance.BorderSize = 0;
+            this.btnAdminRoles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminRoles.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminRoles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdminRoles.Image = ((System.Drawing.Image)(resources.GetObject("btnAdminRoles.Image")));
+            this.btnAdminRoles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdminRoles.Location = new System.Drawing.Point(3, 3);
+            this.btnAdminRoles.Name = "btnAdminRoles";
+            this.btnAdminRoles.Size = new System.Drawing.Size(162, 27);
+            this.btnAdminRoles.TabIndex = 8;
+            this.btnAdminRoles.Text = "Roles";
+            this.btnAdminRoles.UseVisualStyleBackColor = true;
+            this.btnAdminRoles.Click += new System.EventHandler(this.btnAdminRoles_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 197);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 39);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Citas";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel5.Location = new System.Drawing.Point(0, 287);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 39);
+            this.panel5.TabIndex = 18;
+            // 
+            // btnDoctor
+            // 
+            this.btnDoctor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDoctor.FlatAppearance.BorderSize = 0;
+            this.btnDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoctor.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnDoctor.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctor.Image")));
+            this.btnDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDoctor.Location = new System.Drawing.Point(3, 484);
+            this.btnDoctor.Name = "btnDoctor";
+            this.btnDoctor.Size = new System.Drawing.Size(191, 39);
+            this.btnDoctor.TabIndex = 13;
+            this.btnDoctor.Text = "Doctor";
+            this.btnDoctor.UseVisualStyleBackColor = true;
+            this.btnDoctor.Click += new System.EventHandler(this.btnDoctor_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.panel4.Location = new System.Drawing.Point(0, 242);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 39);
+            this.panel4.TabIndex = 19;
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnAdmin.Image = ((System.Drawing.Image)(resources.GetObject("btnAdmin.Image")));
+            this.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.Location = new System.Drawing.Point(3, 336);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(188, 39);
+            this.btnAdmin.TabIndex = 14;
+            this.btnAdmin.Text = "Administrador";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(3, 242);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(191, 39);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Cajas";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(3, 287);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(191, 39);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Servicio cliente";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // frm_menuempleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 584);
-            this.Controls.Add(this.pnlMenuVertical);
-            this.Controls.Add(this.msEmpleado);
+            this.ClientSize = new System.Drawing.Size(1080, 664);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_menuempleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_menuempleado";
-            this.msEmpleado.ResumeLayout(false);
-            this.msEmpleado.PerformLayout();
-            this.pnlMenuVertical.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
+            this.pnlTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlMenuDoctor.ResumeLayout(false);
+            this.pnlMenuAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip msEmpleado;
-        private System.Windows.Forms.ToolStripMenuItem tsmDoctor;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Doctor_Paciente;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Doctor_Expediente;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Doctor_Alergias;
-        private System.Windows.Forms.ToolStripMenuItem crearAdiccionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearPadecimientosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmAdministrador;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Administrador_Roles;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Administrador_CrearDoctor;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Administrador_CrearEspecialidad;
-        private System.Windows.Forms.ToolStripMenuItem tsm_Administrador_CrearConsultorio;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crearModicarDoctorToolStripMenuItem;
-        private System.Windows.Forms.Panel pnlMenuVertical;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlTitulo;
+        private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel pnlMenuDoctor;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnDoctorMantenimiento;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnDoctorExpedientes;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnDoctorPacientes;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel pnlMenuAdmin;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btnAdminMantenimiento;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnAdminReportes;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnAdminRoles;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnDoctor;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

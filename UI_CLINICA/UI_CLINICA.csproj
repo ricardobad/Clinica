@@ -223,6 +223,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Imagenes\admin.png" />
+    <Content Include="Imagenes\cajas.png" />
+    <Content Include="Imagenes\calendario.png" />
+    <Content Include="Imagenes\cerrar.png" />
+    <Content Include="Imagenes\Clinica.png" />
+    <Content Include="Imagenes\crearpaciente.png" />
+    <Content Include="Imagenes\expediente.png" />
+    <Content Include="Imagenes\mantenimiento.png" />
+    <Content Include="Imagenes\medico.png" />
+    <Content Include="Imagenes\reporte.png" />
+    <Content Include="Imagenes\reportes.png" />
+    <Content Include="Imagenes\roles.png" />
+    <Content Include="Imagenes\scliente.png" />
+    <Content Include="Imagenes\sercliente.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

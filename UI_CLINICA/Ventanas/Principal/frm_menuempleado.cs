@@ -41,5 +41,50 @@ namespace UI_CLINICA.Ventanas.Principal
         {
 
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            pnlMenuAdmin.Visible = true;
+        }
+
+        private void btnDoctor_Click(object sender, EventArgs e)
+        {
+            pnlMenuDoctor.Visible = true;
+        }
+
+        private void btnAdminRoles_Click(object sender, EventArgs e)
+        {
+            pnlMenuAdmin.Visible = false;
+        }
+
+        private void btnAdminReportes_Click(object sender, EventArgs e)
+        {
+            pnlMenuAdmin.Visible = false;
+        }
+
+        private void btnAdminMantenimiento_Click(object sender, EventArgs e)
+        {
+            pnlMenuAdmin.Visible = false;
+        }
+
+        private void btnDoctorPacientes_Click(object sender, EventArgs e)
+        {
+            pnlMenuDoctor.Visible = false;
+        }
+
+        private void btnDoctorExpedientes_Click(object sender, EventArgs e)
+        {
+            pnlMenuDoctor.Visible = false;
+        }
+
+        private void btnDoctorMantenimiento_Click(object sender, EventArgs e)
+        {
+            pnlMenuDoctor.Visible = false;
+        }
     }
 }
