@@ -120,11 +120,23 @@
     <Compile Include="Ventanas\Pacientes\frm_pacientes.Designer.cs">
       <DependentUpon>frm_pacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Principal\frm_login.cs">
+    <Compile Include="Ventanas\Principal\frm_loginUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Principal\frm_login.Designer.cs">
-      <DependentUpon>frm_login.cs</DependentUpon>
+    <Compile Include="Ventanas\Principal\frm_loginUsuario.Designer.cs">
+      <DependentUpon>frm_loginUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Principal\frm_seleccionPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Principal\frm_seleccionPerfil.Designer.cs">
+      <DependentUpon>frm_seleccionPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Principal\frm_loginPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Principal\frm_loginPaciente.Designer.cs">
+      <DependentUpon>frm_loginPaciente.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Principal\frm_menuempleado.cs">
       <SubType>Form</SubType>
@@ -158,6 +170,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ventanas\Citas\frm_citas.resx">
       <DependentUpon>frm_citas.cs</DependentUpon>
@@ -195,8 +208,14 @@
     <EmbeddedResource Include="Ventanas\Pacientes\frm_pacientes.resx">
       <DependentUpon>frm_pacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\Principal\frm_login.resx">
-      <DependentUpon>frm_login.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\Principal\frm_loginUsuario.resx">
+      <DependentUpon>frm_loginUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Principal\frm_seleccionPerfil.resx">
+      <DependentUpon>frm_seleccionPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Principal\frm_loginPaciente.resx">
+      <DependentUpon>frm_loginPaciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Principal\frm_menuempleado.resx">
       <DependentUpon>frm_menuempleado.cs</DependentUpon>
@@ -238,6 +257,12 @@
     <Content Include="Imagenes\roles.png" />
     <Content Include="Imagenes\scliente.png" />
     <Content Include="Imagenes\sercliente.png" />
+    <None Include="Resources\MEDICO_1-removebg-preview %282%29.png" />
+    <None Include="Resources\WhatsApp Image 2023-03-07 at 4.51.53 PM.jpeg" />
+    <None Include="Resources\WhatsApp Image 2023-03-07 at 4.52.06 PM1.jpeg" />
+    <None Include="Resources\medico_2-removebg-preview.png" />
+    <None Include="Resources\MEDICO_1-removebg-preview.png" />
+    <None Include="Resources\WhatsApp Image 2023-03-07 at 4.52.06 PM.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

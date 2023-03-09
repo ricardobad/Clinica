@@ -86,5 +86,10 @@ namespace UI_CLINICA.Ventanas.Principal
         {
             pnlMenuDoctor.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace UI_CLINICA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Ventanas.Principal.frm_menuempleado());
+            Application.Run(new Ventanas.Principal.frm_seleccionPerfil());
         }
     }
 }

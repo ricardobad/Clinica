@@ -29,84 +29,114 @@ namespace UI_CLINICA.Ventanas.Expedientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Consultar_Expediente = new System.Windows.Forms.Button();
+            this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(233, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 38);
-            this.label1.TabIndex = 67;
-            this.label1.Text = "Buscar Expediente";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(220, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(362, 25);
-            this.label3.TabIndex = 75;
-            this.label3.Text = "Cédula del paciente a consultar: ";
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(274, 189);
+            this.textBox2.Location = new System.Drawing.Point(25, 101);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(246, 33);
             this.textBox2.TabIndex = 76;
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(292, 242);
+            this.button1.BackgroundImage = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_52_06_PM;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_52_06_PM;
+            this.button1.Location = new System.Drawing.Point(81, 157);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 39);
-            this.button1.TabIndex = 77;
-            this.button1.Text = "Consultar";
+            this.button1.Size = new System.Drawing.Size(150, 35);
+            this.button1.TabIndex = 82;
+            this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // tabPage1
             // 
-            this.button2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(635, 399);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 39);
-            this.button2.TabIndex = 78;
-            this.button2.Text = "Regresar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tabPage1.BackgroundImage = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_51_53_PM;
+            this.tabPage1.Controls.Add(this.btn_Consultar_Expediente);
+            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 35);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(331, 217);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "          Buscar Expediente                       ";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(12, 62);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(339, 256);
+            this.tabControl1.TabIndex = 83;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_52_06_PM;
+            this.label1.Location = new System.Drawing.Point(31, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(255, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cedula de Paciente a Consultar";
+            // 
+            // btn_Consultar_Expediente
+            // 
+            this.btn_Consultar_Expediente.BackgroundImage = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_52_06_PM;
+            this.btn_Consultar_Expediente.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Consultar_Expediente.Image = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_52_06_PM;
+            this.btn_Consultar_Expediente.Location = new System.Drawing.Point(81, 60);
+            this.btn_Consultar_Expediente.Name = "btn_Consultar_Expediente";
+            this.btn_Consultar_Expediente.Size = new System.Drawing.Size(150, 35);
+            this.btn_Consultar_Expediente.TabIndex = 83;
+            this.btn_Consultar_Expediente.Text = "Consultar";
+            this.btn_Consultar_Expediente.UseVisualStyleBackColor = true;
             // 
             // frm_buscarexpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::UI_CLINICA.Properties.Resources.MEDICO_1_removebg_preview__2_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_buscarexpediente";
             this.Text = "frm_buscarexpediente";
+            this.Load += new System.EventHandler(this.frm_buscarexpediente_Load);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Button btn_Consultar_Expediente;
     }
 }

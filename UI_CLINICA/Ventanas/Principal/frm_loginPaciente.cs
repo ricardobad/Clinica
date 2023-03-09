@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace UI_CLINICA.Ventanas.Principal
 {
-    public partial class frm_login : Form
+    public partial class frm_loginPaciente : Form
     {
-        public frm_login()
+        public frm_loginPaciente()
         {
             InitializeComponent();
+        }
+
+        private void grbLogin_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_loginPaciente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

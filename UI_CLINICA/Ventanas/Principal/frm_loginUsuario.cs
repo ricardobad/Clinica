@@ -8,21 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI_CLINICA.Ventanas.Expedientes
+namespace UI_CLINICA.Ventanas.Principal
 {
-    public partial class frm_buscarexpediente : Form
+    public partial class frm_login : Form
     {
-        public frm_buscarexpediente()
+        public frm_login()
         {
             InitializeComponent();
         }
 
-        private void frm_buscarexpediente_Load(object sender, EventArgs e)
+        private void grbLogin_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
+        private void lblNombreUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
