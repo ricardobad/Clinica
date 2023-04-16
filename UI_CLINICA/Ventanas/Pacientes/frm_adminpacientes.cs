@@ -27,11 +27,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
 
         }
 
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox14_TextChanged(object sender, EventArgs e)
         {
 
@@ -66,5 +61,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
         {
 
         }
+
+
     }
 }

@@ -54,6 +54,18 @@
     <Compile Include="Ventanas\Citas\frm_citas.Designer.cs">
       <DependentUpon>frm_citas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Citas\frm_crearcitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Citas\frm_crearcitas.Designer.cs">
+      <DependentUpon>frm_crearcitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Citas\frm_modificarcitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Citas\frm_modificarcitas.Designer.cs">
+      <DependentUpon>frm_modificarcitas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Expedientes\frm_buscarexpediente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +119,12 @@
     </Compile>
     <Compile Include="Ventanas\Mantenimiento\frm_mantenimientopadecimientos.Designer.cs">
       <DependentUpon>frm_mantenimientopadecimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Pacientes\frm_actualizarcontrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Pacientes\frm_actualizarcontrasena.Designer.cs">
+      <DependentUpon>frm_actualizarcontrasena.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\Pacientes\frm_adminpacientes.cs">
       <SubType>Form</SubType>
@@ -175,6 +193,12 @@
     <EmbeddedResource Include="Ventanas\Citas\frm_citas.resx">
       <DependentUpon>frm_citas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Citas\frm_crearcitas.resx">
+      <DependentUpon>frm_crearcitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Citas\frm_modificarcitas.resx">
+      <DependentUpon>frm_modificarcitas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Expedientes\frm_buscarexpediente.resx">
       <DependentUpon>frm_buscarexpediente.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Mantenimiento\frm_mantenimientopadecimientos.resx">
       <DependentUpon>frm_mantenimientopadecimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Pacientes\frm_actualizarcontrasena.resx">
+      <DependentUpon>frm_actualizarcontrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Pacientes\frm_adminpacientes.resx">
       <DependentUpon>frm_adminpacientes.cs</DependentUpon>
@@ -250,6 +277,8 @@
     <Content Include="Imagenes\Clinica.png" />
     <Content Include="Imagenes\crearpaciente.png" />
     <Content Include="Imagenes\expediente.png" />
+    <Content Include="Imagenes\expedientes30.png" />
+    <Content Include="Imagenes\expedientes64.png" />
     <Content Include="Imagenes\mantenimiento.png" />
     <Content Include="Imagenes\medico.png" />
     <Content Include="Imagenes\reporte.png" />
@@ -257,6 +286,11 @@
     <Content Include="Imagenes\roles.png" />
     <Content Include="Imagenes\scliente.png" />
     <Content Include="Imagenes\sercliente.png" />
+    <None Include="Resources\consultorio-removebg-preview.png" />
+    <None Include="Resources\padecimientos-removebg-preview.png" />
+    <None Include="Resources\especialidades.png" />
+    <None Include="Resources\alergia-respiratoria-1-removebg-preview.png" />
+    <None Include="Resources\adicciones-removebg-preview.png" />
     <None Include="Resources\MEDICO_1-removebg-preview %282%29.png" />
     <None Include="Resources\WhatsApp Image 2023-03-07 at 4.51.53 PM.jpeg" />
     <None Include="Resources\WhatsApp Image 2023-03-07 at 4.52.06 PM1.jpeg" />

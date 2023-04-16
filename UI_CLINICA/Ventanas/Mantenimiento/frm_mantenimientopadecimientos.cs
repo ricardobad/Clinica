@@ -16,5 +16,15 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
             InitializeComponent();
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_mantenimientopadecimientos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

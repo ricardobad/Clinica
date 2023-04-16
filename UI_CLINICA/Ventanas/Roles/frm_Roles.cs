@@ -21,5 +21,46 @@ namespace UI_CLINICA.Ventanas.Roles
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frm_Roles_Load(object sender, EventArgs e)
+        {
+            dgvPermisos.Rows.Add("Crear Cita");
+            dgvPermisos.Rows.Add("Editar Cita (Pago)");
+            dgvPermisos.Rows.Add("Editar Cita (Confirmación)");
+            dgvPermisos.Rows.Add("Modulo Doctor");
+            dgvPermisos.Rows.Add("Modulo Administrador");
+            dgvPermisos.Rows.Add("Modulo Pacientes");
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

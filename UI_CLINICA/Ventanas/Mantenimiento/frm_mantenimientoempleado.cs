@@ -16,5 +16,15 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
             InitializeComponent();
         }
+
+        private void frm_mantenimientoempleado_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

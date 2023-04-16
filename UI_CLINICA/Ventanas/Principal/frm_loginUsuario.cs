@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 namespace UI_CLINICA.Ventanas.Principal
 {
     public partial class frm_login : Form
@@ -30,6 +30,28 @@ namespace UI_CLINICA.Ventanas.Principal
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Ingresar_Click(object sender, EventArgs e)
+        {
+            frm_menuempleado Obj_Men_Empleado = new frm_menuempleado();
+            Obj_Men_Empleado.ShowDialog();
+        }
+
+        private void btnLoginIngresar_Click(object sender, EventArgs e)
+        {
+            frm_menuempleado Obj_Men_Empleado = new frm_menuempleado();
+            Obj_Men_Empleado.ShowDialog();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

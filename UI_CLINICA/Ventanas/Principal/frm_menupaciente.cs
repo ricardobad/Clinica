@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace UI_CLINICA.Ventanas.Principal
 {
@@ -25,6 +26,56 @@ namespace UI_CLINICA.Ventanas.Principal
         private void reporteCitasPorPacienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int IParam);
+
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void AbrirFormHijo(object frmHijo)
+        {
+            if (this.pnlContenedor.Controls.Count > 0)
+            {
+                this.pnlContenedor.Controls.RemoveAt(0);
+            }
+            Form fh = frmHijo as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.pnlContenedor.Controls.Add(fh);
+            this.pnlContenedor.Tag = fh;
+            fh.Show();
+
+        }
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Citas.frm_crearcitas());
+        }
+
+        private void btnExpediente_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Expedientes.frm_expediente());
+        }
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlTitulo_MouseDown_1(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

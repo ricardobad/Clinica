@@ -16,5 +16,25 @@ namespace UI_CLINICA.Ventanas.Expedientes
         {
             InitializeComponent();
         }
+
+        private void label33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

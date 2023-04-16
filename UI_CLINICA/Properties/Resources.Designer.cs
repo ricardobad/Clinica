@@ -63,6 +63,46 @@ namespace UI_CLINICA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adicciones_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("adicciones-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alergia_respiratoria_1_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("alergia-respiratoria-1-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap consultorio_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("consultorio-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap especialidades {
+            get {
+                object obj = ResourceManager.GetObject("especialidades", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MEDICO_1_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("MEDICO_1-removebg-preview", resourceCulture);
@@ -86,6 +126,16 @@ namespace UI_CLINICA.Properties {
         internal static System.Drawing.Bitmap medico_2_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("medico_2-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap padecimientos_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("padecimientos-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

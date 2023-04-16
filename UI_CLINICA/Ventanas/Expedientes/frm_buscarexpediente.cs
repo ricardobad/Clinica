@@ -26,5 +26,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
         {
 
         }
+
+        private void btn_Consultar_Expediente_Click(object sender, EventArgs e)
+        {
+            frm_expediente Obj_Expediente = new frm_expediente();
+            Obj_Expediente.ShowDialog();
+        }
     }
 }

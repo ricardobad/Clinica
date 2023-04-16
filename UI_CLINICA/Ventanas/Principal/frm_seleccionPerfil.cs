@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Runtime.InteropServices;
 namespace UI_CLINICA.Ventanas.Principal
 {
     public partial class frm_seleccionPerfil : Form
@@ -17,15 +17,9 @@ namespace UI_CLINICA.Ventanas.Principal
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -40,6 +34,33 @@ namespace UI_CLINICA.Ventanas.Principal
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_usuario_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_paciente_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnIngresoColaborador_Click(object sender, EventArgs e)
+        {
+            frm_login Obj_Log_User = new frm_login();
+            Obj_Log_User.ShowDialog();
+        }
+
+        private void btnIngresoPaciente_Click(object sender, EventArgs e)
+        {
+            frm_loginPaciente Obj_Log_Pac = new frm_loginPaciente();
+            Obj_Log_Pac.ShowDialog();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

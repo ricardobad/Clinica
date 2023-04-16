@@ -21,5 +21,17 @@ namespace UI_CLINICA.Ventanas.Citas
         {
 
         }
+
+        private void btnModificarCita_Click(object sender, EventArgs e)
+        {
+            frm_modificarcitas Obj_Men_Empleado = new frm_modificarcitas();
+            Obj_Men_Empleado.ShowDialog();
+        }
+
+        private void btnCrearCita_Click(object sender, EventArgs e)
+        {
+            frm_crearcitas Obj_Men_Empleado = new frm_crearcitas();
+            Obj_Men_Empleado.ShowDialog();
+        }
     }
 }
