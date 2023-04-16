@@ -65,7 +65,7 @@ namespace UI_CLINICA.Ventanas.Principal
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
