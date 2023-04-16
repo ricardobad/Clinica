@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class cls_Consultorios_DAL
+    public class cls_Consultorios_DAL
     {
         private int _ID_Consultorio, _Numero;
         private bool _Estado;

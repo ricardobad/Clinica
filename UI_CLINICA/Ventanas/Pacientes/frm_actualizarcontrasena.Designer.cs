@@ -31,9 +31,8 @@ namespace UI_CLINICA.Ventanas.Pacientes
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_actualizarcontrasena));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btnRegresar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -43,10 +42,10 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnRegresar = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -61,15 +60,16 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.pnlTitulo.Size = new System.Drawing.Size(662, 44);
             this.pnlTitulo.TabIndex = 239;
             // 
-            // btnRegresar
+            // label7
             // 
-            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
-            this.btnRegresar.Location = new System.Drawing.Point(12, 6);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(39, 36);
-            this.btnRegresar.TabIndex = 239;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label7.Location = new System.Drawing.Point(115, 6);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(463, 38);
+            this.label7.TabIndex = 231;
+            this.label7.Text = "Actualización de contraseña";
             // 
             // btnCerrar
             // 
@@ -81,17 +81,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label7.Location = new System.Drawing.Point(115, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(463, 38);
-            this.label7.TabIndex = 231;
-            this.label7.Text = "Actualización de contraseña";
             // 
             // label3
             // 
@@ -196,18 +185,15 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.button2.Text = "Actualizar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // btnRegresar
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "P",
-            "C",
-            "D"});
-            this.comboBox2.Location = new System.Drawing.Point(68, 160);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(47, 30);
-            this.comboBox2.TabIndex = 252;
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.Location = new System.Drawing.Point(12, 6);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(39, 36);
+            this.btnRegresar.TabIndex = 239;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frm_actualizarcontrasena
             // 
@@ -215,7 +201,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(662, 455);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
@@ -228,14 +213,14 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_actualizarcontrasena";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_actualizarcontrasena";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,6 +241,5 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox btnRegresar;
-        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
