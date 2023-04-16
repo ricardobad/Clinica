@@ -90,11 +90,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(77, 5);
+            this.label2.Location = new System.Drawing.Point(-9, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(331, 56);
+            this.label2.Size = new System.Drawing.Size(515, 56);
             this.label2.TabIndex = 120;
-            this.label2.Text = "Bienvenido a";
+            this.label2.Text = "Bienvenido RICARDO";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox3
             // 
