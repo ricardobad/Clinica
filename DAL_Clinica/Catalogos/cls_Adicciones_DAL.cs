@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class cls_Adicciones_DAL
+    class cls_Adicciones_DAL
     {
 
         private int _ID_Adiccion, _ID_Doctor;

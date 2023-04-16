@@ -41,14 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Catalogos\cls_Adicciones_DAL.cs" />
-    <Compile Include="Catalogos\cls_Alergias_DAL.cs" />
-    <Compile Include="Catalogos\cls_Cantones_DAL.cs" />
-    <Compile Include="Catalogos\cls_Consultorios_DAL.cs" />
-    <Compile Include="Catalogos\cls_Distritos_DAL.cs" />
-    <Compile Include="Catalogos\cls_Padecimiento_DAL.cs" />
-    <Compile Include="Catalogos\cls_Provincias_DAL.cs" />
-    <Compile Include="Catalogos\cls_Usuario_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
