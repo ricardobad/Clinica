@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class cls_Provincias_DAL
+    class cls_Provincias_DAL
     {
 
         private string _sMsjError, _descripcion, _ID_Provincia;

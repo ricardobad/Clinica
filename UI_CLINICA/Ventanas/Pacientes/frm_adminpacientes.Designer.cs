@@ -29,16 +29,26 @@ namespace UI_CLINICA.Ventanas.Pacientes
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_adminpacientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_adminpacientes));
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tbControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -64,24 +74,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -91,25 +83,14 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.tbControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -142,6 +123,17 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.pnlTitulo.Size = new System.Drawing.Size(747, 44);
             this.pnlTitulo.TabIndex = 238;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1440, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -156,7 +148,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             // tbControl1
             // 
             this.tbControl1.Controls.Add(this.tabPage1);
-            this.tbControl1.Controls.Add(this.tabPage4);
             this.tbControl1.Controls.Add(this.tabPage2);
             this.tbControl1.Location = new System.Drawing.Point(23, 60);
             this.tbControl1.Name = "tbControl1";
@@ -167,6 +158,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.textBox7);
             this.tabPage1.Controls.Add(this.label12);
@@ -207,6 +199,108 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.tabPage1.Size = new System.Drawing.Size(687, 578);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacion Personal                             ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(384, 336);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(260, 223);
+            this.pictureBox1.TabIndex = 271;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox7.Location = new System.Drawing.Point(384, 222);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(229, 31);
+            this.textBox7.TabIndex = 269;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.label12.Location = new System.Drawing.Point(451, 198);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 19);
+            this.label12.TabIndex = 268;
+            this.label12.Text = "Correo 2:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBox9.Location = new System.Drawing.Point(384, 96);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(229, 31);
+            this.textBox9.TabIndex = 267;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.label13.Location = new System.Drawing.Point(451, 72);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 19);
+            this.label13.TabIndex = 266;
+            this.label13.Text = "Teléfono 2:";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtCorreo.Location = new System.Drawing.Point(384, 156);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(229, 31);
+            this.txtCorreo.TabIndex = 265;
+            // 
+            // txtTel
+            // 
+            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtTel.Location = new System.Drawing.Point(384, 35);
+            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(229, 31);
+            this.txtTel.TabIndex = 264;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.label20.Location = new System.Drawing.Point(451, 132);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(78, 19);
+            this.label20.TabIndex = 263;
+            this.label20.Text = "Correo 1:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.label14.Location = new System.Drawing.Point(451, 11);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(91, 19);
+            this.label14.TabIndex = 262;
+            this.label14.Text = "Teléfono 1:";
             // 
             // textBox6
             // 
@@ -488,258 +582,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.label17.TabIndex = 181;
             this.label17.Text = "Apellido 2:";
             // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button3);
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.btnFinalizar);
-            this.tabPage4.Controls.Add(this.groupBox2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(687, 578);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Datos Clínica";
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button7.Location = new System.Drawing.Point(323, 460);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(93, 50);
-            this.button7.TabIndex = 246;
-            this.button7.Text = "Modificar";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button3.Location = new System.Drawing.Point(572, 460);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 50);
-            this.button3.TabIndex = 238;
-            this.button3.Text = "Regresar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button5.Location = new System.Drawing.Point(444, 460);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 50);
-            this.button5.TabIndex = 237;
-            this.button5.Text = "Limpiar";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.btnFinalizar.Location = new System.Drawing.Point(192, 460);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(100, 50);
-            this.btnFinalizar.TabIndex = 236;
-            this.btnFinalizar.Text = "Agregar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.textBox17);
-            this.groupBox2.Controls.Add(this.checkedListBox3);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.checkedListBox1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.checkedListBox2);
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.groupBox2.Location = new System.Drawing.Point(9, 8);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(671, 402);
-            this.groupBox2.TabIndex = 235;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos no obligatorios";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox5.Location = new System.Drawing.Point(563, 133);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(58, 31);
-            this.textBox5.TabIndex = 252;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 47);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 19);
-            this.label3.TabIndex = 92;
-            this.label3.Text = "Alergias";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(486, 72);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(139, 27);
-            this.comboBox3.TabIndex = 251;
-            // 
-            // textBox17
-            // 
-            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox17.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox17.Location = new System.Drawing.Point(486, 133);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(58, 31);
-            this.textBox17.TabIndex = 250;
-            // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.checkedListBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Items.AddRange(new object[] {
-            "Adicción 1",
-            "Adicción 2",
-            "Adicción 3",
-            "Adicción 4",
-            "Adicción 5",
-            "Adicción 6",
-            "Adicción 7"});
-            this.checkedListBox3.Location = new System.Drawing.Point(314, 87);
-            this.checkedListBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(139, 238);
-            this.checkedListBox3.TabIndex = 104;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label6.Location = new System.Drawing.Point(568, 109);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 19);
-            this.label6.TabIndex = 249;
-            this.label6.Text = "Peso:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(170, 47);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 19);
-            this.label4.TabIndex = 94;
-            this.label4.Text = "Padecimientos";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label5.Location = new System.Drawing.Point(485, 109);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 19);
-            this.label5.TabIndex = 248;
-            this.label5.Text = "Altura:";
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.checkedListBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Padecimiento 1",
-            "Padecimiento 2",
-            "Padecimiento 3",
-            "Padecimiento 4",
-            "Padecimiento 5",
-            "Padecimiento 6",
-            "Padecimiento 7"});
-            this.checkedListBox1.Location = new System.Drawing.Point(157, 87);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(137, 238);
-            this.checkedListBox1.TabIndex = 102;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label8.Location = new System.Drawing.Point(492, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 19);
-            this.label8.TabIndex = 247;
-            this.label8.Text = "Tipo de Sangre:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(311, 47);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 19);
-            this.label9.TabIndex = 93;
-            this.label9.Text = "Adicciones";
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.checkedListBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "Alergia 1",
-            "Alergia 2",
-            "Alergia 3",
-            "Alergia 4",
-            "Alergia 5",
-            "Alergia 6",
-            "Alergia 7"});
-            this.checkedListBox2.Location = new System.Drawing.Point(8, 87);
-            this.checkedListBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(130, 238);
-            this.checkedListBox2.TabIndex = 103;
-            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -860,118 +702,18 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.Column3.Name = "Column3";
             this.Column3.Width = 83;
             // 
-            // btnCerrar
+            // button3
             // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1440, 4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.TabStop = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox7.Location = new System.Drawing.Point(384, 222);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(229, 31);
-            this.textBox7.TabIndex = 269;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label12.Location = new System.Drawing.Point(451, 198);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 19);
-            this.label12.TabIndex = 268;
-            this.label12.Text = "Correo 2:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9.Location = new System.Drawing.Point(384, 96);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(229, 31);
-            this.textBox9.TabIndex = 267;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label13.Location = new System.Drawing.Point(451, 72);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 19);
-            this.label13.TabIndex = 266;
-            this.label13.Text = "Teléfono 2:";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCorreo.Location = new System.Drawing.Point(384, 156);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(229, 31);
-            this.txtCorreo.TabIndex = 265;
-            // 
-            // txtTel
-            // 
-            this.txtTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTel.Location = new System.Drawing.Point(384, 35);
-            this.txtTel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(229, 31);
-            this.txtTel.TabIndex = 264;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label20.Location = new System.Drawing.Point(451, 132);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(78, 19);
-            this.label20.TabIndex = 263;
-            this.label20.Text = "Correo 1:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label14.Location = new System.Drawing.Point(451, 11);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 19);
-            this.label14.TabIndex = 262;
-            this.label14.Text = "Teléfono 1:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(384, 336);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 223);
-            this.pictureBox1.TabIndex = 271;
-            this.pictureBox1.TabStop = false;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.button3.Location = new System.Drawing.Point(133, 528);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(87, 31);
+            this.button3.TabIndex = 272;
+            this.button3.Text = "Crear";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // frm_adminpacientes
             // 
@@ -987,17 +729,14 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.Load += new System.EventHandler(this.frm_adminpacientes_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.tbControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1031,23 +770,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -1058,7 +780,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button4;
@@ -1071,5 +792,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button3;
     }
 }
