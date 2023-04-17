@@ -38,12 +38,12 @@ namespace UI_CLINICA.Ventanas.Principal
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRegresar = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -140,6 +140,17 @@ namespace UI_CLINICA.Ventanas.Principal
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label15.Location = new System.Drawing.Point(192, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(432, 38);
+            this.label15.TabIndex = 232;
+            this.label15.Text = "Ingreso Pacientes PRUEBAS";
+            // 
             // btn_cerrar
             // 
             this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -196,17 +207,6 @@ namespace UI_CLINICA.Ventanas.Principal
             this.btnRegresar.TabIndex = 110;
             this.btnRegresar.TabStop = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label15.Location = new System.Drawing.Point(192, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(289, 38);
-            this.label15.TabIndex = 232;
-            this.label15.Text = "Ingreso Pacientes";
             // 
             // frm_loginPaciente
             // 
