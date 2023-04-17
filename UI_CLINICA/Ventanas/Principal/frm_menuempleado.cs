@@ -176,7 +176,7 @@ namespace UI_CLINICA.Ventanas.Principal
         private void btnAdminDoctores_Click(object sender, EventArgs e)
         {
             pnlMenuAdmin.Visible = false;
-            AbrirFormHijo(new Mantenimiento.frm_mantenimientodoctor());
+            //AbrirFormHijo(new Mantenimiento.frm_mantenimientodoctor());
         }
 
         private void btnAdminEmpleados_Click(object sender, EventArgs e)
