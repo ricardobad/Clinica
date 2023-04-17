@@ -66,6 +66,7 @@
     <Compile Include="Ventanas\Citas\frm_modificarcitas.Designer.cs">
       <DependentUpon>frm_modificarcitas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Class1.cs" />
     <Compile Include="Ventanas\Expedientes\frm_buscarexpediente.cs">
       <SubType>Form</SubType>
     </Compile>

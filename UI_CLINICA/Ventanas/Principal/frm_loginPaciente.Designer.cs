@@ -147,9 +147,9 @@ namespace UI_CLINICA.Ventanas.Principal
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label15.Location = new System.Drawing.Point(192, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(432, 38);
+            this.label15.Size = new System.Drawing.Size(289, 38);
             this.label15.TabIndex = 232;
-            this.label15.Text = "Ingreso Pacientes PRUEBAS";
+            this.label15.Text = "Ingreso Pacientes";
             // 
             // btn_cerrar
             // 
