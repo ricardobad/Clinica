@@ -119,7 +119,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 420);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 525);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnCerrarSesion.Size = new System.Drawing.Size(200, 33);
@@ -133,7 +133,7 @@ namespace UI_CLINICA.Ventanas.Principal
             // 
             this.pnlMenuPacientes.Controls.Add(this.btnPacientesCrear);
             this.pnlMenuPacientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMenuPacientes.Location = new System.Drawing.Point(0, 388);
+            this.pnlMenuPacientes.Location = new System.Drawing.Point(0, 493);
             this.pnlMenuPacientes.Name = "pnlMenuPacientes";
             this.pnlMenuPacientes.Size = new System.Drawing.Size(200, 32);
             this.pnlMenuPacientes.TabIndex = 28;
@@ -169,7 +169,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.btnPacientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnPacientes.Image = ((System.Drawing.Image)(resources.GetObject("btnPacientes.Image")));
             this.btnPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPacientes.Location = new System.Drawing.Point(0, 355);
+            this.btnPacientes.Location = new System.Drawing.Point(0, 460);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnPacientes.Size = new System.Drawing.Size(200, 33);
@@ -184,7 +184,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.pnlMenuCitas.Controls.Add(this.btnCitasModificar);
             this.pnlMenuCitas.Controls.Add(this.btnCitasCrear);
             this.pnlMenuCitas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMenuCitas.Location = new System.Drawing.Point(0, 267);
+            this.pnlMenuCitas.Location = new System.Drawing.Point(0, 372);
             this.pnlMenuCitas.Name = "pnlMenuCitas";
             this.pnlMenuCitas.Size = new System.Drawing.Size(200, 88);
             this.pnlMenuCitas.TabIndex = 26;
@@ -260,7 +260,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.btnCitas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.btnCitas.Image = ((System.Drawing.Image)(resources.GetObject("btnCitas.Image")));
             this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(0, 228);
+            this.btnCitas.Location = new System.Drawing.Point(0, 333);
             this.btnCitas.Name = "btnCitas";
             this.btnCitas.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnCitas.Size = new System.Drawing.Size(200, 39);
@@ -279,7 +279,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.pnlMenuAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuAdmin.Location = new System.Drawing.Point(0, 195);
             this.pnlMenuAdmin.Name = "pnlMenuAdmin";
-            this.pnlMenuAdmin.Size = new System.Drawing.Size(200, 33);
+            this.pnlMenuAdmin.Size = new System.Drawing.Size(200, 138);
             this.pnlMenuAdmin.TabIndex = 23;
             this.pnlMenuAdmin.Visible = false;
             // 
