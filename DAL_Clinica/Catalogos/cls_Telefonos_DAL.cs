@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class cls_Padecimiento_DAL
+    public class cls_Telefonos_DAL
     {
 
-        private int _ID_Padecimiento, _ID_Doctor;
-        private string _sMsjError, _Descripcion;
+        private string _sMsjError, _ID_Persona, _Telefono;
         private DataTable _dtDatos, _dtParametros;
 
-        public int ID_Padecimiento { get => _ID_Padecimiento; set => _ID_Padecimiento = value; }
-        public int ID_Doctor { get => _ID_Doctor; set => _ID_Doctor = value; }
-        public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
+        public string ID_Persona { get => _ID_Persona; set => _ID_Persona = value; }
+        public string Telefono { get => _Telefono; set => _Telefono = value; }
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }

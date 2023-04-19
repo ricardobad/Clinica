@@ -291,5 +291,15 @@
     <None Include="Resources\MEDICO_1-removebg-preview.png" />
     <None Include="Resources\WhatsApp Image 2023-03-07 at 4.52.06 PM.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL_Clinica\BLL_Clinica.csproj">
+      <Project>{86b07810-6438-4d32-879c-e63c7c4ffcef}</Project>
+      <Name>BLL_Clinica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL_Clinica\DAL_Clinica.csproj">
+      <Project>{817df985-a6e8-4460-9b7e-e3bd35735f5d}</Project>
+      <Name>DAL_Clinica</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

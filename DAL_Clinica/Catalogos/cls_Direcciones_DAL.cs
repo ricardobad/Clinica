@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class cls_Distritos_DAL
+    public class cls_Direcciones_DAL
     {
 
-        private string _sMsjError, _descripcion, _ID_Distrito;
+        private int _ID_Direccion;
+        private string _sMsjError, _ID_Provincia, _ID_Canton, _ID_Distrito, _Otras_Guias;
         private DataTable _dtDatos, _dtParametros;
 
+        public int ID_Direccion { get => _ID_Direccion; set => _ID_Direccion = value; }
+        public string ID_Provincia { get => _ID_Provincia; set => _ID_Provincia = value; }
+        public string ID_Canton { get => _ID_Canton; set => _ID_Canton = value; }
         public string ID_Distrito { get => _ID_Distrito; set => _ID_Distrito = value; }
-        public string descripcion { get => _descripcion; set => _descripcion = value; }
+        public string Otras_Guias { get => _Otras_Guias; set => _Otras_Guias = value; }
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }

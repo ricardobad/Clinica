@@ -41,15 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BD\cls_BD_DAL.cs" />
     <Compile Include="Catalogos\cls_Adicciones_DAL.cs" />
     <Compile Include="Catalogos\cls_Alergias_DAL.cs" />
     <Compile Include="Catalogos\cls_Cantones_DAL.cs" />
+    <Compile Include="Catalogos\cls_Citas_DAL.cs" />
     <Compile Include="Catalogos\cls_Consultorios_DAL.cs" />
+    <Compile Include="Catalogos\cls_Correos_DAL.cs" />
+    <Compile Include="Catalogos\cls_Direcciones_DAL.cs" />
     <Compile Include="Catalogos\cls_Distritos_DAL.cs" />
+    <Compile Include="Catalogos\cls_Doctores_DAL.cs" />
+    <Compile Include="Catalogos\cls_Especialidades_DAL.cs" />
+    <Compile Include="Catalogos\cls_Pacientes_DAL.cs" />
     <Compile Include="Catalogos\cls_Padecimiento_DAL.cs" />
+    <Compile Include="Catalogos\cls_Personas_DAL.cs" />
     <Compile Include="Catalogos\cls_Provincias_DAL.cs" />
+    <Compile Include="Catalogos\cls_Reportes_DAL.cs" />
+    <Compile Include="Catalogos\cls_Roles_DAL.cs" />
+    <Compile Include="Catalogos\cls_Telefonos_DAL.cs" />
     <Compile Include="Catalogos\cls_Usuario_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
