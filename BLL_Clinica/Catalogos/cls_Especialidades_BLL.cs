@@ -49,7 +49,7 @@ namespace BLL_Clinica.Catalogos
 
         }
 
-       //De momento no hacer nada aca
+       //De momento no hacer nada aca 
         public void eliminar_especialidades(ref cls_Especialidades_DAL Obj_especialidades_DAL)
         {
 
