@@ -13,7 +13,7 @@ namespace BLL_Clinica.Catalogos
 {
     public class cls_Especialidades_BLL
     {
-
+        // declaracion de variales globlaes
         #region VARIABLES GLOBALES
         cls_Especialidades_DAL Obj_especialidades = new cls_Especialidades_DAL();
         cls_BD_DAL Obj_BD_DAL = new cls_BD_DAL();
@@ -22,47 +22,16 @@ namespace BLL_Clinica.Catalogos
         #endregion
 
         #region Metodos
-        public void listar_filtrar_especialidades(ref cls_Especialidades_DAL Obj_especidades_DAL)
-        {
-
-
-            if (Obj_especidades_DAL.ID_Especialidad == 0)
-            {
-                Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_especialidades"].ToString();
-
-            }
-            else
-            {
-
-                //Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["filtrar_especialidades"].ToString();
-                //Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
-                //Obj_BD_DAL.obj_dtParametros.Rows.Add("@FILTRO", "5", Obj_especidades_DAL.sespecialidad);
-
-            }
-
-            Obj_BD_DAL.sNomTabla = "T_ESPECIALIDADES";
-
-            Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
-
-            if (Obj_BD_DAL.sMsjError == string.Empty)
-            {
-                Obj_especidades_DAL.sMsjError = string.Empty;
-                Obj_especidades_DAL.DtDatos = Obj_BD_DAL.obj_ds.Tables[0];
-            }
-            else
-            {
-                Obj_especidades_DAL.sMsjError = Obj_BD_DAL.sMsjError;
-                Obj_especidades_DAL.DtDatos = null;
-            }
-        }
-
+        
+                                                                    // ojo a este ref de abajo, que no se enrede con el de arriba
         public void listar_especialidades(ref cls_Especialidades_DAL Obj_especialidades_DAL)
         {
 
-
+            //aqui se llama el Store Procedure que esta en el APP.Config
 
             Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_especialidades"].ToString();
-
+            
+            //aqui abajo se pone el nombrre de la tabla
             Obj_BD_DAL.sNomTabla = "T_ESPECIALIDADES";
 
             Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
@@ -80,7 +49,7 @@ namespace BLL_Clinica.Catalogos
 
         }
 
-       
+       //De momento no hacer nada aca
         public void eliminar_especialidades(ref cls_Especialidades_DAL Obj_especialidades_DAL)
         {
 

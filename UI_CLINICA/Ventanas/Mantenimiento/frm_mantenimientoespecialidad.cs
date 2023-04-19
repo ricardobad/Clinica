@@ -53,10 +53,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             BLL_Especialidades.listar_especialidades(ref DAL_Especialidades );
 
-            // este es filtrar  DAL_Especialidades. sCodCentro = tls_txt_Filtrar.Text.Trim();
-
-            // Obj_Centros_BLL.listar_filtrar_Centros(ref Obj_Centros_DAL);
-            DAL_Especialidades.sMsjError = "";
+            //aqui se llama al datagrid del formulario
+         
             if (DAL_Especialidades.sMsjError == string.Empty)
             {
                 dgvNumero.DataSource = null;
@@ -161,9 +159,13 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         //        Pant_Editar.ShowDialog();
         //    }
         //}
-    
 
-    #endregion
 
-}
+        #endregion
+
+        private void dgvNumero_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
 }

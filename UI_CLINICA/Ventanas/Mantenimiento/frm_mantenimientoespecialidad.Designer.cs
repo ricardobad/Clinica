@@ -236,6 +236,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.dgvNumero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNumero.Size = new System.Drawing.Size(962, 500);
             this.dgvNumero.TabIndex = 250;
+            this.dgvNumero.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNumero_CellContentClick);
             // 
             // pnlTitulo
             // 
