@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD\cls_BD_BLL.cs" />
+    <Compile Include="Catalogos\cls_Consultorios_BLL.cs" />
     <Compile Include="Catalogos\cls_Especialidades_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
