@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL_Clinica.Catalogos
 {
     public class cls_Consultorios_DAL
     {
@@ -13,6 +13,7 @@ namespace DAL
         private bool _Estado;
         private string _sMsjError;
         private DataTable _dtDatos, _dtParametros;
+        private DataSet _dsConsultorios;
 
         public int ID_Consultorio { get => _ID_Consultorio; set => _ID_Consultorio = value; }
         public int Numero { get => _Numero; set => _Numero = value; }
@@ -20,6 +21,6 @@ namespace DAL
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public DataSet DsConsultorios { get => _dsConsultorios; set => _dsConsultorios = value; }
     }
 }
