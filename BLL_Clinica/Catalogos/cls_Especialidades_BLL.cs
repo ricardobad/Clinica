@@ -56,7 +56,7 @@ namespace BLL_Clinica.Catalogos
             }
         }
 
-        public void listar_especialidades(ref cls_Especialidades_DAL Obj_especidades_DAL)
+        public void listar_especialidades(ref cls_Especialidades_DAL Obj_especialidades_DAL)
         {
 
 
@@ -67,10 +67,10 @@ namespace BLL_Clinica.Catalogos
 
             Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
 
-            if (Obj_especidades_DAL.ID_Especialidad == 0)
+            if (Obj_BD_DAL.sMsjError == string.Empty)
             {
-                Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_especialidades"].ToString();
-
+                Obj_especialidades_DAL.sMsjError = string.Empty;
+                Obj_especialidades_DAL.DtDatos = Obj_BD_DAL.obj_ds.Tables[0];
             }
             else
             {
