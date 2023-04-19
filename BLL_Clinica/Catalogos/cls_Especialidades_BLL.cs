@@ -18,6 +18,7 @@ namespace BLL_Clinica.Catalogos
         cls_Especialidades_DAL Obj_especialidades = new cls_Especialidades_DAL();
         cls_BD_DAL Obj_BD_DAL = new cls_BD_DAL();
         cls_BD_BLL Obj_BD_BLL = new cls_BD_BLL();
+        ///comentar
         #endregion
 
         #region Metodos
