@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using DAL_Practica_Clase.BD;
-using System.Configuration;
+using DAL_Clinica.BD;
 using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
 
 namespace BLL_Practica_Clase.BD
 {
@@ -14,7 +15,7 @@ namespace BLL_Practica_Clase.BD
     {
 
 
-        public void CrearDTParametros(ref cls_BD_DAL Obj_BD_DAL)
+        public void CrearDTParametros(ref cls_BD_II_DAL Obj_BD_DAL)
         {
             Obj_BD_DAL.dtParametros = new DataTable("PARAMETROS_SP");
             Obj_BD_DAL.dtParametros.Columns.Add("NOMB_PARAM");
@@ -22,12 +23,12 @@ namespace BLL_Practica_Clase.BD
             Obj_BD_DAL.dtParametros.Columns.Add("VALOR_PARAM");
         }
 
-        public void ExecDataAdapter(ref cls_BD_DAL Obj_BD_DAL)
+        public void ExecDataAdapter(ref cls_BD_II_DAL Obj_BD_DAL)
         {
             try
             {
                 // INSTANCIA EL OBJETO DE TIPO SQLCONNECTION
-                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["WIN_AUT_DB_AEROPUERTO_PROGRA_III"].ToString().Trim());
+                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["WIN_AUT_CLINICA_SALUD_A_SU_ALCANCE"].ToString().Trim());
 
                 if (Obj_BD_DAL.obj_SqlCnx.State == ConnectionState.Closed)
                 {
@@ -160,12 +161,12 @@ namespace BLL_Practica_Clase.BD
             }
         }
 
-        public void ExecCommand(ref cls_BD_DAL Obj_BD_DAL)
+        public void ExecCommand(ref cls_BD_II_DAL Obj_BD_DAL)
         {
             try
             {
                 // INSTANCIA EL OBJETO DE TIPO SQLCONNECTION
-                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["WIN_AUT_DB_AEROPUERTO_PROGRA_III"].ToString().Trim());
+                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["WIN_AUT_DB_CLINICA_SALUD_A_SU_ALCANCE"].ToString().Trim());
 
                 if (Obj_BD_DAL.obj_SqlCnx.State == ConnectionState.Closed)
                 {
