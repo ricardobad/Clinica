@@ -45,10 +45,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvNumero = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -200,11 +196,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             // dgvNumero
             // 
+            this.dgvNumero.AllowUserToAddRows = false;
+            this.dgvNumero.AllowUserToDeleteRows = false;
             this.dgvNumero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvNumero.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvNumero.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvNumero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -213,13 +209,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvNumero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNumero.ColumnHeadersHeight = 30;
-            this.dgvNumero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvNumero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.Column1,
-            this.Column2,
-            this.duracion});
+            this.dgvNumero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -228,12 +218,12 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNumero.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvNumero.EnableHeadersVisualStyles = false;
+            this.dgvNumero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvNumero.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.dgvNumero.Location = new System.Drawing.Point(39, 426);
+            this.dgvNumero.Location = new System.Drawing.Point(66, 424);
             this.dgvNumero.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.dgvNumero.MultiSelect = false;
             this.dgvNumero.Name = "dgvNumero";
-            this.dgvNumero.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -242,40 +232,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvNumero.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvNumero.RowHeadersVisible = false;
             this.dgvNumero.RowHeadersWidth = 62;
             this.dgvNumero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNumero.Size = new System.Drawing.Size(962, 500);
             this.dgvNumero.TabIndex = 250;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Id de Especialidad";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 266;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre de Especialidad";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 338;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Estado";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 124;
-            // 
-            // duracion
-            // 
-            this.duracion.HeaderText = "Duración (min)";
-            this.duracion.MinimumWidth = 8;
-            this.duracion.Name = "duracion";
-            this.duracion.Width = 220;
             // 
             // pnlTitulo
             // 
@@ -352,9 +312,5 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private System.Windows.Forms.DataGridView dgvNumero;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duracion;
     }
 }
