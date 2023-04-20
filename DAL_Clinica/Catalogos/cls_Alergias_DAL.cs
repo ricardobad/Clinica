@@ -13,7 +13,7 @@ namespace DAL
         private int _ID_Alergia, _ID_Doctor;
         private string _sMsjError, _Descripcion;
         private DataTable _dtDatos, _dtParametros;
-
+        private bool _bEstado;
         public int ID_Alergia { get => _ID_Alergia; set => _ID_Alergia = value; }
         public int ID_Doctor { get => _ID_Doctor; set => _ID_Doctor = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
@@ -21,5 +21,6 @@ namespace DAL
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
 
+        public bool bEstado { get => _bEstado; set => _bEstado = value; }
     }
 }
