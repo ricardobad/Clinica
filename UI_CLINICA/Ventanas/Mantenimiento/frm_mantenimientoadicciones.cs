@@ -22,7 +22,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         cls_Adicciones_DAL DAL_Adicciones = new cls_Adicciones_DAL();
         cls_BD_BLL BD_BLL = new cls_BD_BLL();
         cls_BD_DAL BD_DAL = new cls_BD_DAL();
-        cls_Adicciones_BLL BLL_Adicciones = new cls_Adicciones_BLL();
+       // cls_Adicciones_BLL BLL_Adicciones = new cls_Adicciones_BLL();
         #endregion
         public frm_mantenimientoadicciones()
         {
@@ -38,7 +38,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void CargarDatos()
         {
 
-            BLL_Adicciones.listar_Adicciones(ref DAL_Adicciones);
+            //BLL_Adicciones.listar_Adicciones(ref DAL_Adicciones);
 
             //aqui se llama al datagrid del formulario
 
