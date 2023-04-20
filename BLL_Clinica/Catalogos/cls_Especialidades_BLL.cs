@@ -23,7 +23,7 @@ namespace BLL_Clinica.Catalogos
 
         #region Metodos
         
-                                                                    // ojo a este ref de abajo, que no se enrede con el de arriba
+                 // ojo a este ref de abajo, que no se enrede con el de arriba
         public void listar_especialidades(ref cls_Especialidades_DAL Obj_especialidades_DAL)
         {
 
