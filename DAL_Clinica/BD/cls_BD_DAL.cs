@@ -18,7 +18,7 @@ namespace DAL_Clinica.BD
         private DataSet _obj_ds;
         private DataTable _obj_dtParametros;
         private char _cAxn;
-        private string _sNomTabla, _sNomSp, _sValorScalar, _sMsjError;
+        private string _sNomTabla, _sNomSp, _sValorScalar, _sMsjError, _sIndAxn;
 
 
 
@@ -35,6 +35,7 @@ namespace DAL_Clinica.BD
         public string sNomSp { get => _sNomSp; set => _sNomSp = value; }
         public string sValorScalar { get => _sValorScalar; set => _sValorScalar = value; }
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
+        public string SIndAxn { get => _sIndAxn; set => _sIndAxn = value; }
         #endregion
 
     }
