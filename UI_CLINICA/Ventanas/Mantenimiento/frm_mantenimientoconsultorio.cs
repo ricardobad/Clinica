@@ -29,10 +29,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         #region METODOS
 
 
-        //private void CargarDatos()
-        //{
+        private void CargarDatos()
+        {
 
-        //    dgvConsultorio.DataSource = null;
+           dgvConsultorio.DataSource = null;
 
             
 

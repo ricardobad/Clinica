@@ -88,7 +88,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Consul_Num.Name = "txt_Consul_Num";
             this.txt_Consul_Num.Size = new System.Drawing.Size(160, 37);
             this.txt_Consul_Num.TabIndex = 62;
-            this.txt_Consul_Num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Consul_Num_KeyPress);
+           this.txt_Consul_Num.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Consul_Num_KeyPress);
             // 
             // label3
             // 
