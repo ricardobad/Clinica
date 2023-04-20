@@ -14,6 +14,7 @@ namespace DAL
         private bool _Estado;
         private string _sMsjError, _Nombre, _Duracion_Aproximada;
         private DataTable _dtDatos, _dtParametros;
+     
 
         public int ID_Especialidad { get => _ID_Especialidad; set => _ID_Especialidad = value; }
         public bool Estado { get => _Estado; set => _Estado = value; }

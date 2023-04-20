@@ -8,12 +8,10 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-
-namespace BLL_Practica_Clase.BD
+namespace BLL_Clinica.BD
 {
-    public class cls_BD_BLL
+    public class cls_BD_II_BLL
     {
-
 
         public void CrearDTParametros(ref cls_BD_II_DAL Obj_BD_DAL)
         {
@@ -28,7 +26,7 @@ namespace BLL_Practica_Clase.BD
             try
             {
                 // INSTANCIA EL OBJETO DE TIPO SQLCONNECTION
-                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["WIN_AUT_CLINICA_SALUD_A_SU_ALCANCE"].ToString().Trim());
+                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["win_auth"].ToString().Trim());
 
                 if (Obj_BD_DAL.obj_SqlCnx.State == ConnectionState.Closed)
                 {
@@ -166,7 +164,7 @@ namespace BLL_Practica_Clase.BD
             try
             {
                 // INSTANCIA EL OBJETO DE TIPO SQLCONNECTION
-                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["WIN_AUT_DB_CLINICA_SALUD_A_SU_ALCANCE"].ToString().Trim());
+                Obj_BD_DAL.obj_SqlCnx = new SqlConnection(ConfigurationManager.ConnectionStrings["win_auth"].ToString().Trim());
 
                 if (Obj_BD_DAL.obj_SqlCnx.State == ConnectionState.Closed)
                 {
@@ -174,7 +172,7 @@ namespace BLL_Practica_Clase.BD
                     Obj_BD_DAL.obj_SqlCnx.Open();
                 }
 
-                Obj_BD_DAL.Obj_SqlCmd = new SqlCommand (Obj_BD_DAL.sNobreSP,   //************ cambiarle SQLDAP//nombre del store procedure que debe ejecutar en la BD
+                Obj_BD_DAL.Obj_SqlCmd = new SqlCommand(Obj_BD_DAL.sNobreSP,   //************ cambiarle SQLDAP//nombre del store procedure que debe ejecutar en la BD
                                                         Obj_BD_DAL.obj_SqlCnx   //conexion a la bd previamente contruida y abierta
                                                         );
 
@@ -277,11 +275,11 @@ namespace BLL_Practica_Clase.BD
                 {
                     Obj_BD_DAL.sValorScalar = Obj_BD_DAL.Obj_SqlCmd.ExecuteScalar().ToString().Trim();
                 }
-               
-              
 
 
-             Obj_BD_DAL.sMsjError = string.Empty;
+
+
+                Obj_BD_DAL.sMsjError = string.Empty;
 
             }
             catch (SqlException ex)
@@ -300,9 +298,6 @@ namespace BLL_Practica_Clase.BD
 
             }
         }
-
-
-
 
     }
 }
