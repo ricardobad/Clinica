@@ -48,6 +48,7 @@
     <Compile Include="Catalogos\cls_Consultorios_BLL.cs" />
     <Compile Include="Catalogos\cls_Empleados_BLL.cs" />
     <Compile Include="Catalogos\cls_Especialidades_BLL.cs" />
+    <Compile Include="Catalogos\cls_Padecimientos_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

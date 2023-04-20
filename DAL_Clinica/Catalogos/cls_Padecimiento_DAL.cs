@@ -11,15 +11,19 @@ namespace DAL
     {
 
         private int _ID_Padecimiento, _ID_Doctor;
-        private string _sMsjError, _Descripcion;
-        private DataTable _dtDatos, _dtParametros;
+        private string _sMsjError, _sDescripcion;
+        private DataSet _dsPadecimientos;
+        private bool _booEstado;
+        private char _cIndAxn;   //Nuevo o Modificado
+
+
 
         public int ID_Padecimiento { get => _ID_Padecimiento; set => _ID_Padecimiento = value; }
         public int ID_Doctor { get => _ID_Doctor; set => _ID_Doctor = value; }
-        public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
+        public string sDescripcion { get => _sDescripcion; set => _sDescripcion = value; }
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
-        public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
-        public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public DataSet dsPadecimientos { get => _dsPadecimientos; set => _dsPadecimientos = value; }
+        public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
+        public bool booEstado { get => _booEstado; set => _booEstado = value; }
     }
 }

@@ -39,15 +39,13 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.dgvNumero = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.dgv_Numero = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNumero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Numero)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox2
@@ -123,66 +121,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label15.TabIndex = 231;
             this.label15.Text = "Mantenimiento de Adicciones";
             // 
-            // dgvNumero
-            // 
-            this.dgvNumero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvNumero.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvNumero.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvNumero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNumero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNumero.ColumnHeadersHeight = 30;
-            this.dgvNumero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvNumero.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.Column1});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNumero.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvNumero.EnableHeadersVisualStyles = false;
-            this.dgvNumero.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.dgvNumero.Location = new System.Drawing.Point(180, 206);
-            this.dgvNumero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvNumero.Name = "dgvNumero";
-            this.dgvNumero.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNumero.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvNumero.RowHeadersVisible = false;
-            this.dgvNumero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNumero.Size = new System.Drawing.Size(348, 380);
-            this.dgvNumero.TabIndex = 253;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Id de Adicción";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 148;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre de Adicción";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 197;
-            // 
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -219,16 +157,63 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.button6.Text = "Agregar";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // dgv_Numero
+            // 
+            this.dgv_Numero.AllowUserToAddRows = false;
+            this.dgv_Numero.AllowUserToDeleteRows = false;
+            this.dgv_Numero.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Numero.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_Numero.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgv_Numero.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Numero.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Numero.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Numero.ColumnHeadersHeight = 30;
+            this.dgv_Numero.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Numero.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Numero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgv_Numero.EnableHeadersVisualStyles = false;
+            this.dgv_Numero.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.dgv_Numero.Location = new System.Drawing.Point(109, 204);
+            this.dgv_Numero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Numero.MultiSelect = false;
+            this.dgv_Numero.Name = "dgv_Numero";
+            this.dgv_Numero.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Numero.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Numero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Numero.Size = new System.Drawing.Size(529, 276);
+            this.dgv_Numero.TabIndex = 257;
+            // 
             // frm_mantenimientoadicciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(747, 685);
+            this.Controls.Add(this.dgv_Numero);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.dgvNumero);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox2);
@@ -238,10 +223,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frm_mantenimientoadicciones";
             this.Text = "frm_mantenimientoadicciones";
+            this.Load += new System.EventHandler(this.frm_mantenimientoadicciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNumero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Numero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,11 +241,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView dgvNumero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridView dgv_Numero;
     }
 }
