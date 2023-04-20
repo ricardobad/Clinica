@@ -46,10 +46,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         #region Metodos
 
-        private void CargarDatos_II() {
+        private void CargarDatos_II()
+        {
             Obj_Empleados_DAL.sID_Persona = txt_busqueda.Text.Trim().ToString();
             Obj_Empleados_BLL.listar_filtrar_Empleados(ref Obj_Empleados_DAL);
-            
+
             if (Obj_Empleados_DAL.sMsjError == string.Empty)
             {
                 dgv_Empleados.DataSource = null;
@@ -62,9 +63,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         }
 
-        private void CargarDatos() {
+        private void CargarDatos()
+        {
 
-            
+
             Obj_Empleados_BLL.listar_Empleados(ref Obj_Empleados_DAL);
             if (Obj_Empleados_DAL.sMsjError == string.Empty)
             {
@@ -103,8 +105,36 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void btn_Cargar_Click(object sender, EventArgs e)
         {
-            Obj_Empleados_BLL.cargaempleados(ref Obj_Empleados_DAL);
-            txt_Nombre.Text = Obj_Empleados_DAL.sID_Persona.ToString();
+
+
+            if (dgv_Empleados.Rows.Count > 0)
+            {
+                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
+                        "Información o Alerta",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Obj_Empleados_DAL.sID_Persona = dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sPrimer_apellido = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim();
+
+
+
+                    txt_Nombre.Text = Obj_Empleados_DAL.sNombre.ToString().Trim();    //Pone el ID en el txt correspondiente
+                    txt_Apellido_I.Text = Obj_Empleados_DAL.sPrimer_apellido.Trim();   //Pone el nombre en el txt correspondiente
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("No tiene padecimientos para Editar",
+                                 "Información o Alerta",
+                                 MessageBoxButtons.OK,
+                                  MessageBoxIcon.Information);
+
+            }
+
+
 
         }
     }

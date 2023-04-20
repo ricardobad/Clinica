@@ -92,7 +92,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 }
                 else
                 {
-                    MessageBox.Show("No tiene Regiones para Editar",
+                    MessageBox.Show("No tiene padecimientos para Editar",
                                      "Información o Alerta",
                                      MessageBoxButtons.OK,
                                       MessageBoxIcon.Information);
