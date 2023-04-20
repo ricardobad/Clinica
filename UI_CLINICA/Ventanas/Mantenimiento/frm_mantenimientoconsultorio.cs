@@ -29,30 +29,30 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         #region METODOS
 
 
-        private void CargarDatos()
-        {
+        //private void CargarDatos()
+        //{
 
-            dgvConsultorio.DataSource = null;
+        //    dgvConsultorio.DataSource = null;
 
-            Obj_Consultorios_DAL.Numero = Convert.ToInt32(txt_Consul_Num.Text.Trim());
+        //    Obj_Consultorios_DAL.Numero = Convert.ToInt32(txt_Consul_Num.Text.Trim());
 
-            Obj_Consultorios_BLL.Listar_Filtrar_Regiones(ref Obj_Consultorios_DAL);
+        //    Obj_Consultorios_BLL.Listar_Filtrar_Regiones(ref Obj_Consultorios_DAL);
 
-            if (Obj_Regiones_DAL.sMsjError == string.Empty)
-            {
-                dgv_Datos.DataSource = Obj_Regiones_DAL.dsRegiones.Tables[0];
-            }
+        //    if (Obj_Regiones_DAL.sMsjError == string.Empty)
+        //    {
+        //        dgv_Datos.DataSource = Obj_Regiones_DAL.dsRegiones.Tables[0];
+        //    }
 
-            else
-            {
-                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de regiones. Error = [" +
-                    Obj_Regiones_DAL.sMsjError + " ].",
-                    "ERROR",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+        //    else
+        //    {
+        //        MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de regiones. Error = [" +
+        //            Obj_Regiones_DAL.sMsjError + " ].",
+        //            "ERROR",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error);
+        //    }
 
-        }
+        //}
 
 
         #endregion
