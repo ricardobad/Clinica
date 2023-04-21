@@ -66,8 +66,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             if (Obj_Consultorios_DAL.CIndAxn == 'N')
             {
                 Obj_Consultorios_DAL.ID_Consultorio = 0;
-                Obj_Consultorios_DAL.Numero = Convert.ToInt32(string.Empty);
-                Obj_Consultorios_DAL.Estado = Convert.ToInt32(string.Empty);
+                Obj_Consultorios_DAL.iNumero = Convert.ToInt32(string.Empty);
+                Obj_Consultorios_DAL.iEstado = Convert.ToInt32(string.Empty);
 
             }
             else //"Modificar
@@ -80,16 +80,16 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Obj_Consultorios_DAL.ID_Consultorio = Convert.ToInt32(dgvConsultorio.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                        Obj_Consultorios_DAL.Numero = Convert.ToInt32(dgvConsultorio.SelectedRows[0].Cells[1].Value.ToString().Trim());
+                        Obj_Consultorios_DAL.iNumero = Convert.ToInt32(dgvConsultorio.SelectedRows[0].Cells[1].Value.ToString().Trim());
                         if (dgvConsultorio.SelectedRows[0].Cells[2].Value.ToString().Trim() == "True")
                         {
                             cbox_Estado.SelectedItem = "Activo";
-                            Obj_Consultorios_DAL.Estado = 1;
+                            Obj_Consultorios_DAL.iEstado = 1;
                         }
                         else
                         {
                             cbox_Estado.SelectedItem = "Inactivo";
-                            Obj_Consultorios_DAL.Estado = 0;
+                            Obj_Consultorios_DAL.iEstado = 0;
                         }
                     }
                 }
@@ -127,8 +127,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 txt_IDConsultorio.Enabled = false;
                 txt_IDConsultorio.ReadOnly = true;
                 txt_IDConsultorio.Text = Obj_Consultorios_DAL.ID_Consultorio.ToString().Trim();
-                txt_Consul_Num.Text = Convert.ToString(Obj_Consultorios_DAL.Numero);
-                if (Obj_Consultorios_DAL.Estado == 1)
+                txt_Consul_Num.Text = Convert.ToString(Obj_Consultorios_DAL.iNumero);
+                if (Obj_Consultorios_DAL.iEstado == 1)
                 {
                     cbox_Estado.SelectedItem = "Activo";
                 }
@@ -163,14 +163,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             else
             {
                 erp_Mensajes.Clear();
-                Obj_Consultorios_DAL.Numero = Convert.ToInt32(txt_Consul_Num.Text.Trim());
+                Obj_Consultorios_DAL.iNumero = Convert.ToInt32(txt_Consul_Num.Text.Trim());
                 if (cbox_Estado.SelectedItem == "Activo")
                 {
-                    Obj_Consultorios_DAL.Estado = 1;
+                    Obj_Consultorios_DAL.iEstado = 1;
                 }
                 else
                 {
-                    Obj_Consultorios_DAL.Estado = 0;
+                    Obj_Consultorios_DAL.iEstado = 0;
                 }
             }
 
@@ -217,8 +217,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 }
             //}
             Obj_Consultorios_DAL.ID_Consultorio = 0;
-            Obj_Consultorios_DAL.Numero = 0;
-            Obj_Consultorios_DAL.Estado = 0;
+            Obj_Consultorios_DAL.iNumero = 0;
+            Obj_Consultorios_DAL.iEstado = 0;
             CargarDatos();
 
             #endregion
