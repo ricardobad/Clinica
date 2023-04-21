@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL_Clinica.Catalogos
 {
     public class cls_Telefonos_DAL
     {

@@ -15,7 +15,7 @@ namespace DAL
         private string _sMsjError, _ID_Persona, _Nombre, _primer_apellido, _segundo_apellido, _Identificacion, _TipoCliente;
         private bool _Tipo_ID, _Sexo, _Estado;
         private DataTable _dtDatos, _dtParametros;
-
+        private DataSet _dsPersonas;
         public int ID_Direccion { get => _ID_Direccion; set => _ID_Direccion = value; }
         public string ID_Persona { get => _ID_Persona; set => _ID_Persona = value; }
         public string Nombre { get => _Nombre; set => _Nombre = value; }
@@ -31,6 +31,6 @@ namespace DAL
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public DataSet dsPersonas { get => _dsPersonas; set => _dsPersonas = value; }
     }
 }

@@ -29,7 +29,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_Identificacion = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_Consultar_Expediente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,20 +38,20 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txt_Identificacion
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(35, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 33);
-            this.textBox2.TabIndex = 76;
+            this.txt_Identificacion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_Identificacion.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Identificacion.Location = new System.Drawing.Point(35, 81);
+            this.txt_Identificacion.Name = "txt_Identificacion";
+            this.txt_Identificacion.Size = new System.Drawing.Size(246, 33);
+            this.txt_Identificacion.TabIndex = 76;
             // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = global::UI_CLINICA.Properties.Resources.WhatsApp_Image_2023_03_07_at_4_51_53_PM;
             this.tabPage1.Controls.Add(this.btn_Consultar_Expediente);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.txt_Identificacion);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 35);
             this.tabPage1.Name = "tabPage1";
@@ -120,7 +120,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_Identificacion;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
