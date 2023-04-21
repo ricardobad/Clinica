@@ -80,8 +80,24 @@ namespace UI_CLINICA.Ventanas.Roles
                     {
                         Obj_Roles_DAL.sIDRol = dgvRoles.SelectedRows[0].Cells[0].Value.ToString().Trim();
                         Obj_Roles_DAL.sDescripcion = dgvRoles.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                        Obj_Roles_DAL.ITipoLE = Convert.ToInt32(dgvRoles.SelectedRows[0].Cells[2].Value.ToString().Trim());
-                        Obj_Roles_DAL.ITipoES = Convert.ToInt32(dgvRoles.SelectedRows[0].Cells[3].Value.ToString().Trim());
+
+                        if (dgvRoles.SelectedRows[0].Cells[2].Value.ToString().Trim() == "true")
+                        {
+                            Obj_Roles_DAL.ITipoLE = 1;
+                        }
+                        else
+                        {
+                            Obj_Roles_DAL.ITipoLE = 0;
+                        }
+                        if (dgvRoles.SelectedRows[0].Cells[3].Value.ToString().Trim() == "true")
+                        {
+                            Obj_Roles_DAL.ITipoES = 1;
+                        }
+                        else
+                        {
+                            Obj_Roles_DAL.ITipoES = 0;
+                        }
+                        
                         if (dgvRoles.SelectedRows[0].Cells[4].Value.ToString().Trim() == "True")
                         {
                             cbo_Estado.SelectedItem = "Activo";
@@ -171,26 +187,27 @@ namespace UI_CLINICA.Ventanas.Roles
         {
             //int iTemp = 0;
             //int.TryParse(txt_IDConsultorio.Text.ToString().Trim(), out iTemp);
-            if (txt_IDRol.Text.Trim() == "")
-            {
-              MessageBox.Show("El Id de Rol no puede ser vacio, favor corregirlo para continuar.", "Alerta de Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                Obj_Roles_DAL.sIDRol = txt_IDRol.Text.Trim();
-            }
+           // if (txt_IDRol.Text.Trim() == "")
+            //{
+              //MessageBox.Show("El Id de Rol no puede ser vacio, favor corregirlo para continuar.", "Alerta de Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //}
+            //else
+            //{
+              //  Obj_Roles_DAL.sIDRol = txt_IDRol.Text.Trim();
+            //}
 
             if(txt_Descripcion.Text.Trim() == string.Empty || txt_IDRol.Text.Trim() == string.Empty)
             {
-                erp_Mensajes.SetError(txt_Descripcion, "El campo de Descripcion no puede ser vacia, favor corregir el error");
+             //   erp_Mensajes.SetError(txt_Descripcion, "El campo de Descripcion no puede ser vacia, favor corregir el error");
                 //btn_Agregar.Enabled = false;
                 MessageBox.Show("No debe dejar campos de texto vacios para crear un nuevo Rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
-            }
+           }
             else
             {
-                erp_Mensajes.Clear();
+                //  erp_Mensajes.Clear();
+                Obj_Roles_DAL.sIDRol = txt_IDRol.Text.Trim();
                 Obj_Roles_DAL.sDescripcion = txt_Descripcion.Text.Trim();
                 if (cbo_Estado.SelectedItem == "Activo")
                 {
