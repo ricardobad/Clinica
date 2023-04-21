@@ -305,7 +305,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void txt_Filtro_Leave(object sender, EventArgs e)
         {
-            EspaciosVacioYLimite(txt_Nombre);
+
         }
 
         private void txt_Filtro_KeyPress(object sender, KeyPressEventArgs e)

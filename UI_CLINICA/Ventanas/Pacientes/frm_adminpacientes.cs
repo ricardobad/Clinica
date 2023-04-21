@@ -77,7 +77,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
 
         private void CargarDatos_II()
         {
-            Obj_Pacientes_DAL.sID_Persona = txt_Busqueda.Text.Trim().ToString();
+            Obj_Pacientes_DAL.sIdentificacion = txt_Busqueda.Text.Trim().ToString();
             Obj_Pacientes_BLL.listar_filtrar_Pacientes(ref Obj_Pacientes_DAL);
 
             if (Obj_Pacientes_DAL.sMsjError == string.Empty)
@@ -110,7 +110,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
                     Obj_Pacientes_DAL.Tipo_Sangre = dgv_Pacientes.SelectedRows[0].Cells[3].Value.ToString().Trim();
 
 
-                    txtx_Nombre.Text = Obj_Pacientes_DAL.sID_Persona.ToString().Trim();    //Pone el ID en el txt correspondiente
+                    txtx_Nombre.Text = Obj_Pacientes_DAL.sIdentificacion.ToString().Trim();    //Pone el ID en el txt correspondiente
                     txt_Apellido_I.Text = Obj_Pacientes_DAL.Tipo_Sangre.Trim();   //Pone el nombre en el txt correspondiente
 
                 }

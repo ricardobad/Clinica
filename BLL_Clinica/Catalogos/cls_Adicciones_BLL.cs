@@ -75,6 +75,55 @@ namespace BLL_Clinica.Catalogos
 
 
 
+        public void Filtrar_Adicciones_Pacientes(ref cls_Adicciones_DAL Obj_Adicciones_DAL)
+        {
+
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "T_ADICCIONES_PACIENTES";
+
+                if (Obj_Adicciones_DAL.Descripcion == string.Empty)
+                {
+
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_listar_adicciones";
+
+                    Obj_BD_DAL.dtParametros = null;
+
+
+
+                }
+                else
+                {
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_ADICCIONES_PACIENTES";
+
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                    Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Adicciones_DAL.iIdPaciente);
+                }
+
+
+                Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+                Obj_Adicciones_DAL.dsAdicciones = Obj_BD_DAL.dsDatos;
+                Obj_Adicciones_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Adicciones_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
+
+        }
+
+
+
         public void Modificar_Adicciones(ref cls_Adicciones_DAL Obj_Adicciones_DAL)
             {
             try

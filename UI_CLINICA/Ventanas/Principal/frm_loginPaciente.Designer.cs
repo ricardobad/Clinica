@@ -132,6 +132,7 @@ namespace UI_CLINICA.Ventanas.Principal
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.Controls.Add(this.btnRegresar);
             this.pnlTitulo.Controls.Add(this.label15);
             this.pnlTitulo.Controls.Add(this.btn_cerrar);
             this.pnlTitulo.Location = new System.Drawing.Point(1, -1);
@@ -201,7 +202,7 @@ namespace UI_CLINICA.Ventanas.Principal
             // btnRegresar
             // 
             this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
-            this.btnRegresar.Location = new System.Drawing.Point(30, 377);
+            this.btnRegresar.Location = new System.Drawing.Point(11, 6);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(39, 36);
             this.btnRegresar.TabIndex = 110;
@@ -214,7 +215,6 @@ namespace UI_CLINICA.Ventanas.Principal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.ClientSize = new System.Drawing.Size(710, 422);
-            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);

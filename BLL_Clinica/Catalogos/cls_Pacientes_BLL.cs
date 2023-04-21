@@ -25,7 +25,7 @@ namespace BLL_Clinica.Catalogos
         public void listar_filtrar_Pacientes(ref cls_Pacientes_DAL Obj_PACIENTES_DAL)
         {
 
-            if (Obj_PACIENTES_DAL.sID_Persona == string.Empty)
+            if (Obj_PACIENTES_DAL.sIdentificacion == string.Empty)
             {
                 Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_pacientes"].ToString();
             }
@@ -33,7 +33,7 @@ namespace BLL_Clinica.Catalogos
             {
                 Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["filtrar_pacientes"].ToString();
                 Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Filtro", "7", Obj_PACIENTES_DAL.sID_Persona);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Filtro", "7", Obj_PACIENTES_DAL.sIdentificacion);
             }
 
 

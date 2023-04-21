@@ -10,7 +10,7 @@ namespace DAL
     public class cls_Adicciones_DAL
     {
 
-        private int _ID_Adiccion, _ID_Doctor;
+        private int _ID_Adiccion, _ID_Doctor, _iIdPaciente;
         private string _sMsjError, _Descripcion;
         private DataTable _dtDatos, _dtParametros;
         private char _cIndAxn;
@@ -26,5 +26,6 @@ namespace DAL
         public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
         public bool booEstado { get => _booEstado; set => _booEstado = value; }
         public DataSet dsAdicciones { get => _dsAdicciones; set => _dsAdicciones = value; }
+        public int iIdPaciente { get => _iIdPaciente; set => _iIdPaciente = value; }
     }
 }

@@ -109,85 +109,95 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Trim() == string.Empty)
-            {
-                if (dgvNumero.Rows.Count > 0)
+            
+            
+
+                if (textBox2.Text.Trim() == string.Empty)
                 {
-                    if (MessageBox.Show("Desea realmente editar la Alergia [ " + dgvNumero.SelectedRows[0].Cells[1].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
-                            "Información o Alerta",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (dgvNumero.Rows.Count > 0)
                     {
-                        Obj_Alergias_DAL.ID_Alergia = Convert.ToInt32(dgvNumero.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                        Obj_Alergias_DAL.Descripcion = dgvNumero.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                        Obj_Alergias_DAL.ID_Doctor = Convert.ToInt32(dgvNumero.SelectedRows[0].Cells[2].Value.ToString().Trim());
+                        if (MessageBox.Show("Desea realmente editar la Alergia [ " + dgvNumero.SelectedRows[0].Cells[1].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
+                                "Información o Alerta",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            Obj_Alergias_DAL.ID_Alergia = Convert.ToInt32(dgvNumero.SelectedRows[0].Cells[0].Value.ToString().Trim());
+                            Obj_Alergias_DAL.Descripcion = dgvNumero.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                            Obj_Alergias_DAL.ID_Doctor = Convert.ToInt32(dgvNumero.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
 
 
-                        textBox1.Text = Obj_Alergias_DAL.ID_Alergia.ToString().Trim();    //Pone el ID en el txt correspondiente
-                        textBox2.Text = Obj_Alergias_DAL.Descripcion.Trim();   //Pone el nombre en el txt correspondiente
+                            textBox1.Text = Obj_Alergias_DAL.ID_Alergia.ToString().Trim();    //Pone el ID en el txt correspondiente
+                            textBox2.Text = Obj_Alergias_DAL.Descripcion.Trim();   //Pone el nombre en el txt correspondiente
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No tiene Alergias para Editar",
+                                         "Información o Alerta",
+                                         MessageBoxButtons.OK,
+                                          MessageBoxIcon.Information);
 
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No tiene Alergias para Editar",
-                                     "Información o Alerta",
-                                     MessageBoxButtons.OK,
-                                      MessageBoxIcon.Information);
-
-                }
-            }
-            else
-            {
-                if (textBox2.Text.Trim() != string.Empty)
-                {
-                    if (MessageBox.Show("Desea realmente editar la Alergia [ " + Obj_Alergias_DAL.Descripcion + " ] ...?",//seleccionar la celda marcada con el nombre de la region
-                            "Información o Alerta",
-                            MessageBoxButtons.YesNo,
-                            MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (textBox2.Text.Trim() != string.Empty)
                     {
-
-                        Obj_Alergias_DAL.Descripcion = textBox2.Text;
-                        if (cmb_Estados.SelectedIndex == 0)
+                        if (MessageBox.Show("Desea realmente editar la Alergia [ " + Obj_Alergias_DAL.Descripcion + " ] ...?",//seleccionar la celda marcada con el nombre de la region
+                                "Información o Alerta",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            Obj_Alergias_DAL.bEstado = true;
-                        }
-                        else
-                        {
-                            Obj_Alergias_DAL.bEstado = false;
+
+                            Obj_Alergias_DAL.Descripcion = textBox2.Text;
+                            if (cmb_Estados.SelectedIndex == 0)
+                            {
+                                Obj_Alergias_DAL.bEstado = true;
+                            }
+                            else
+                            {
+                                Obj_Alergias_DAL.bEstado = false;
+                            }
+
+
+                            Obj_Alergias_BLL.Modificar_Alergias(ref Obj_Alergias_DAL);
+
+                            if (Obj_Alergias_DAL.sMsjError == String.Empty)
+                            {
+                                MessageBox.Show("Alergia modificada exitosamente...!!!",
+                                                "Proceso Exitoso",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Information);
+
+                                CargarDatos();
+                                Limpiar();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Se presentó un error en la modificación de la Alergia.\n\nError: [ " + Obj_Alergias_DAL.sMsjError + " ].",
+                                                "Error",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Error);
+                            }
                         }
 
 
-                        Obj_Alergias_BLL.Modificar_Alergias(ref Obj_Alergias_DAL);
-
-                        if (Obj_Alergias_DAL.sMsjError == String.Empty)
-                        {
-                            MessageBox.Show("Alergia modificada exitosamente...!!!",
-                                            "Proceso Exitoso",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Information);
-
-                            CargarDatos();
-                            Limpiar();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Se presentó un error en la modificación de la Alergia.\n\nError: [ " + Obj_Alergias_DAL.sMsjError + " ].",
-                                            "Error",
-                                            MessageBoxButtons.OK,
-                                            MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
 
                     }
 
-
                 }
 
-            }
+
+
+
+
+
+
+            
+
+                
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -205,55 +215,73 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Trim() != string.Empty)
+
+            if (textBox1.Text.Trim() == string.Empty)
             {
-                cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
-                cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
 
-                Obj_Alergias_DAL.ID_Doctor = 1;
-                Obj_Alergias_DAL.Descripcion = textBox2.Text.Trim();
-                if (cmb_Estados.SelectedIndex == 0)
+                if (textBox2.Text.Trim() != string.Empty)
                 {
-                    Obj_Alergias_DAL.bEstado = true;
+                    cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
+                    cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
+
+                    Obj_Alergias_DAL.ID_Doctor = 1;
+                    Obj_Alergias_DAL.Descripcion = textBox2.Text.Trim();
+                    if (cmb_Estados.SelectedIndex == 0)
+                    {
+                        Obj_Alergias_DAL.bEstado = true;
+                    }
+                    else
+                    {
+                        Obj_Alergias_DAL.bEstado = false;
+                    }
+
+                    Obj_Doctores_DAL.Carnet = cmbDoctores.Text;
+                    Obj_Doctores_BLL.Listar_Filtrar_Doctores(ref Obj_Doctores_DAL);
+
+                    DataRow primeraFila = Obj_Doctores_DAL.dsDoctores.Tables["Doctores"].Rows[0];
+                    Obj_Alergias_DAL.ID_Doctor = Convert.ToInt32(primeraFila["ID_Doctor"]);
+
+                    Obj_Alergias_BLL.Crear_Alergias(ref Obj_Alergias_DAL);
+
+                    if (Obj_Alergias_DAL.sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Nueva Alergia creada exitosamente...!!!",
+                                        "Proceso Éxitoso",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+                        CargarDatos();
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error en la creación de una nueva Alergia .\n\nError: [" + Obj_Alergias_DAL.sMsjError + " ].",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
                 }
+
                 else
                 {
-                    Obj_Alergias_DAL.bEstado = false;
+                    MessageBox.Show("no Digito ningun nombre  ].",
+                                            "Error",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
                 }
 
-                Obj_Doctores_DAL.Carnet = cmbDoctores.Text;
-                Obj_Doctores_BLL.Listar_Filtrar_Doctores(ref Obj_Doctores_DAL);
 
-                DataRow primeraFila = Obj_Doctores_DAL.dsDoctores.Tables["Doctores"].Rows[0];
-                Obj_Alergias_DAL.ID_Doctor = Convert.ToInt32(primeraFila["ID_Doctor"]);
 
-                Obj_Alergias_BLL.Crear_Alergias(ref Obj_Alergias_DAL);
 
-                if (Obj_Alergias_DAL.sMsjError == string.Empty)
-                {
-                    MessageBox.Show("Nueva Alergia creada exitosamente...!!!",
-                                    "Proceso Éxitoso",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
-                    CargarDatos();
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("Se presentó un error en la creación de una nueva Alergia .\n\nError: [" + Obj_Alergias_DAL.sMsjError + " ].",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
             }
-
-            else {
-                MessageBox.Show("no Digito ningun nombre  ].",
+            else
+            {
+                MessageBox.Show("No se puede crear si está en proceso de modificación.\n\n Utilice el botón limpiar para limpiar los datos o concluya su modificación ",
                                         "Error",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
             }
+                
 
         }
 
@@ -294,6 +322,62 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void txt_Filtro_TextChanged_1(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            EspaciosVacioYLimite(textBox2);
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, textBox2);
+        }
+
+        private void txt_Filtro_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Filtro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Filtro);
+        }
+
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+
+
+        }
+
+        private Boolean EspaciosVacioYLimite(TextBox txt)
+        {
+            if (txt.Text.Trim() == string.Empty)
+            {
+
+                txt.Focus();
+                erp_Principal.SetError(txt, "No permite espacio vacíos");
+
+                return false;
+            }
+
+            else
+            {
+                erp_Principal.Clear();
+                return true;
+            }
         }
     }
 }
