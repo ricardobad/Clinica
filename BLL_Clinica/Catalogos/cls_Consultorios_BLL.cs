@@ -24,7 +24,7 @@ namespace BLL_Clinica.Catalogos
 
                 Obj_BD_DAL.sNomTabla = "tbl_CONSULTORIOS";
 
-                if (Obj_Consultorios_DAL.Numero == 0)
+                if (Obj_Consultorios_DAL.iNumero == 0)
                 {
 
                     Obj_BD_DAL.sNomSp = "dbo.SP_listar_consultorio";
@@ -35,7 +35,7 @@ namespace BLL_Clinica.Catalogos
 
                     Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
 
-                    Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Consultorio", "VarChar", Obj_Consultorios_DAL.Numero);
+                    Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Consultorio", "VarChar", Obj_Consultorios_DAL.iNumero);
 
                 }
 
@@ -70,8 +70,8 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
 
                 //Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Consultorio", "INT", Obj_Consultorios_DAL.ID_Consultorio);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Numero", "INT", Obj_Consultorios_DAL.Numero);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "BIT", Obj_Consultorios_DAL.Estado);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Numero", "INT", Obj_Consultorios_DAL.iNumero);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "BIT", Obj_Consultorios_DAL.iEstado);
 
                 Obj_BD_DAL.SIndAxn = "NORMAL";
 
@@ -122,8 +122,8 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
 
                 Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Consultorio", "INT", Obj_Consultorios_DAL.ID_Consultorio);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Numero", "INT", Obj_Consultorios_DAL.Numero);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "BIT", Obj_Consultorios_DAL.Estado);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Numero", "INT", Obj_Consultorios_DAL.iNumero);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "BIT", Obj_Consultorios_DAL.iEstado);
 
                 Obj_BD_DAL.SIndAxn = "NORMAL";
 

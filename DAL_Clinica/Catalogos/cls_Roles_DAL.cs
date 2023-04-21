@@ -5,22 +5,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL_Clinica.Catalogos
 {
     public class cls_Roles_DAL
     {
-
-        private string _sMsjError, _ID_Rol, _Descripcion;
-        private bool _Lectura, _Escritura;
+        #region VARIABLES PRIVADAS
+        private char _cIndAxn;
+        private string _sMsjError, _sDescripcion, _sIDRol;
+        private int _iTipoLE, _iTipoES, _iEstado;//Lectura-Escritura
         private DataTable _dtDatos, _dtParametros;
+        private DataSet _dsRoles;
 
-        public bool Lectura { get => _Lectura; set => _Lectura = value; }
-        public bool Escritura { get => _Escritura; set => _Escritura = value; }
-        public string ID_Rol { get => _ID_Rol; set => _ID_Rol = value; }
-        public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
+
+        #endregion
+
+        #region VARIABLES PUBLICAS
+
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
-        public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
-        public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
+        public string sDescripcion { get => _sDescripcion; set => _sDescripcion = value; }
+        
+        public DataTable dtDatos { get => _dtDatos; set => _dtDatos = value; }
+        public DataTable dtParametros { get => _dtParametros; set => _dtParametros = value; }
+        public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
+        public DataSet dsRoles { get => _dsRoles; set => _dsRoles = value; }
+        public int ITipoLE { get => _iTipoLE; set => _iTipoLE = value; }
+        public string sIDRol { get => _sIDRol; set => _sIDRol = value; }
+        public int iEstado { get => _iEstado; set => _iEstado = value; }
+        public int ITipoES { get => _iTipoES; set => _iTipoES = value; }
+
+        #endregion
+
 
     }
 }
