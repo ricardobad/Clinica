@@ -69,8 +69,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            if (txt_Nombre.Text.Trim() != string.Empty)
-            {
+            if (txt_ID.Text != string.Empty)
+            { 
+
+                if (txt_Nombre.Text.Trim() != string.Empty)
+                {
 
                 cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
                 cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
@@ -110,6 +113,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
                 }
+            }
+            }
+            else
+            {
+                MessageBox.Show("No se puede crear si está en proceso de modificación.\n\n Utilice el botón limpiar para limpiar los datos o concluya su modificación ",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
             }
         }
 
@@ -236,6 +247,61 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void txt_Filtro_TextChanged(object sender, EventArgs e)
         {
                 CargarDatos();
+        }
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+
+
+        }
+
+        private Boolean EspaciosVacioYLimite(TextBox txt)
+        {
+            if (txt.Text.Trim() == string.Empty)
+            {
+
+                txt.Focus();
+                erp_Principal.SetError(txt, "No permite espacio vacíos   ");
+
+                return false;
+            }
+
+            else
+            {
+                erp_Principal.Clear();
+                return true;
+            }
+        }
+
+        private void txt_Nombre_Leave(object sender, EventArgs e)
+        {
+            EspaciosVacioYLimite(txt_Nombre);
+        }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Nombre);
+        }
+
+        private void txt_Filtro_Leave(object sender, EventArgs e)
+        {
+            EspaciosVacioYLimite(txt_Nombre);
+        }
+
+        private void txt_Filtro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Nombre);
         }
     }
 }
