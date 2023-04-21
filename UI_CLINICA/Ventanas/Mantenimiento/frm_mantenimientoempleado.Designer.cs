@@ -29,9 +29,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_mantenimientoempleado));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_Cargar = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.cmb_Tipo_ID = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtx_Nomb_Usuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_Telefono_I = new System.Windows.Forms.TextBox();
@@ -61,8 +61,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label21 = new System.Windows.Forms.Label();
             this.txt_Contrasena = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
+            this.btn_agregar = new System.Windows.Forms.Button();
             this.cmb_Rol = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmb_Estado_Empleado = new System.Windows.Forms.ComboBox();
@@ -88,8 +88,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.tbControl1 = new System.Windows.Forms.TabControl();
             this.label15 = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btn_Refrescar_Telefonos = new System.Windows.Forms.Button();
-            this.btn_Refrescar_Correos = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Empleados)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -146,38 +144,39 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.dgv_Empleados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgv_Empleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Empleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Empleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Empleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_Empleados.ColumnHeadersHeight = 30;
             this.dgv_Empleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Empleados.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Empleados.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_Empleados.EnableHeadersVisualStyles = false;
             this.dgv_Empleados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.dgv_Empleados.Location = new System.Drawing.Point(0, 74);
             this.dgv_Empleados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_Empleados.Name = "dgv_Empleados";
+            this.dgv_Empleados.ReadOnly = true;
             this.dgv_Empleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Empleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Empleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_Empleados.RowHeadersVisible = false;
             this.dgv_Empleados.RowHeadersWidth = 51;
             this.dgv_Empleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -207,8 +206,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.tabPage1.Controls.Add(this.btn_Refrescar_Correos);
-            this.tabPage1.Controls.Add(this.btn_Refrescar_Telefonos);
             this.tabPage1.Controls.Add(this.cmb_Distrito);
             this.tabPage1.Controls.Add(this.txt_Correo_II);
             this.tabPage1.Controls.Add(this.label14);
@@ -217,7 +214,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.comboBox5);
             this.tabPage1.Controls.Add(this.cmb_Tipo_ID);
-            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.txtx_Nomb_Usuario);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.txt_Telefono_I);
@@ -230,8 +227,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.txt_Contrasena);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.btnFinalizar);
+            this.tabPage1.Controls.Add(this.btn_modificar);
+            this.tabPage1.Controls.Add(this.btn_agregar);
             this.tabPage1.Controls.Add(this.cmb_Rol);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.cmb_Estado_Empleado);
@@ -275,7 +272,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Correo_II.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Correo_II.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo_II.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Correo_II.Location = new System.Drawing.Point(475, 241);
+            this.txt_Correo_II.Location = new System.Drawing.Point(383, 243);
             this.txt_Correo_II.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Correo_II.Name = "txt_Correo_II";
             this.txt_Correo_II.Size = new System.Drawing.Size(208, 42);
@@ -331,7 +328,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             "P",
             "C",
             "D"});
-            this.comboBox5.Location = new System.Drawing.Point(376, 313);
+            this.comboBox5.Location = new System.Drawing.Point(373, 310);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(47, 44);
             this.comboBox5.TabIndex = 275;
@@ -340,24 +337,21 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             this.cmb_Tipo_ID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Tipo_ID.FormattingEnabled = true;
-            this.cmb_Tipo_ID.Items.AddRange(new object[] {
-            "0",
-            "1"});
             this.cmb_Tipo_ID.Location = new System.Drawing.Point(8, 247);
             this.cmb_Tipo_ID.Name = "cmb_Tipo_ID";
             this.cmb_Tipo_ID.Size = new System.Drawing.Size(139, 36);
             this.cmb_Tipo_ID.TabIndex = 274;
             // 
-            // textBox9
+            // txtx_Nomb_Usuario
             // 
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9.Location = new System.Drawing.Point(427, 312);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(209, 42);
-            this.textBox9.TabIndex = 273;
+            this.txtx_Nomb_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtx_Nomb_Usuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtx_Nomb_Usuario.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtx_Nomb_Usuario.Location = new System.Drawing.Point(427, 312);
+            this.txtx_Nomb_Usuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtx_Nomb_Usuario.Name = "txtx_Nomb_Usuario";
+            this.txtx_Nomb_Usuario.Size = new System.Drawing.Size(209, 42);
+            this.txtx_Nomb_Usuario.TabIndex = 273;
             // 
             // label4
             // 
@@ -397,7 +391,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label1.Location = new System.Drawing.Point(517, 219);
+            this.label1.Location = new System.Drawing.Point(422, 219);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 28);
@@ -432,7 +426,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Correo_I.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Correo_I.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo_I.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Correo_I.Location = new System.Drawing.Point(475, 176);
+            this.txt_Correo_I.Location = new System.Drawing.Point(376, 176);
             this.txt_Correo_I.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Correo_I.Name = "txt_Correo_I";
             this.txt_Correo_I.Size = new System.Drawing.Size(208, 42);
@@ -454,7 +448,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label20.Location = new System.Drawing.Point(527, 152);
+            this.label20.Location = new System.Drawing.Point(426, 152);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(119, 28);
@@ -481,6 +475,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Contrasena.Location = new System.Drawing.Point(181, 385);
             this.txt_Contrasena.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Contrasena.Name = "txt_Contrasena";
+            this.txt_Contrasena.PasswordChar = '*';
             this.txt_Contrasena.Size = new System.Drawing.Size(141, 42);
             this.txt_Contrasena.TabIndex = 256;
             // 
@@ -496,31 +491,32 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label2.TabIndex = 255;
             this.label2.Text = "Contraseña:";
             // 
-            // button4
+            // btn_modificar
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button4.Location = new System.Drawing.Point(129, 541);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 31);
-            this.button4.TabIndex = 254;
-            this.button4.Text = "Modificar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_modificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_modificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.btn_modificar.Location = new System.Drawing.Point(129, 541);
+            this.btn_modificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(100, 31);
+            this.btn_modificar.TabIndex = 254;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = true;
             // 
-            // btnFinalizar
+            // btn_agregar
             // 
-            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.btnFinalizar.Location = new System.Drawing.Point(21, 541);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(100, 31);
-            this.btnFinalizar.TabIndex = 245;
-            this.btnFinalizar.Text = "Agregar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_agregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.btn_agregar.Location = new System.Drawing.Point(21, 541);
+            this.btn_agregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(100, 31);
+            this.btn_agregar.TabIndex = 245;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // cmb_Rol
             // 
@@ -576,6 +572,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.button2.TabIndex = 242;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_Otras_Guias
             // 
@@ -802,24 +799,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.pnlTitulo.Size = new System.Drawing.Size(747, 44);
             this.pnlTitulo.TabIndex = 244;
             // 
-            // btn_Refrescar_Telefonos
-            // 
-            this.btn_Refrescar_Telefonos.Location = new System.Drawing.Point(346, 176);
-            this.btn_Refrescar_Telefonos.Name = "btn_Refrescar_Telefonos";
-            this.btn_Refrescar_Telefonos.Size = new System.Drawing.Size(29, 40);
-            this.btn_Refrescar_Telefonos.TabIndex = 284;
-            this.btn_Refrescar_Telefonos.Text = "R";
-            this.btn_Refrescar_Telefonos.UseVisualStyleBackColor = true;
-            // 
-            // btn_Refrescar_Correos
-            // 
-            this.btn_Refrescar_Correos.Location = new System.Drawing.Point(439, 241);
-            this.btn_Refrescar_Correos.Name = "btn_Refrescar_Correos";
-            this.btn_Refrescar_Correos.Size = new System.Drawing.Size(29, 40);
-            this.btn_Refrescar_Correos.TabIndex = 285;
-            this.btn_Refrescar_Correos.Text = "R";
-            this.btn_Refrescar_Correos.UseVisualStyleBackColor = true;
-            // 
             // frm_mantenimientoempleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
@@ -877,8 +856,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TabControl tbControl1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btn_modificar;
+        private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txt_Contrasena;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label15;
@@ -894,7 +873,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtx_Nomb_Usuario;
         private System.Windows.Forms.ComboBox cmb_Tipo_ID;
         private System.Windows.Forms.ComboBox cmb_Canton;
         private System.Windows.Forms.ComboBox cmb_Provincia;
@@ -903,7 +882,5 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private System.Windows.Forms.ComboBox cmb_Distrito;
         private System.Windows.Forms.TextBox txt_Correo_II;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btn_Refrescar_Correos;
-        private System.Windows.Forms.Button btn_Refrescar_Telefonos;
     }
 }

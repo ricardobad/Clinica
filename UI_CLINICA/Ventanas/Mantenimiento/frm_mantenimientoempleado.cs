@@ -48,6 +48,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void CargarDatos_II()
         {
+            
             Obj_Empleados_DAL.sID_Persona = txt_busqueda.Text.Trim().ToString();
             Obj_Empleados_BLL.listar_filtrar_Empleados(ref Obj_Empleados_DAL);
 
@@ -60,34 +61,35 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             {
                 MessageBox.Show("Se ha presentado un error al cargar los datos" + Obj_Empleados_DAL.sMsjError, "Error en carga de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
         }
 
-        private void CargarDatos()
-        {
+        //private void CargarDatos()
+        //{
 
 
-            Obj_Empleados_BLL.listar_Empleados(ref Obj_Empleados_DAL);
-            if (Obj_Empleados_DAL.sMsjError == string.Empty)
-            {
-                dgv_Empleados.DataSource = null;
+        //    Obj_Empleados_BLL.listar_Empleados(ref Obj_Empleados_DAL);
+        //    if (Obj_Empleados_DAL.sMsjError == string.Empty)
+        //    {
+        //        dgv_Empleados.DataSource = null;
 
-                dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
-
-
-            }
-            else
-            {
-                MessageBox.Show("Se ha presentado un error al cargar los datos \n\n" + Obj_Empleados_DAL.sMsjError,
-                    "Error en carga de datos",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
-            }
+        //        dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
 
 
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Se ha presentado un error al cargar los datos \n\n" + Obj_Empleados_DAL.sMsjError,
+        //            "Error en carga de datos",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error);
 
-        }
+        //    }
+
+
+
+        //}
 
         #endregion
 
@@ -129,8 +131,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             if (dgv_Empleados.Rows.Count > 0)
             {
-                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim() +  " "
-                    + dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
+                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim() +  " "
+                    + dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
                         "Información o Alerta",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
@@ -139,15 +141,31 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     Obj_Empleados_DAL.sPrimer_apellido = dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim();
                     Obj_Empleados_DAL.sSegundo_apellido = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim();
                     Obj_Empleados_DAL.bTipo_ID = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[3].Value);
-                    Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[4].Value.ToString().Trim();
-                    Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[5].Value);
-                    Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
+                    Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[4].Value);
+                    Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[5].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
                     Obj_Empleados_DAL.bEstado = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[7].Value);
-                    Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim();
+                   
                     Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
                     Obj_Empleados_DAL.sID_Distrito= dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
                     Obj_Empleados_DAL.sTelefonoI= dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sTelefonoII = dgv_Empleados.SelectedRows[0].Cells[13].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sCorreoI = dgv_Empleados.SelectedRows[0].Cells[14].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sCorreoII = dgv_Empleados.SelectedRows[0].Cells[15].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sNombreUser = dgv_Empleados.SelectedRows[0].Cells[16].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sContrasena = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[18].Value.ToString().Trim();
+                    //if (dgv_Empleados.SelectedRows[0].Cells[18].Value.ToString().Trim() == string.Empty)
+                    //{
+                    //    Obj_Empleados_DAL.iRol_Activo = 0;
+                    //}
+
+                    //else {
+                    //    Obj_Empleados_DAL.iRol_Activo = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[19].Value.ToString());
+                    //}
+                    
 
 
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre.ToString().Trim();    //Pone el ID en el txt correspondiente
@@ -156,11 +174,24 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     txt_Identificacion.Text = Obj_Empleados_DAL.sIdentificacion.Trim();
                     dtp_FechaNacimiento.Value = DateTime.Parse(Obj_Empleados_DAL.sFecha_nacimiento);
                     txt_Otras_Guias.Text = Obj_Empleados_DAL.sOtras_Guias.Trim();
-                    cmb_Canton.Text = Obj_Empleados_DAL.sIdentificacion.Trim();
+                    cmb_Provincia.Text = Obj_Empleados_DAL.sID_Provincia.Trim();
+                    cmb_Canton.Text = Obj_Empleados_DAL.sID_Canton.Trim();
+                    cmb_Distrito.Text = Obj_Empleados_DAL.sID_Distrito.Trim();
                     txt_Telefono_I.Text = Obj_Empleados_DAL.sTelefonoI.Trim();
+                    txt_Telefono_II.Text = Obj_Empleados_DAL.sTelefonoII.Trim();
+                    txt_Correo_I.Text = Obj_Empleados_DAL.sCorreoI.Trim();
+                    txt_Correo_I.Text = Obj_Empleados_DAL.sCorreoI.Trim();
+                    cmb_Tipo_ID.Text = Convert.ToString(Obj_Empleados_DAL.bTipo_ID);
+                    cmb_Sexo.Text = Convert.ToString(Obj_Empleados_DAL.bSexo);
+                    cmb_Estado_Empleado.Text = Convert.ToString(Obj_Empleados_DAL.bEstado);
+                    txtx_Nomb_Usuario.Text = Obj_Empleados_DAL.sNombreUser.Trim();
+                    txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
+                    cmb_Rol.Text = Obj_Empleados_DAL.sRol_Descripcion.Trim();
+
 
 
                     CargarCombox();
+                    tbControl1.SelectedTab = tabPage1;
                 }
             }
             else
@@ -174,6 +205,56 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
 
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {//LIMPIAR
+            txt_Nombre.Text = string.Empty;    
+            txt_Apellido_I.Text = string.Empty;     
+            txt_Apellido_II.Text = string.Empty;
+            txt_Identificacion.Text = string.Empty;
+            dtp_FechaNacimiento.Value = DateTime.Now;
+            txt_Otras_Guias.Text = string.Empty;
+            cmb_Provincia.Text = string.Empty;;
+            cmb_Canton.Text = string.Empty;
+            cmb_Distrito.Text = string.Empty;
+            txt_Telefono_I.Text = string.Empty;
+            txt_Telefono_II.Text = string.Empty;
+            txt_Correo_I.Text = string.Empty;
+            txt_Correo_I.Text = string.Empty;
+            cmb_Tipo_ID.Text = string.Empty;
+            cmb_Sexo.Text = string.Empty;
+            cmb_Estado_Empleado.Text = string.Empty;
+            txtx_Nomb_Usuario.Text = string.Empty;
+            txt_Contrasena.Text = string.Empty;
+            cmb_Rol.Text = string.Empty;
+
+        }
+
+        private void btn_agregar_Click(object sender, EventArgs e)
+        {
+            if (txt_Nombre.Text == string.Empty || txt_Apellido_I.Text == string.Empty ||
+            txt_Apellido_II.Text == string.Empty || txt_Identificacion.Text == string.Empty ||
+            txt_Otras_Guias.Text == string.Empty|| cmb_Provincia.Text == string.Empty ||
+            cmb_Canton.Text ==string.Empty || cmb_Distrito.Text == string.Empty ||
+            txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty||
+            cmb_Tipo_ID.Text == string.Empty ||cmb_Sexo.Text == string.Empty||
+            cmb_Estado_Empleado.Text == string.Empty|| txtx_Nomb_Usuario.Text == string.Empty||
+            txt_Contrasena.Text == string.Empty|| cmb_Rol.Text == string.Empty
+
+            )
+            {
+                MessageBox.Show("Debe rellenar todos los campos obligatorios",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+
+            }
+
+            else { 
+            
+            
+            }
         }
     }
 }

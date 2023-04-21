@@ -15,8 +15,8 @@ namespace DAL_Clinica.Catalogos
         private string _sMsjError, _sID_Persona, _sNombre, _sPrimer_apellido, _sSegundo_apellido, _sFecha_nacimiento, _sTipoCliente,
             _sOtras_Guias, _sID_Canton, _sID_Distrito, _sID_Provincia, _sContrasena, _sTelefonoI, _sTelefonoII, _sCorreoI, _sCorreoII;
         private DataTable _dtDatos, _dtParametros;
-        private int _iID_Direccion;
-        private string _sIdentificacion;
+        private int _iID_Direccion, _iRol_Activo;
+        private string _sIdentificacion, _sNombreUser, _sRol_Descripcion;
 
 
         #endregion
@@ -45,6 +45,11 @@ namespace DAL_Clinica.Catalogos
         public string sCorreoI { get => _sCorreoI; set => _sCorreoI = value; }
         public string sCorreoII { get => _sCorreoII; set => _sCorreoII = value; }
         public string sIdentificacion { get => _sIdentificacion; set => _sIdentificacion = value; }
+        public string sNombreUser { get => _sNombreUser; set => _sNombreUser = value; }
+        public string sRol_Descripcion { get => _sRol_Descripcion; set => _sRol_Descripcion = value; }
+        public int iRol_Activo { get => _iRol_Activo; set => _iRol_Activo = value; }
+
+
 
         #endregion
 
