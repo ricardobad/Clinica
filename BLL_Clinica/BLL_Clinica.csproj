@@ -51,6 +51,7 @@
     <Compile Include="Catalogos\cls_Doctores_BLL.cs" />
     <Compile Include="Catalogos\cls_Empleados_BLL.cs" />
     <Compile Include="Catalogos\cls_Especialidades_BLL.cs" />
+    <Compile Include="Catalogos\cls_Expedientes_BLL.cs" />
     <Compile Include="Catalogos\cls_Pacientes_BLL.cs" />
     <Compile Include="Catalogos\cls_Padecimientos_BLL.cs" />
     <Compile Include="Catalogos\cls_Roles_BLL.cs" />

@@ -138,33 +138,8 @@ namespace BLL_Clinica.Catalogos
 
         }
 
-        public void Eliminar_Padecimientos(ref cls_Padecimiento_DAL Obj_Padecimientos_DAL)
-        {
-            try
-            {
-                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
-                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
 
-                Obj_BD_DAL.sNobreSP = "dbo.SP_ELIMINAR_PAISES";
-
-                Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
-
-                Obj_BD_DAL.dtParametros.Rows.Add("@ID_Padecimiento", "1", Obj_Padecimientos_DAL.ID_Padecimiento);
-
-                Obj_BD_DAL.sIndAxn = "NORMAL";
-
-                Obj_BD_BLL.ExecCommand(ref Obj_BD_DAL);
-
-                Obj_Padecimientos_DAL.sMsjError = Obj_BD_DAL.sMsjError;
-
-            }
-            catch (Exception ex)
-            {
-                Obj_Padecimientos_DAL.sMsjError = ex.Message.ToString().Trim();
-
-            }
-
-        }
+        
 
     }
 
