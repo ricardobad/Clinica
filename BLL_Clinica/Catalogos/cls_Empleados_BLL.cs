@@ -62,7 +62,7 @@ namespace BLL_Clinica.Catalogos
 
             if (Obj_EMPLEADOS_DAL.sID_Persona == string.Empty)
             {
-                Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_personas"].ToString();
+                Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_empleados"].ToString();
             }
             else
             {
