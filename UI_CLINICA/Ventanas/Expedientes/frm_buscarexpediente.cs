@@ -70,7 +70,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
                 //DESPUES DE FILTRAR INFO DE PERSONA FILTRA DIRECCIONES
-                Obj_Direcciones_DAL.ID_Direccion = Obj_Personas_DAL.dsPersonas.Tables["ID_Direccion"].Rows[0])["Nombre"]
+               // Obj_Direcciones_DAL.ID_Direccion = Obj_Personas_DAL.dsPersonas.Tables["ID_Direccion"].Rows[0])["Nombre"]
 
                 frm_expediente Obj_Expediente = new frm_expediente();
 

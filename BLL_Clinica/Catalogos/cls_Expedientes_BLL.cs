@@ -43,7 +43,7 @@ namespace BLL_Clinica.Catalogos
                 }
 
 
-
+                //s
             }
             catch (Exception ex)
             {

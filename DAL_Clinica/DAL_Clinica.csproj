@@ -54,7 +54,6 @@
     <Compile Include="Catalogos\cls_Doctores_DAL.cs" />
     <Compile Include="Catalogos\cls_Empleados_DAL.cs" />
     <Compile Include="Catalogos\cls_Especialidades_DAL.cs" />
-    <Compile Include="Catalogos\cls_Expedientes_DAL.cs" />
     <Compile Include="Catalogos\cls_Pacientes_DAL.cs" />
     <Compile Include="Catalogos\cls_Padecimiento_DAL.cs" />
     <Compile Include="Catalogos\cls_Personas_DAL.cs" />

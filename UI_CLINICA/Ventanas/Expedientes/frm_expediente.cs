@@ -54,6 +54,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
         private void CargarDatos()
         {
+            //
             DataRow Fila = Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0];
             //Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(primeraFila["ID_Doctor"]);
 
