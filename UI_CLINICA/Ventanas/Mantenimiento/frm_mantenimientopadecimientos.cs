@@ -80,13 +80,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                             MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Obj_Padecimientos_DAL.ID_Padecimiento = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                        Obj_Padecimientos_DAL.sDescripcion = dgv_Datos.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                        Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[2].Value.ToString().Trim());
+                        Obj_Padecimientos_DAL.sDescripcion = dgv_Datos.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                        Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[1].Value.ToString().Trim());
 
 
                         
                         txt_ID.Text = Obj_Padecimientos_DAL.ID_Padecimiento.ToString().Trim();    //Pone el ID en el txt correspondiente
                         txt_Nombre.Text = Obj_Padecimientos_DAL.sDescripcion.Trim();   //Pone el nombre en el txt correspondiente
+                        cmb_Estados.SelectedItem = dgv_Datos.SelectedRows[0].Cells[3].Value.ToString().Trim();
 
                     }
                 }
@@ -176,7 +177,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
                 cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
 
-                Obj_Padecimientos_DAL.ID_Doctor = 1;
+
                 Obj_Padecimientos_DAL.sDescripcion = txt_Nombre.Text.Trim();
                 if (cmb_Estados.SelectedIndex == 0)
                 {
