@@ -26,11 +26,11 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_DAL.sNombreDataTable = "Personas";
 
 
-                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_PERSONAS";
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_EMPLEADOS";
 
                     Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
 
-                    Obj_BD_DAL.dtParametros.Rows.Add("@Filtro", "7", Obj_Personas_DAL.Identificacion);
+                    Obj_BD_DAL.dtParametros.Rows.Add("@Identificacion", "7", Obj_Personas_DAL.Identificacion);
 
                 Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
 
@@ -43,7 +43,6 @@ namespace BLL_Clinica.Catalogos
                 }
 
 
-                //s
             }
             catch (Exception ex)
             {

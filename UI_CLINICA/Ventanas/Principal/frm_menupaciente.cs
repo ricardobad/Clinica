@@ -7,12 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL_Clinica.BD;
+using BLL_Clinica.BD;
+using DAL;
+using BLL_Clinica.Catalogos;
+using DAL_Clinica.Catalogos;
+using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 namespace UI_CLINICA.Ventanas.Principal
 {
     public partial class frm_menupaciente : Form
     {
+
+
+        cls_Personas_DAL Obj_Personas_DAL = new cls_Personas_DAL();
+
+
         public frm_menupaciente()
         {
             InitializeComponent();
@@ -40,16 +51,24 @@ namespace UI_CLINICA.Ventanas.Principal
         }
         private void AbrirFormHijo(object frmHijo)
         {
+
+            
             if (this.pnlContenedor.Controls.Count > 0)
             {
                 this.pnlContenedor.Controls.RemoveAt(0);
             }
             Form fh = frmHijo as Form;
+
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.pnlContenedor.Controls.Add(fh);
             this.pnlContenedor.Tag = fh;
+
+
+
+
             fh.Show();
+           
 
         }
         private void btnCitas_Click(object sender, EventArgs e)
@@ -59,7 +78,16 @@ namespace UI_CLINICA.Ventanas.Principal
 
         private void btnExpediente_Click(object sender, EventArgs e)
         {
+
+
+            
+
+            
+
             AbrirFormHijo(new Expedientes.frm_expediente());
+
+
+
         }
 
         private void btnPerfil_Click(object sender, EventArgs e)

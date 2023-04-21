@@ -10,7 +10,7 @@ namespace DAL
     public class cls_Alergias_DAL
     {
 
-        private int _ID_Alergia, _ID_Doctor;
+        private int _ID_Alergia, _ID_Doctor, _iIdPaciente;
         private string _sMsjError, _Descripcion;
         private DataTable _dtDatos, _dtParametros;
         private DataSet _dsAlergias;
@@ -26,5 +26,6 @@ namespace DAL
         public DataSet dsAlergias { get => _dsAlergias; set => _dsAlergias = value; }
         public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
         public bool bEstado { get => _bEstado; set => _bEstado = value; }
+        public int iIdPaciente { get => _iIdPaciente; set => _iIdPaciente = value; }
     }
 }

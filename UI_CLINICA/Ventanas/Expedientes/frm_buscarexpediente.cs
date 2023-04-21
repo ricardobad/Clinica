@@ -68,7 +68,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
                 MessageBox.Show("Datos del expediente cargados con éxito",
                                 "Sistema",
                                 MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
+                                MessageBoxIcon.Information);
                 //DESPUES DE FILTRAR INFO DE PERSONA FILTRA DIRECCIONES
                // Obj_Direcciones_DAL.ID_Direccion = Obj_Personas_DAL.dsPersonas.Tables["ID_Direccion"].Rows[0])["Nombre"]
 

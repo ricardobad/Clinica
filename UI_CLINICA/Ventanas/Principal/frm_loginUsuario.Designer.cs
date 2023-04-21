@@ -31,18 +31,18 @@ namespace UI_CLINICA.Ventanas.Principal
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_login));
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLoginIngresar = new System.Windows.Forms.Button();
             this.txtLoginContraseña = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLoginIdentificacion = new System.Windows.Forms.TextBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRegresar = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,12 +53,36 @@ namespace UI_CLINICA.Ventanas.Principal
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.Controls.Add(this.btnRegresar);
             this.pnlTitulo.Controls.Add(this.label15);
             this.pnlTitulo.Controls.Add(this.btnCerrar);
             this.pnlTitulo.Location = new System.Drawing.Point(0, -1);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(710, 47);
             this.pnlTitulo.TabIndex = 119;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label15.Location = new System.Drawing.Point(190, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(336, 38);
+            this.label15.TabIndex = 233;
+            this.label15.Text = "Ingreso Colaborador";
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(672, 11);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 109;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel2
             // 
@@ -124,18 +148,6 @@ namespace UI_CLINICA.Ventanas.Principal
             this.txtLoginIdentificacion.TabIndex = 109;
             this.txtLoginIdentificacion.Text = "Nombre de Usuario";
             // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(672, 11);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(25, 25);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 109;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(150)))), ((int)(((byte)(191)))));
@@ -174,23 +186,12 @@ namespace UI_CLINICA.Ventanas.Principal
             // btnRegresar
             // 
             this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
-            this.btnRegresar.Location = new System.Drawing.Point(29, 374);
+            this.btnRegresar.Location = new System.Drawing.Point(12, 8);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(39, 36);
             this.btnRegresar.TabIndex = 120;
             this.btnRegresar.TabStop = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label15.Location = new System.Drawing.Point(190, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(336, 38);
-            this.label15.TabIndex = 233;
-            this.label15.Text = "Ingreso Colaborador";
             // 
             // frm_login
             // 
@@ -198,7 +199,6 @@ namespace UI_CLINICA.Ventanas.Principal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.ClientSize = new System.Drawing.Size(710, 422);
-            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);

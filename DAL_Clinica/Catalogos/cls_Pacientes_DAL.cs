@@ -11,9 +11,9 @@ namespace DAL
     {
 
         private int _ID_Paciente, _ID_Usuario;
-        private string _sMsjError, _Peso, _Altura, _Tipo_Sangre, _sID_Persona;
+        private string _sMsjError, _Peso, _Altura, _Tipo_Sangre, _sIdentificacion;
         private DataTable _dtDatos, _dtParametros;
-
+        private DataSet _dsPacientes;
         public int ID_Paciente { get => _ID_Paciente; set => _ID_Paciente = value; }
         public int ID_Usuario { get => _ID_Usuario; set => _ID_Usuario = value; }
         public string Peso { get => _Peso; set => _Peso = value; }
@@ -22,6 +22,7 @@ namespace DAL
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-        public string sID_Persona { get => _sID_Persona; set => _sID_Persona = value; }
+        public string sIdentificacion { get => _sIdentificacion; set => _sIdentificacion = value; }
+        public DataSet dsPacientes { get => _dsPacientes; set => _dsPacientes = value; }
     }
 }
