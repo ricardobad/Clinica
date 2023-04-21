@@ -14,7 +14,8 @@ namespace DAL
         private bool _Estado;
         private string _sMsjError, _Nombre, _Duracion_Aproximada;
         private DataTable _dtDatos, _dtParametros;
-     
+        private DataSet _dsDatos;
+
 
         public int ID_Especialidad { get => _ID_Especialidad; set => _ID_Especialidad = value; }
         public bool Estado { get => _Estado; set => _Estado = value; }
@@ -23,6 +24,6 @@ namespace DAL
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public DataSet DsDatos { get => _dsDatos; set => _dsDatos = value; }
     }
 }

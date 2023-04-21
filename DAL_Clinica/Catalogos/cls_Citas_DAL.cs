@@ -15,6 +15,8 @@ namespace DAL
         private string _sMsjError, _NotasAdd;
         private DateTime _FechaHoraInicio, _FechaHoraFin, _FechaCreacionCita;
         private DataTable _dtDatos, _dtParametros;
+        private DataSet _dsDatos;
+        private char _cIndAxn;   //Nuevo o Modificado
 
         public int ID_Cita { get => _ID_Cita; set => _ID_Cita = value; }
         public int ID_Paciente { get => _ID_Paciente; set => _ID_Paciente = value; }
@@ -29,6 +31,7 @@ namespace DAL
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
+        public DataSet DsDatos { get => _dsDatos; set => _dsDatos = value; }
     }
 }

@@ -229,6 +229,16 @@ namespace BLL_Clinica.BD
                                     TipoDatoSQL = SqlDbType.TinyInt;
                                     break;
                                 }
+                            case "12":
+                                {
+                                    TipoDatoSQL = SqlDbType.Date;
+                                    break;
+                                }
+                            case "13":
+                                {
+                                    TipoDatoSQL = SqlDbType.SmallInt;
+                                    break;
+                                }
 
                             default:
                                 break;
