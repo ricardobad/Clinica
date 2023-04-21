@@ -111,9 +111,8 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
 
             txt_Identificacion.Text = Obj_Personas_DAL.Identificacion.ToString().Trim();
-
             txt_FechaNacimiento.Text = Fila["fecha_nacimiento"].ToString().Trim();
-
+            
             cmb_Provincias.Text = Fila["Provincia"].ToString().Trim();
             cmb_Distritos.Text = Fila["Distrito"].ToString().Trim();
             cmb_Cantones.Text = Fila["Canton"].ToString().Trim();
@@ -291,6 +290,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
 
             
+
+        }
+
+        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
