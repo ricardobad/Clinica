@@ -80,13 +80,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                             MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Obj_Padecimientos_DAL.ID_Padecimiento = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                        Obj_Padecimientos_DAL.sDescripcion = dgv_Datos.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                        Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[2].Value.ToString().Trim());
+                        Obj_Padecimientos_DAL.sDescripcion = dgv_Datos.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                        Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[1].Value.ToString().Trim());
 
 
                         
                         txt_ID.Text = Obj_Padecimientos_DAL.ID_Padecimiento.ToString().Trim();    //Pone el ID en el txt correspondiente
                         txt_Nombre.Text = Obj_Padecimientos_DAL.sDescripcion.Trim();   //Pone el nombre en el txt correspondiente
+                        cmb_Estados.SelectedItem = dgv_Datos.SelectedRows[0].Cells[3].Value.ToString().Trim();
 
                     }
                 }
@@ -170,49 +171,59 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void btn_Crear_Click(object sender, EventArgs e)
         {
-
-            if (txt_Nombre.Text.Trim() != string.Empty)
+            if(txt_ID.Text != string.Empty)
             {
-                cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
-                cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
-
-                Obj_Padecimientos_DAL.ID_Doctor = 1;
-                Obj_Padecimientos_DAL.sDescripcion = txt_Nombre.Text.Trim();
-                if (cmb_Estados.SelectedIndex == 0)
+                if (txt_Nombre.Text.Trim() != string.Empty)
                 {
-                    Obj_Padecimientos_DAL.booEstado = true;
-                }
-                else
-                {
-                    Obj_Padecimientos_DAL.booEstado = false;
-                }
+                    cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
+                    cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
 
-                Obj_Doctores_DAL.Carnet = cmbDoctores.Text;
-                Obj_Doctores_BLL.Listar_Filtrar_Doctores(ref Obj_Doctores_DAL);
 
-                DataRow primeraFila = Obj_Doctores_DAL.dsDoctores.Tables["Doctores"].Rows[0];
-                Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(primeraFila["ID_Doctor"]);
+                    Obj_Padecimientos_DAL.sDescripcion = txt_Nombre.Text.Trim();
+                    if (cmb_Estados.SelectedIndex == 0)
+                    {
+                        Obj_Padecimientos_DAL.booEstado = true;
+                    }
+                    else
+                    {
+                        Obj_Padecimientos_DAL.booEstado = false;
+                    }
 
-                Obj_Padecimientos_BLL.Crear_Padecimientos(ref Obj_Padecimientos_DAL);
+                    Obj_Doctores_DAL.Carnet = cmbDoctores.Text;
+                    Obj_Doctores_BLL.Listar_Filtrar_Doctores(ref Obj_Doctores_DAL);
 
-                if (Obj_Padecimientos_DAL.sMsjError == string.Empty)
-                {
-                    MessageBox.Show("Nuevo Padecimiento creado exitosamente...!!!",
-                                    "Proceso Éxitoso",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                    DataRow primeraFila = Obj_Doctores_DAL.dsDoctores.Tables["Doctores"].Rows[0];
+                    Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(primeraFila["ID_Doctor"]);
 
-                    CargarDatos();
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("Se presentó un error en la creación de un nuevo Padecimiento .\n\nError: [" + Obj_Padecimientos_DAL.sMsjError + " ].",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    Obj_Padecimientos_BLL.Crear_Padecimientos(ref Obj_Padecimientos_DAL);
+
+                    if (Obj_Padecimientos_DAL.sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Nuevo Padecimiento creado exitosamente...!!!",
+                                        "Proceso Exitoso",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+                        CargarDatos();
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error en la creación de un nuevo Padecimiento .\n\nError: [" + Obj_Padecimientos_DAL.sMsjError + " ].",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("No se puede crear si está en proceso de modificación.\n\n Utilice el botón limpiar para limpiar los datos o concluya su modificación ",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+            }
+            
                 
         }
 
@@ -244,8 +255,69 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             }
         }
 
+
+
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+
+
+        }
+
+        private Boolean EspaciosVacioYLimite(TextBox txt)
+        {
+            if (txt.Text.Trim() == string.Empty)
+            {
+
+                txt.Focus();
+                erp_Principal.SetError(txt, "No permite espacio vacíos   ");
+
+                return false;
+            }
+
+            else
+            {
+                erp_Principal.Clear();
+                return true;
+            }
+        }
+
+        private void txt_Nombre_Leave(object sender, EventArgs e)
+        {
+            EspaciosVacioYLimite(txt_Nombre);
+        }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Nombre);
+        }
+
+        private void txt_Filtro_Leave(object sender, EventArgs e)
+        {
+            EspaciosVacioYLimite(txt_Nombre);
+        }
+
+        private void txt_Filtro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Nombre);
+        }
+
+
     }
 
-    
+   
+
+
 }
 

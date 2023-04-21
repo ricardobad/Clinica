@@ -16,6 +16,7 @@ namespace DAL_Clinica.Catalogos
             _sOtras_Guias, _sID_Canton, _sID_Distrito, _sID_Provincia, _sContrasena, _sTelefonoI, _sTelefonoII, _sCorreoI, _sCorreoII;
         private DataTable _dtDatos, _dtParametros;
         private int _iID_Direccion;
+        private string _sIdentificacion;
 
 
         #endregion
@@ -43,6 +44,7 @@ namespace DAL_Clinica.Catalogos
         public string sTelefonoII { get => _sTelefonoII; set => _sTelefonoII = value; }
         public string sCorreoI { get => _sCorreoI; set => _sCorreoI = value; }
         public string sCorreoII { get => _sCorreoII; set => _sCorreoII = value; }
+        public string sIdentificacion { get => _sIdentificacion; set => _sIdentificacion = value; }
 
         #endregion
 

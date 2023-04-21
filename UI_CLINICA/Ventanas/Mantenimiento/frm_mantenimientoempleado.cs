@@ -103,31 +103,69 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         }
 
+
+
+        #region MEtodos
+
+        private void CargarCombox()
+        {
+            Obj_Empleados_BLL.listar_filtrar_Empleados(ref Obj_Empleados_DAL);
+            Obj_Empleados_DAL.DtDatos.Rows.Add("--- Seleccione una Sexo ---");
+
+
+            cmb_Sexo.DataSource = null;
+
+          //  cmb_Sexo.DataSource = Obj_Empleados_DAL.bSexo;
+
+         //   cmb_Sexo.DisplayMember = "Sexo";
+         //   cmb_Sexo.ValueMember = "Sexo";
+        }
+
+
+        #endregion
         private void btn_Cargar_Click(object sender, EventArgs e)
         {
-
+          
 
             if (dgv_Empleados.Rows.Count > 0)
             {
-                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
+                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim() +  " "
+                    + dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
                         "Información o Alerta",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Obj_Empleados_DAL.sID_Persona = dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sPrimer_apellido = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim();
-
+                    Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim();//id
+                    Obj_Empleados_DAL.sPrimer_apellido = dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sSegundo_apellido = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim();
+                    Obj_Empleados_DAL.bTipo_ID = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[3].Value);
+                    Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[4].Value.ToString().Trim();
+                    Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[5].Value);
+                    Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
+                    Obj_Empleados_DAL.bEstado = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[7].Value);
+                    Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sID_Distrito= dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sTelefonoI= dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim();
 
 
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre.ToString().Trim();    //Pone el ID en el txt correspondiente
                     txt_Apellido_I.Text = Obj_Empleados_DAL.sPrimer_apellido.Trim();   //Pone el nombre en el txt correspondiente
+                    txt_Apellido_II.Text = Obj_Empleados_DAL.sSegundo_apellido.Trim();
+                    txt_Identificacion.Text = Obj_Empleados_DAL.sIdentificacion.Trim();
+                    dtp_FechaNacimiento.Value = DateTime.Parse(Obj_Empleados_DAL.sFecha_nacimiento);
+                    txt_Otras_Guias.Text = Obj_Empleados_DAL.sOtras_Guias.Trim();
+                    cmb_Canton.Text = Obj_Empleados_DAL.sIdentificacion.Trim();
+                    txt_Telefono_I.Text = Obj_Empleados_DAL.sTelefonoI.Trim();
 
+
+                    CargarCombox();
                 }
             }
             else
             {
-                MessageBox.Show("No tiene padecimientos para Editar",
+                MessageBox.Show("No tiene persona elegida para Editar",
                                  "Información o Alerta",
                                  MessageBoxButtons.OK,
                                   MessageBoxIcon.Information);
