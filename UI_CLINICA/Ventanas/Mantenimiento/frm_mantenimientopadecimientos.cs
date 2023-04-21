@@ -102,7 +102,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             }
             else
             {
-                if(txt_Nombre.Text.Trim() != string.Empty)
+                if(txt_Nombre.Text.Trim() == string.Empty)
                 {
                     if (MessageBox.Show("Desea realmente editar el Padecimiento [ " + Obj_Padecimientos_DAL.sDescripcion + " ] ...?",//seleccionar la celda marcada con el nombre de la region
                             "Información o Alerta",

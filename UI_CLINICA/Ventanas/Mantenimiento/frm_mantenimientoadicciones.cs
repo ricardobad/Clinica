@@ -69,7 +69,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            if (txt_ID.Text != string.Empty)
+            if (txt_ID.Text == string.Empty)
             { 
 
                 if (txt_Nombre.Text.Trim() != string.Empty)
