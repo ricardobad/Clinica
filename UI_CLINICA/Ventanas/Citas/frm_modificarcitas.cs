@@ -41,7 +41,7 @@ namespace UI_CLINICA.Ventanas.Citas
         private void CargarDatos()
         {
 
-            BLL_Citas.listar_Citas(ref DAL_Citas);
+            //BLL_Citas.listar_Citas(ref DAL_Citas);
 
             //aqui se llama al datagrid del formulario
 

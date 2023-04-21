@@ -87,14 +87,14 @@ namespace BLL_Clinica.Catalogos
 
                     Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
 
-                    Obj_BD_DAL.dtParametros.Rows.Add("@Filtro", "1", Obj_Citas_DAL.ID_Cita);
+                    //Obj_BD_DAL.dtParametros.Rows.Add("@Filtro", "1", Obj_Citas_DAL.ID_Cita);
                 }
 
 
                 Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
 
-                Obj_Citas_DAL.DtDatos = Obj_BD_DAL.dtParametros; //Fallo?
-                Obj_Citas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+                //Obj_Citas_DAL.DtDatos = Obj_BD_DAL.dtParametros; //Fallo?
+                //Obj_Citas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
 
 
 
@@ -102,7 +102,7 @@ namespace BLL_Clinica.Catalogos
             }
             catch (Exception ex)
             {
-                Obj_Citas_DAL.sMsjError = ex.Message.ToString().Trim();
+                //Obj_Citas_DAL.sMsjError = ex.Message.ToString().Trim();
 
             }
 

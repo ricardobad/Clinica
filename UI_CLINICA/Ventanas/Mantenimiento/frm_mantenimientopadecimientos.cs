@@ -80,8 +80,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                             MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Obj_Padecimientos_DAL.ID_Padecimiento = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[0].Value.ToString().Trim());
-                        Obj_Padecimientos_DAL.sDescripcion = dgv_Datos.SelectedRows[0].Cells[2].Value.ToString().Trim();
-                        Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[1].Value.ToString().Trim());
+                        Obj_Padecimientos_DAL.sDescripcion = dgv_Datos.SelectedRows[0].Cells[1].Value.ToString().Trim();
+                        Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(dgv_Datos.SelectedRows[0].Cells[2].Value.ToString().Trim());
 
 
                         
@@ -102,7 +102,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             }
             else
             {
-                if(txt_Nombre.Text.Trim() == string.Empty)
+                if(txt_Nombre.Text.Trim() != string.Empty)
                 {
                     if (MessageBox.Show("Desea realmente editar el Padecimiento [ " + Obj_Padecimientos_DAL.sDescripcion + " ] ...?",//seleccionar la celda marcada con el nombre de la region
                             "Información o Alerta",
@@ -171,7 +171,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void btn_Crear_Click(object sender, EventArgs e)
         {
-            if(txt_ID.Text != string.Empty)
+            if(txt_ID.Text == string.Empty)
             {
                 if (txt_Nombre.Text.Trim() != string.Empty)
                 {
