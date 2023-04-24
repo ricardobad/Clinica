@@ -55,12 +55,10 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.cmb_Estado = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_Tipo_ID = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmb_Sexo = new System.Windows.Forms.ComboBox();
             this.cmb_Canton = new System.Windows.Forms.ComboBox();
             this.txt_Otras_Guias = new System.Windows.Forms.TextBox();
-            this.txt_Provincia = new System.Windows.Forms.TextBox();
             this.txt_Identificacion = new System.Windows.Forms.TextBox();
             this.txt_Apellido_II = new System.Windows.Forms.TextBox();
             this.txtx_Nombre = new System.Windows.Forms.TextBox();
@@ -79,6 +77,10 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.btn_Cargar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dgv_Pacientes = new System.Windows.Forms.DataGridView();
+            this.cmb_Tipo_ID = new System.Windows.Forms.ComboBox();
+            this.lbl_Distrito = new System.Windows.Forms.Label();
+            this.cmb_Distrito = new System.Windows.Forms.ComboBox();
+            this.cmb_Provincia = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.tbControl1.SuspendLayout();
@@ -159,6 +161,10 @@ namespace UI_CLINICA.Ventanas.Pacientes
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.tabPage1.Controls.Add(this.cmb_Provincia);
+            this.tabPage1.Controls.Add(this.cmb_Distrito);
+            this.tabPage1.Controls.Add(this.lbl_Distrito);
+            this.tabPage1.Controls.Add(this.cmb_Tipo_ID);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.txt_Correo_II);
@@ -174,12 +180,10 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.tabPage1.Controls.Add(this.cmb_Estado);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.txt_Tipo_ID);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.cmb_Sexo);
             this.tabPage1.Controls.Add(this.cmb_Canton);
             this.tabPage1.Controls.Add(this.txt_Otras_Guias);
-            this.tabPage1.Controls.Add(this.txt_Provincia);
             this.tabPage1.Controls.Add(this.txt_Identificacion);
             this.tabPage1.Controls.Add(this.txt_Apellido_II);
             this.tabPage1.Controls.Add(this.txtx_Nombre);
@@ -231,7 +235,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.txt_Correo_II.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Correo_II.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo_II.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Correo_II.Location = new System.Drawing.Point(576, 342);
+            this.txt_Correo_II.Location = new System.Drawing.Point(576, 445);
             this.txt_Correo_II.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txt_Correo_II.Name = "txt_Correo_II";
             this.txt_Correo_II.Size = new System.Drawing.Size(342, 42);
@@ -242,7 +246,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label12.Location = new System.Drawing.Point(676, 305);
+            this.label12.Location = new System.Drawing.Point(676, 409);
             this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(119, 28);
@@ -277,7 +281,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.txtx_Correo_I.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtx_Correo_I.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtx_Correo_I.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtx_Correo_I.Location = new System.Drawing.Point(576, 240);
+            this.txtx_Correo_I.Location = new System.Drawing.Point(576, 341);
             this.txtx_Correo_I.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtx_Correo_I.Name = "txtx_Correo_I";
             this.txtx_Correo_I.Size = new System.Drawing.Size(342, 42);
@@ -299,7 +303,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label20.Location = new System.Drawing.Point(676, 203);
+            this.label20.Location = new System.Drawing.Point(676, 305);
             this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(119, 28);
@@ -376,17 +380,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txt_Tipo_ID
-            // 
-            this.txt_Tipo_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Tipo_ID.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Tipo_ID.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Tipo_ID.Location = new System.Drawing.Point(12, 342);
-            this.txt_Tipo_ID.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txt_Tipo_ID.Name = "txt_Tipo_ID";
-            this.txt_Tipo_ID.Size = new System.Drawing.Size(208, 42);
-            this.txt_Tipo_ID.TabIndex = 249;
-            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -426,17 +419,6 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.txt_Otras_Guias.Name = "txt_Otras_Guias";
             this.txt_Otras_Guias.Size = new System.Drawing.Size(475, 126);
             this.txt_Otras_Guias.TabIndex = 233;
-            // 
-            // txt_Provincia
-            // 
-            this.txt_Provincia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Provincia.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Provincia.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Provincia.Location = new System.Drawing.Point(12, 240);
-            this.txt_Provincia.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txt_Provincia.Name = "txt_Provincia";
-            this.txt_Provincia.Size = new System.Drawing.Size(208, 42);
-            this.txt_Provincia.TabIndex = 226;
             // 
             // txt_Identificacion
             // 
@@ -693,6 +675,46 @@ namespace UI_CLINICA.Ventanas.Pacientes
             this.dgv_Pacientes.Size = new System.Drawing.Size(946, 703);
             this.dgv_Pacientes.TabIndex = 243;
             // 
+            // cmb_Tipo_ID
+            // 
+            this.cmb_Tipo_ID.FormattingEnabled = true;
+            this.cmb_Tipo_ID.Location = new System.Drawing.Point(15, 355);
+            this.cmb_Tipo_ID.Name = "cmb_Tipo_ID";
+            this.cmb_Tipo_ID.Size = new System.Drawing.Size(205, 28);
+            this.cmb_Tipo_ID.TabIndex = 273;
+            // 
+            // lbl_Distrito
+            // 
+            this.lbl_Distrito.AutoSize = true;
+            this.lbl_Distrito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Distrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.lbl_Distrito.Location = new System.Drawing.Point(676, 202);
+            this.lbl_Distrito.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_Distrito.Name = "lbl_Distrito";
+            this.lbl_Distrito.Size = new System.Drawing.Size(96, 28);
+            this.lbl_Distrito.TabIndex = 274;
+            this.lbl_Distrito.Text = "Distrito:";
+            // 
+            // cmb_Distrito
+            // 
+            this.cmb_Distrito.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Distrito.FormattingEnabled = true;
+            this.cmb_Distrito.Location = new System.Drawing.Point(576, 240);
+            this.cmb_Distrito.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmb_Distrito.Name = "cmb_Distrito";
+            this.cmb_Distrito.Size = new System.Drawing.Size(353, 36);
+            this.cmb_Distrito.TabIndex = 275;
+            // 
+            // cmb_Provincia
+            // 
+            this.cmb_Provincia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Provincia.FormattingEnabled = true;
+            this.cmb_Provincia.Location = new System.Drawing.Point(12, 240);
+            this.cmb_Provincia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmb_Provincia.Name = "cmb_Provincia";
+            this.cmb_Provincia.Size = new System.Drawing.Size(206, 36);
+            this.cmb_Provincia.TabIndex = 276;
+            // 
             // frm_adminpacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -729,12 +751,10 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private System.Windows.Forms.TabControl tbControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txt_Tipo_ID;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cmb_Sexo;
         private System.Windows.Forms.ComboBox cmb_Canton;
         private System.Windows.Forms.TextBox txt_Otras_Guias;
-        private System.Windows.Forms.TextBox txt_Provincia;
         private System.Windows.Forms.TextBox txt_Identificacion;
         private System.Windows.Forms.TextBox txt_Apellido_II;
         private System.Windows.Forms.TextBox txtx_Nombre;
@@ -767,5 +787,9 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cmb_Tipo_ID;
+        private System.Windows.Forms.ComboBox cmb_Distrito;
+        private System.Windows.Forms.Label lbl_Distrito;
+        private System.Windows.Forms.ComboBox cmb_Provincia;
     }
 }

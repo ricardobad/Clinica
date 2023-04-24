@@ -112,7 +112,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             
             
 
-                if (textBox2.Text.Trim() == string.Empty)
+                if (txt_nombre.Text.Trim() == string.Empty)
                 {
                     if (dgvNumero.Rows.Count > 0)
                     {
@@ -128,7 +128,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
 
                             textBox1.Text = Obj_Alergias_DAL.ID_Alergia.ToString().Trim();    //Pone el ID en el txt correspondiente
-                            textBox2.Text = Obj_Alergias_DAL.Descripcion.Trim();   //Pone el nombre en el txt correspondiente
+                            txt_nombre.Text = Obj_Alergias_DAL.Descripcion.Trim();   //Pone el nombre en el txt correspondiente
 
                         }
                     }
@@ -143,7 +143,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 }
                 else
                 {
-                    if (textBox2.Text.Trim() != string.Empty)
+                    if (txt_nombre.Text.Trim() != string.Empty)
                     {
                         if (MessageBox.Show("Desea realmente editar la Alergia [ " + Obj_Alergias_DAL.Descripcion + " ] ...?",//seleccionar la celda marcada con el nombre de la region
                                 "Información o Alerta",
@@ -151,7 +151,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                                 MessageBoxIcon.Question) == DialogResult.Yes)
                         {
 
-                            Obj_Alergias_DAL.Descripcion = textBox2.Text;
+                            Obj_Alergias_DAL.Descripcion = txt_nombre.Text;
                             if (cmb_Estados.SelectedIndex == 0)
                             {
                                 Obj_Alergias_DAL.bEstado = true;
@@ -208,7 +208,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void Limpiar()
         {
             textBox1.Text = string.Empty;
-            textBox2.Text = string.Empty;
+            txt_nombre.Text = string.Empty;
             txt_Filtro.Text = string.Empty;
             //falta
         }
@@ -219,13 +219,13 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             if (textBox1.Text.Trim() == string.Empty)
             {
 
-                if (textBox2.Text.Trim() != string.Empty)
+                if (txt_nombre.Text.Trim() != string.Empty)
                 {
                     cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
                     cls_Doctores_BLL Obj_Doctores_BLL = new cls_Doctores_BLL();
 
                     Obj_Alergias_DAL.ID_Doctor = 1;
-                    Obj_Alergias_DAL.Descripcion = textBox2.Text.Trim();
+                    Obj_Alergias_DAL.Descripcion = txt_nombre.Text.Trim();
                     if (cmb_Estados.SelectedIndex == 0)
                     {
                         Obj_Alergias_DAL.bEstado = true;
@@ -316,7 +316,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void button3_Click(object sender, EventArgs e)
         {
             txt_Filtro.Text = "";
-            textBox2.Text = "";
+            txt_nombre.Text = "";
         }
 
         private void txt_Filtro_TextChanged_1(object sender, EventArgs e)
@@ -326,12 +326,12 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void textBox2_Leave(object sender, EventArgs e)
         {
-            EspaciosVacioYLimite(textBox2);
+            EspaciosVacioYLimite(txt_nombre);
         }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidaTXT(e, textBox2);
+            ValidaTXT(e, txt_nombre);
         }
 
         private void txt_Filtro_Leave(object sender, EventArgs e)
@@ -355,7 +355,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             else
             {
                 e.Handled = true; // Cancela 
-                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+                erp_Principal.SetError(txt, "Esta presionando una tecla no permitida para esta caja de texto ");
             }
 
 

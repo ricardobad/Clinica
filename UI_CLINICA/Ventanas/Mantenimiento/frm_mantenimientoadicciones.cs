@@ -251,7 +251,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
         {
-            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8))
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32))
             {
                 erp_Principal.Clear();
                 e.Handled = false; // Permite // Continua 
