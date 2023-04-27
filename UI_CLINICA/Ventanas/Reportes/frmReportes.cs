@@ -20,10 +20,11 @@ namespace UI_CLINICA.Ventanas.Reportes
 
         #region Globales
         cls_Reportes_BLL reporte_BLL = new cls_Reportes_BLL();
-        cls_Reportes_DAL reporte_DAL = new cls_Reportes_DAL();
+       public cls_Reportes_DAL reporte_DAL = new cls_Reportes_DAL();
         cls_BD_BLL BD_BLL = new cls_BD_BLL();
         cls_BD_DAL BD_DAL = new cls_BD_DAL();
         public DateTime FechaInicio, FechaFinal;
+        
         #endregion
 
         public frmReportes()
@@ -67,8 +68,8 @@ namespace UI_CLINICA.Ventanas.Reportes
             {
 
                 
-               string respuesta =Convert.ToString( reporte_DAL.DtDatos.Rows[0][0]);
-                MessageBox.Show("carga exitosa , las cantidad de citas en esa fecha es de " + respuesta);
+               reporte_DAL.sRespuesta =Convert.ToString( reporte_DAL.DtDatos.Rows[0][0]);
+                MessageBox.Show("carga exitosa , las cantidad de citas en esa fecha es de " + reporte_DAL.sRespuesta);
 
             }
             else
@@ -92,25 +93,99 @@ namespace UI_CLINICA.Ventanas.Reportes
                 CargarDatos();
 
             }
+            //reportes por especialidad ID 1
+
+            if (cmbReporte.SelectedIndex==1 && cmbEspecialidad.SelectedIndex == 0) {
+                //asigna 1 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 1;
+               
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 2
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 1)
+            {
+                //asigna 2 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 2;
+               
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 3
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 2)
+            {
+                //asigna 3 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 3;
+               
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 4
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 3)
+            {
+                //asigna 4 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 4;
+              
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 5
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 4)
+            {
+                //asigna 5 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 5;
 
 
-           
-           
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+
+
         }
 
-        private void cld_Final_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            FechaFinal = cld_Final.SelectionStart;
-        }
-
+     
         private void cmbReporte_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            //habilita boton mostrar
             button3.Enabled = true;
+           
+            //Habilita segundo combo
+            if (cmbReporte.SelectedIndex == 1) { 
+            cmbEspecialidad.Enabled = true;
+            }
+
         }
 
+        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        #region Eventos
         private void cld_inicio_DateChanged(object sender, DateRangeEventArgs e)
         {
             FechaInicio = cld_inicio.SelectionStart;
         }
+        private void cld_Final_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            FechaFinal = cld_Final.SelectionStart;
+        }
+        #endregion
+
+
     }
 }

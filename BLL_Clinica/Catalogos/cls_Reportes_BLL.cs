@@ -40,5 +40,30 @@ namespace BLL_Clinica.Catalogos
 
         }
 
+        public void CitasEspecialidad(ref cls_Reportes_DAL Obj_Reportes_DAL)
+        {
+            Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["reporte_citas_especialidad"].ToString();
+            Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
+            Obj_BD_DAL.obj_dtParametros.Rows.Add("@fecha_inicial", "8", Obj_Reportes_DAL.FechaInicial);
+            Obj_BD_DAL.obj_dtParametros.Rows.Add("@fecha_final", "8", Obj_Reportes_DAL.FechaFinal);
+            Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Especialidad", "1", Obj_Reportes_DAL.ID_Especialidad);
+
+            Obj_BD_DAL.sNomTabla = "T_CITASS";
+
+            Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+            if (Obj_BD_DAL.sMsjError == string.Empty)
+            {
+                Obj_Reportes_DAL.sMsjError = string.Empty;
+                Obj_Reportes_DAL.DtDatos = Obj_BD_DAL.obj_ds.Tables[0];
+            }
+            else
+            {
+                Obj_BD_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+                Obj_Reportes_DAL.DtDatos = null;
+            }
+
+        }
+
+
     }
 }

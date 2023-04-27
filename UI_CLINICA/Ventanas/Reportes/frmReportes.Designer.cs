@@ -29,6 +29,7 @@ namespace UI_CLINICA.Ventanas.Reportes
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.lblIdentificacion = new System.Windows.Forms.Label();
@@ -46,10 +47,12 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.dgv_Reportes = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Reportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
             this.SuspendLayout();
@@ -82,14 +85,18 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbEspecialidad.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Items.AddRange(new object[] {
-            "Reporte de citas totales",
-            "Reporte de citas por especialidad",
-            "Reporte de citas por paciente"});
+            "Odontologia",
+            "Psicologia",
+            "Pediatria",
+            "Medicina General",
+            "Oftamologia",
+            "Ginecologia"});
             this.cmbEspecialidad.Location = new System.Drawing.Point(179, 102);
             this.cmbEspecialidad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(242, 35);
             this.cmbEspecialidad.TabIndex = 33;
+            this.cmbEspecialidad.Text = "Seleccione especialidad";
             // 
             // lblEspecialidad
             // 
@@ -211,6 +218,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgv_Reportes);
             this.groupBox1.Controls.Add(this.lblTipoReporte);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.cmbReporte);
@@ -242,8 +250,9 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(738, 44);
+            this.pnlTitulo.Size = new System.Drawing.Size(741, 44);
             this.pnlTitulo.TabIndex = 239;
+            this.pnlTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTitulo_Paint);
             // 
             // label7
             // 
@@ -256,6 +265,25 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.label7.TabIndex = 240;
             this.label7.Text = "Generador de Reportes";
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
+            // 
+            // dgv_Reportes
+            // 
+            this.dgv_Reportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Reportes.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Reportes.Location = new System.Drawing.Point(442, 16);
+            this.dgv_Reportes.Name = "dgv_Reportes";
+            this.dgv_Reportes.ReadOnly = true;
+            this.dgv_Reportes.RowHeadersWidth = 62;
+            this.dgv_Reportes.RowTemplate.Height = 28;
+            this.dgv_Reportes.Size = new System.Drawing.Size(226, 154);
+            this.dgv_Reportes.TabIndex = 240;
             // 
             // btnCerrar
             // 
@@ -284,7 +312,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(738, 620);
+            this.ClientSize = new System.Drawing.Size(741, 620);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -297,6 +325,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.groupBox1.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Reportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).EndInit();
             this.ResumeLayout(false);
@@ -323,5 +352,6 @@ namespace UI_CLINICA.Ventanas.Reportes
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btn_cerrar;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgv_Reportes;
     }
 }

@@ -250,13 +250,13 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.dgvEspecialidades.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.dgvEspecialidades.MultiSelect = false;
             this.dgvEspecialidades.Name = "dgvEspecialidades";
-            this.dgvNumero.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvNumero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvNumero.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.dgvNumero.Location = new System.Drawing.Point(44, 276);
-            this.dgvNumero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvNumero.MultiSelect = false;
-            this.dgvNumero.Name = "dgvNumero";
+            this.dgvEspecialidades.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEspecialidades.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvEspecialidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.dgvEspecialidades.Location = new System.Drawing.Point(44, 276);
+            this.dgvEspecialidades.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvEspecialidades.MultiSelect = false;
+            this.dgvEspecialidades.Name = "dgvNumero";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
@@ -270,12 +270,12 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.dgvEspecialidades.Size = new System.Drawing.Size(855, 400);
             this.dgvEspecialidades.TabIndex = 250;
             this.dgvEspecialidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNumero_CellContentClick);
-            this.dgvNumero.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvNumero.RowHeadersWidth = 62;
-            this.dgvNumero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNumero.Size = new System.Drawing.Size(641, 325);
-            this.dgvNumero.TabIndex = 250;
-            this.dgvNumero.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNumero_CellContentClick);
+            this.dgvEspecialidades.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvEspecialidades.RowHeadersWidth = 62;
+            this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEspecialidades.Size = new System.Drawing.Size(641, 325);
+            this.dgvEspecialidades.TabIndex = 250;
+            this.dgvEspecialidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNumero_CellContentClick);
             // 
             // pnlTitulo
             // 
