@@ -15,7 +15,7 @@ using BLL_Clinica.Catalogos;
 
 namespace UI_CLINICA.Ventanas.Expedientes
 {
-    public partial class frm_expediente : Form 
+    public partial class frm_expediente : Form
     {
         #region VARIABLES GLOBALES
         public cls_Personas_DAL Obj_Personas_DAL;
@@ -203,7 +203,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
             Obj_Adicciones_BLL.Modificar_Adicciones_Pacientes(ref Obj_Adicciones_DAL);
 
-          
+
 
 
 
@@ -436,7 +436,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
         private void CargarDatosCitas()
         {
-            
+
 
 
             Obj_Citas_DAL.ID_Paciente = Convert.ToInt32(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["ID_Paciente"]);
@@ -518,9 +518,9 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
 
             txt_Identificacion.Text = Obj_Personas_DAL.Identificacion.ToString().Trim();
-            txt_FechaNacimiento.Text = Convert.ToDateTime(Fila["fecha_nacimiento"]).Day.ToString() +" / " +Convert.ToDateTime(Fila["fecha_nacimiento"]).Month.ToString() + " / "+ Convert.ToDateTime(Fila["fecha_nacimiento"]).Year.ToString();
+            txt_FechaNacimiento.Text = Convert.ToDateTime(Fila["fecha_nacimiento"]).Day.ToString() + " / " + Convert.ToDateTime(Fila["fecha_nacimiento"]).Month.ToString() + " / " + Convert.ToDateTime(Fila["fecha_nacimiento"]).Year.ToString();
 
-            cmb_Provincias.SelectedIndex = Convert.ToInt32(Fila["ID_Provincia"])-1;
+            cmb_Provincias.SelectedIndex = Convert.ToInt32(Fila["ID_Provincia"]) - 1;
 
 
 
@@ -542,7 +542,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
             CargarDatosClinica();
 
-            
+
 
 
 
@@ -554,9 +554,6 @@ namespace UI_CLINICA.Ventanas.Expedientes
         private void CargarDatosClinica()
         {
             //LLENADO DE TAB CONTROL DE INFORMACIÓN DEL PACIENTE
-
-
-
 
             dgv_Adicciones.DataSource = null;
 
@@ -614,7 +611,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
                 Obj_Alergias_DAL.Descripcion = string.Empty;
                 Obj_Alergias_BLL.Filtrar_Alergias_Pacientes(ref Obj_Alergias_DAL);
 
-                
+
 
                 dgv_Alergias.DataSource = Obj_Alergias_DAL.dsAlergias.Tables[0];
 
@@ -636,14 +633,29 @@ namespace UI_CLINICA.Ventanas.Expedientes
                 dgv_Padecimientos.Columns[0].ReadOnly = true;
 
             }
-            else
+
+
+        }
+
+
+
+        private void CargarComboCanton()
+        {
+            Obj_Provincias_DAL = new cls_Provincias_DAL();
+
+            cls_Direcciones_BLL Obj_Direcciones_BLL = new cls_Direcciones_BLL();
+            cls_Cantones_DAL Obj_Cantones_DAL = new cls_Cantones_DAL();
+            cmb_Provincias.DataSource = null;
+            cmb_Cantones.DataSource = null;
+            cmb_Distritos.DataSource = null;
+            Obj_Cantones_DAL.ID_Canton = "";
+
+            Obj_Provincias_DAL.iD_Provincia = (cmb_Provincias.SelectedIndex + 1).ToString().Trim(); //CMB EMPIEZA EN 0 ENTONCES, EL ID PROVINCIA 0 NO EXISTE ENTONCES SE LE SUMA 1
+            Obj_Direcciones_BLL.Listar_Direcciones(ref Obj_Provincias_DAL, ref Obj_Cantones_DAL);
+
+            if (Obj_Provincias_DAL.sMsjError == string.Empty)
             {
-                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de Paciente Error = [ " +
-                                Obj_Paciente_DAL.sMsjError + " ].",
-                                "ERROR",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
+
                 cmb_Cantones.DisplayMember = "CANTONES";
                 cmb_Cantones.ValueMember = "ID_Provincia";
                 cmb_Cantones.DataSource = Obj_Provincias_DAL.dsProvincias.Tables[0];
@@ -660,6 +672,8 @@ namespace UI_CLINICA.Ventanas.Expedientes
                                 MessageBoxIcon.Error);
             }
         }
+
+
 
 
         private void CargarComboDistrito()
@@ -710,6 +724,8 @@ namespace UI_CLINICA.Ventanas.Expedientes
             CargarCita();
         }
 
+
+
         private void CargarCita()
         {
 
@@ -718,11 +734,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
                 int numFila = dgv_Datos_Citas.CurrentRow.Index;
                 DateTime Fecha = Convert.ToDateTime(Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["FechaHoraInicio"]);
-                txt_IDCita.Text =  Convert.ToString(Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["ID_Cita"]);
-                lbl_infocita.Text = "El día " + Fecha.Day +" de "+ Fecha.ToString("MMMM") + " del año "+Fecha.Year+ " el paciente " +Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["Nombre"]+" "+Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["primer_apellido"]+" "+ Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["segundo_apellido"]+
-                                    "\ncon la identificación " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["Identificacion"]+" se presentó en el consultorio número "+ Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["ID_Consultorio"]+ "\npara su cita con el doctor " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["NombreDoctor"] +" " +Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["PrimerApellido_Doctor"]+ " "+Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["SegundoApellido_Doctor"]+
-                                    ", especialista en " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["NombreEspecialidad"]+ "\n\nSe anota la siguiente información acerca de la cita:";
-                txt_InfoCita.Text= Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["notasAdd"].ToString();
+                txt_IDCita.Text = Convert.ToString(Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["ID_Cita"]);
+                lbl_infocita.Text = "El día " + Fecha.Day + " de " + Fecha.ToString("MMMM") + " del año " + Fecha.Year + " el paciente " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["Nombre"] + " " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["primer_apellido"] + " " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["segundo_apellido"] +
+                                    "\ncon la identificación " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["Identificacion"] + " se presentó en el consultorio número " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["ID_Consultorio"] + "\npara su cita con el doctor " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["NombreDoctor"] + " " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["PrimerApellido_Doctor"] + " " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["SegundoApellido_Doctor"] +
+                                    ", especialista en " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["NombreEspecialidad"] + "\n\nSe anota la siguiente información acerca de la cita:";
+                txt_InfoCita.Text = Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["notasAdd"].ToString();
                 MessageBox.Show("Información de la cita cargada con éxito",
                                  "Información o Alerta",
                                  MessageBoxButtons.OK,
@@ -738,15 +754,14 @@ namespace UI_CLINICA.Ventanas.Expedientes
                                  "Información o Alerta",
                                  MessageBoxButtons.OK,
                                   MessageBoxIcon.Information);
+
+            }
         }
 
-        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
         private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
-        {        
-            if (char.IsNumber(e.KeyChar) || (e.KeyChar == 8)|| (e.KeyChar == 99) || (e.KeyChar == 109))
+        {
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 99) || (e.KeyChar == 109))
             {
                 erp_Principal.Clear();
                 e.Handled = false; // Permite // Continua 
@@ -769,7 +784,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
         private void ValidaPeso(KeyPressEventArgs e, TextBox txt)
         {
-            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 107) || (e.KeyChar == 103) || (e.KeyChar == 108))
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8)||(e.KeyChar == 107) || (e.KeyChar == 103) || (e.KeyChar == 108))
             {
                 erp_Principal.Clear();
                 e.Handled = false; // Permite // Continua 
@@ -788,13 +803,13 @@ namespace UI_CLINICA.Ventanas.Expedientes
         private void txt_Peso_HideSelectionChanged(object sender, EventArgs e)
         {
 
-            }
         }
 
-        }
+
+
         private void ValidaAltura(KeyPressEventArgs e, TextBox txt)
         {
-            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 107) || (e.KeyChar == 76) || (e.KeyChar == 71) || (e.KeyChar == 250))
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8)|| (e.KeyChar == 107) || (e.KeyChar == 76) || (e.KeyChar == 71) || (e.KeyChar == 250))
             {
                 erp_Principal.Clear();
                 e.Handled = false; // Permite // Continua 
@@ -809,9 +824,35 @@ namespace UI_CLINICA.Ventanas.Expedientes
         {
             ValidaPeso(e, txt_Peso);
         }
+
+        private void txt_Correo_I_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNoEspacios(e, txt_Correo_I);
+        }
+
+        private void txt_Correo_II_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNoEspacios(e, txt_Correo_II);
+        }
+
+        private void ValidaNoEspacios(KeyPressEventArgs e, TextBox txt)
+        {
+
+            if (e.KeyChar == 32) 
+            {
+                
+                e.Handled = true;
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+            else
+            {
+                e.Handled = false;
+                erp_Principal.Clear();
+                
+            }
+
+        }
     }
-
-
-
-
 }
+
+

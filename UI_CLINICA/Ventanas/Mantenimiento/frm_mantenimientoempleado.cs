@@ -445,9 +445,5 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             ValidaNumeros(e, txt_Telefono_II);
         }
 
-        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
     }
 }
