@@ -61,6 +61,61 @@ namespace BLL_Clinica.Catalogos
 
         }
 
+        public void Filtrar_Padecimientos_Pacientes(ref cls_Padecimiento_DAL Obj_Padecimientos_DAL)
+        {
+
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "T_PADECIMIENTOS_PACIENTE";
+
+
+                if (Obj_Padecimientos_DAL.sDescripcion == string.Empty)
+                {
+
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_LISTAR_PADECIMIENTOS_PACIENTE";
+
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                    Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Padecimientos_DAL.iIdPaciente);
+
+
+
+                }
+                else
+                {
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_PADECIMIENTOS_PACIENTES";
+
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                    Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Padecimientos_DAL.iIdPaciente);
+                    Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Padecimientos_DAL.iIdPaciente);
+                }
+
+
+
+
+
+                Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+                Obj_Padecimientos_DAL.dsPadecimientos = Obj_BD_DAL.dsDatos;
+                Obj_Padecimientos_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Padecimientos_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
+
+        }
+
+
         public void Crear_Padecimientos(ref cls_Padecimiento_DAL Obj_Padecimientos_DAL)
         {
             try
@@ -139,7 +194,42 @@ namespace BLL_Clinica.Catalogos
         }
 
 
-        
+        public void Modificar_Padecimientos_Pacientes(ref cls_Padecimiento_DAL Obj_Padecimientos_DAL)
+        {
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "T_Padecimientos_PACIENTES";
+
+
+                Obj_BD_DAL.sNobreSP = "dbo.SP_MODIFICAR_PADECIMIENTOS_PACIENTE";
+
+                Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Padecimientos_DAL.iIdPaciente);
+
+                Obj_BD_DAL.dtParametros.Rows.Add("@Padecimientos", "7", Obj_Padecimientos_DAL.sPadecimientosTotales);
+
+                Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+                Obj_Padecimientos_DAL.dsPadecimientos = Obj_BD_DAL.dsDatos;
+                Obj_Padecimientos_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Padecimientos_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
+        }
+
+
+
 
     }
 
