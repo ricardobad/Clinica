@@ -29,6 +29,7 @@ namespace UI_CLINICA.Ventanas.Principal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_loginPaciente));
             this.lblOlvidarContrasena = new System.Windows.Forms.Label();
             this.txtLoginIdentificacion = new System.Windows.Forms.TextBox();
@@ -38,18 +39,20 @@ namespace UI_CLINICA.Ventanas.Principal
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.PictureBox();
+            this.Titulo = new System.Windows.Forms.Label();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnRegresar = new System.Windows.Forms.PictureBox();
+            this.erp_Principal = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Principal)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOlvidarContrasena
@@ -60,7 +63,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.lblOlvidarContrasena.Location = new System.Drawing.Point(361, 296);
             this.lblOlvidarContrasena.Name = "lblOlvidarContrasena";
             this.lblOlvidarContrasena.Size = new System.Drawing.Size(251, 24);
-            this.lblOlvidarContrasena.TabIndex = 4;
+            this.lblOlvidarContrasena.TabIndex = 0;
             this.lblOlvidarContrasena.Text = "¿Olvidó la contraseña?";
             this.lblOlvidarContrasena.Click += new System.EventHandler(this.lblOlvidarContrasena_Click);
             // 
@@ -71,10 +74,13 @@ namespace UI_CLINICA.Ventanas.Principal
             this.txtLoginIdentificacion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginIdentificacion.ForeColor = System.Drawing.Color.White;
             this.txtLoginIdentificacion.Location = new System.Drawing.Point(407, 128);
+            this.txtLoginIdentificacion.MaxLength = 14;
             this.txtLoginIdentificacion.Name = "txtLoginIdentificacion";
             this.txtLoginIdentificacion.Size = new System.Drawing.Size(223, 30);
-            this.txtLoginIdentificacion.TabIndex = 2;
+            this.txtLoginIdentificacion.TabIndex = 1;
             this.txtLoginIdentificacion.Text = "Identificación";
+            this.txtLoginIdentificacion.Click += new System.EventHandler(this.txtLoginIdentificacion_Click);
+            this.txtLoginIdentificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoginIdentificacion_KeyPress);
             // 
             // txtLoginContraseña
             // 
@@ -83,10 +89,13 @@ namespace UI_CLINICA.Ventanas.Principal
             this.txtLoginContraseña.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginContraseña.ForeColor = System.Drawing.Color.White;
             this.txtLoginContraseña.Location = new System.Drawing.Point(407, 197);
+            this.txtLoginContraseña.MaxLength = 16;
             this.txtLoginContraseña.Name = "txtLoginContraseña";
             this.txtLoginContraseña.Size = new System.Drawing.Size(223, 30);
-            this.txtLoginContraseña.TabIndex = 3;
+            this.txtLoginContraseña.TabIndex = 2;
             this.txtLoginContraseña.Text = "Contraseña";
+            this.txtLoginContraseña.Click += new System.EventHandler(this.txtLoginContraseña_Click);
+            this.txtLoginContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoginContraseña_KeyPress);
             // 
             // bntLoginIngresar
             // 
@@ -96,7 +105,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.bntLoginIngresar.Location = new System.Drawing.Point(365, 240);
             this.bntLoginIngresar.Name = "bntLoginIngresar";
             this.bntLoginIngresar.Size = new System.Drawing.Size(275, 37);
-            this.bntLoginIngresar.TabIndex = 105;
+            this.bntLoginIngresar.TabIndex = 0;
             this.bntLoginIngresar.Text = "Ingresar";
             this.bntLoginIngresar.UseVisualStyleBackColor = true;
             this.bntLoginIngresar.Click += new System.EventHandler(this.bntLoginIngresar_Click);
@@ -133,7 +142,7 @@ namespace UI_CLINICA.Ventanas.Principal
             // pnlTitulo
             // 
             this.pnlTitulo.Controls.Add(this.btnRegresar);
-            this.pnlTitulo.Controls.Add(this.label15);
+            this.pnlTitulo.Controls.Add(this.Titulo);
             this.pnlTitulo.Controls.Add(this.btn_cerrar);
             this.pnlTitulo.Location = new System.Drawing.Point(1, -1);
             this.pnlTitulo.Name = "pnlTitulo";
@@ -141,16 +150,26 @@ namespace UI_CLINICA.Ventanas.Principal
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
-            // label15
+            // btnRegresar
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label15.Location = new System.Drawing.Point(192, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(289, 38);
-            this.label15.TabIndex = 232;
-            this.label15.Text = "Ingreso Pacientes";
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.Location = new System.Drawing.Point(11, 6);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(39, 36);
+            this.btnRegresar.TabIndex = 110;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // Titulo
+            // 
+            this.Titulo.AutoSize = true;
+            this.Titulo.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.Titulo.Location = new System.Drawing.Point(192, 0);
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Size = new System.Drawing.Size(289, 38);
+            this.Titulo.TabIndex = 0;
+            this.Titulo.Text = "Ingreso Pacientes";
             // 
             // btn_cerrar
             // 
@@ -199,15 +218,9 @@ namespace UI_CLINICA.Ventanas.Principal
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
-            // btnRegresar
+            // erp_Principal
             // 
-            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
-            this.btnRegresar.Location = new System.Drawing.Point(11, 6);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(39, 36);
-            this.btnRegresar.TabIndex = 110;
-            this.btnRegresar.TabStop = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.erp_Principal.ContainerControl = this;
             // 
             // frm_loginPaciente
             // 
@@ -234,11 +247,12 @@ namespace UI_CLINICA.Ventanas.Principal
             this.Load += new System.EventHandler(this.frm_loginPaciente_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Principal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,6 +272,7 @@ namespace UI_CLINICA.Ventanas.Principal
         private System.Windows.Forms.PictureBox btn_cerrar;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.PictureBox btnRegresar;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label Titulo;
+        private System.Windows.Forms.ErrorProvider erp_Principal;
     }
 }

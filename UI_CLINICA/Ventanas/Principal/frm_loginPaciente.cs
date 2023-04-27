@@ -32,7 +32,7 @@ namespace UI_CLINICA.Ventanas.Principal
 
         private void frm_loginPaciente_Load(object sender, EventArgs e)
         {
-
+            Titulo.Focus();
         }
 
         private void lblCrearPaciente_Click(object sender, EventArgs e)
@@ -167,6 +167,42 @@ namespace UI_CLINICA.Ventanas.Principal
         {
             Pacientes.frm_actualizarcontrasena Obj_RecuperarContrasena = new Pacientes.frm_actualizarcontrasena();
             Obj_RecuperarContrasena.ShowDialog();
+        }
+
+        private void txtLoginIdentificacion_Click(object sender, EventArgs e)
+        {
+            txtLoginIdentificacion.Text = string.Empty;
+        }
+
+        private void txtLoginContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void txtLoginContraseña_Click(object sender, EventArgs e)
+        {
+            txtLoginContraseña.Text = string.Empty;
+        }
+
+        private void txtLoginIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txtLoginIdentificacion);
+        }
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsNumber(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45)   || (e.KeyChar == 95))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+
+
         }
     }
 }

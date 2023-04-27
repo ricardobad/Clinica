@@ -54,7 +54,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(955, 35);
+            this.pnlTitulo.Size = new System.Drawing.Size(955, 42);
             this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown_1);
             // 
@@ -84,9 +84,9 @@ namespace UI_CLINICA.Ventanas.Principal
             // pnlContenedor
             // 
             this.pnlContenedor.BackColor = System.Drawing.Color.White;
-            this.pnlContenedor.Location = new System.Drawing.Point(199, 37);
+            this.pnlContenedor.Location = new System.Drawing.Point(199, 34);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(757, 685);
+            this.pnlContenedor.Size = new System.Drawing.Size(757, 688);
             this.pnlContenedor.TabIndex = 6;
             // 
             // panel1
