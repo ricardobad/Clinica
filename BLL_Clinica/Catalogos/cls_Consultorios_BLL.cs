@@ -27,7 +27,7 @@ namespace BLL_Clinica.Catalogos
                 if (Obj_Consultorios_DAL.iNumero == 0)
                 {
 
-                    Obj_BD_DAL.sNomSp = "dbo.SP_listar_consultorio";
+                    Obj_BD_DAL.sNomSp = "dbo.SP_LISTAR_CONSULTORIO";
                 }
                 else
                 {

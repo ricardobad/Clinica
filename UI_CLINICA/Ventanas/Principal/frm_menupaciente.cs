@@ -12,7 +12,6 @@ using BLL_Clinica.BD;
 using DAL;
 using BLL_Clinica.Catalogos;
 using DAL_Clinica.Catalogos;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 namespace UI_CLINICA.Ventanas.Principal

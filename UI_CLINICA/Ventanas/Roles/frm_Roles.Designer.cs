@@ -172,7 +172,7 @@ namespace UI_CLINICA.Ventanas.Roles
             this.dgvRoles.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvRoles.RowHeadersWidth = 51;
             this.dgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRoles.Size = new System.Drawing.Size(906, 235);
+            this.dgvRoles.Size = new System.Drawing.Size(1235, 235);
             this.dgvRoles.TabIndex = 250;
             // 
             // btn_Limpiar
@@ -294,12 +294,13 @@ namespace UI_CLINICA.Ventanas.Roles
             // 
             // pnlTitulo
             // 
+            this.pnlTitulo.AutoSize = true;
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.pnlTitulo.Controls.Add(this.label15);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1037, 44);
+            this.pnlTitulo.Size = new System.Drawing.Size(1308, 47);
             this.pnlTitulo.TabIndex = 256;
             // 
             // label15
@@ -342,7 +343,7 @@ namespace UI_CLINICA.Ventanas.Roles
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1037, 620);
+            this.ClientSize = new System.Drawing.Size(1308, 620);
             this.Controls.Add(this.cbox_Escritura);
             this.Controls.Add(this.cbox_Lectura);
             this.Controls.Add(this.pnlTitulo);
