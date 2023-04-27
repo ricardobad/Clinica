@@ -12,7 +12,7 @@ namespace DAL
 
         private int _ID_Reporte, _ID_Especialidad, _ID_Paciente, _ID_Cita;
         private DateTime _FechaInicial, _FechaFinal;
-        private string _sMsjError;
+        private string _sMsjError, _sRespuesta, _sRespuesta_I;
         private DataTable _dtDatos, _dtParametros;
 
         public int ID_Cita { get => _ID_Cita; set => _ID_Cita = value; }
@@ -24,6 +24,7 @@ namespace DAL
        public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public string sRespuesta { get => _sRespuesta; set => _sRespuesta = value; }
+        public string sRespuesta_I { get => _sRespuesta_I; set => _sRespuesta_I = value; }
     }
 }

@@ -240,8 +240,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             if (Obj_Doctores_DAL.sMsjError == string.Empty)
             {
-
+                //info de la columna deseada abajo
                 cmbDoctores.DisplayMember = "Carnet";
+                //nombre de la columna primary Key que se quiere la info
                 cmbDoctores.ValueMember = "ID_Doctor";
                 cmbDoctores.DataSource = Obj_Doctores_DAL.dsDoctores.Tables[0];
             }

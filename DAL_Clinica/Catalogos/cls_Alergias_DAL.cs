@@ -11,7 +11,7 @@ namespace DAL
     {
 
         private int _ID_Alergia, _ID_Doctor, _iIdPaciente;
-        private string _sMsjError, _Descripcion;
+        private string _sMsjError, _Descripcion, _sAlergiasTotales;
         private DataTable _dtDatos, _dtParametros;
         private DataSet _dsAlergias;
         private bool _bEstado;
@@ -27,5 +27,6 @@ namespace DAL
         public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
         public bool bEstado { get => _bEstado; set => _bEstado = value; }
         public int iIdPaciente { get => _iIdPaciente; set => _iIdPaciente = value; }
+        public string sAlergiasTotales { get => _sAlergiasTotales; set => _sAlergiasTotales = value; }
     }
 }

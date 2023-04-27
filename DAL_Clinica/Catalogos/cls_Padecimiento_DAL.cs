@@ -11,7 +11,7 @@ namespace DAL
     {
 
         private int _ID_Padecimiento, _ID_Doctor, _iIdPaciente;
-        private string _sMsjError, _sDescripcion;
+        private string _sMsjError, _sDescripcion, _sPadecimientosTotales;
         private DataSet _dsPadecimientos;
         private bool _booEstado;
         private char _cIndAxn;   //Nuevo o Modificado
@@ -26,5 +26,6 @@ namespace DAL
         public char cIndAxn { get => _cIndAxn; set => _cIndAxn = value; }
         public bool booEstado { get => _booEstado; set => _booEstado = value; }
         public int iIdPaciente { get => _iIdPaciente; set => _iIdPaciente = value; }
+        public string sPadecimientosTotales { get => _sPadecimientosTotales; set => _sPadecimientosTotales = value; }
     }
 }

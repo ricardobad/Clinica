@@ -12,7 +12,6 @@ using BLL_Clinica.BD;
 using DAL;
 using BLL_Clinica.Catalogos;
 using DAL_Clinica.Catalogos;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 namespace UI_CLINICA.Ventanas.Principal
@@ -21,7 +20,7 @@ namespace UI_CLINICA.Ventanas.Principal
     {
 
 
-        cls_Personas_DAL Obj_Personas_DAL = new cls_Personas_DAL();
+        public cls_Personas_DAL Obj_Personas_DAL;
 
 
         public frm_menupaciente()
@@ -61,8 +60,11 @@ namespace UI_CLINICA.Ventanas.Principal
 
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
+
+
             this.pnlContenedor.Controls.Add(fh);
             this.pnlContenedor.Tag = fh;
+
 
 
 
@@ -71,24 +73,26 @@ namespace UI_CLINICA.Ventanas.Principal
            
 
         }
+
         private void btnCitas_Click(object sender, EventArgs e)
         {
+            
             AbrirFormHijo(new Citas.frm_crearcitas());
         }
 
         private void btnExpediente_Click(object sender, EventArgs e)
         {
+            Expedientes.frm_expediente Obj_Expediente = new Expedientes.frm_expediente();
 
-
-            
-
-            
-
-            AbrirFormHijo(new Expedientes.frm_expediente());
+            Obj_Expediente.Obj_Personas_DAL = Obj_Personas_DAL;
+            AbrirFormHijo(Obj_Expediente);
 
 
 
         }
+
+
+        
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
@@ -104,6 +108,10 @@ namespace UI_CLINICA.Ventanas.Principal
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_menupaciente_Load(object sender, EventArgs e)
+        {
         }
     }
 }
