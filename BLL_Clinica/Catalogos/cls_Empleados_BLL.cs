@@ -63,6 +63,7 @@ namespace BLL_Clinica.Catalogos
             if (Obj_EMPLEADOS_DAL.sID_Persona == string.Empty)
             {
                 Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_empleados"].ToString();
+
             }
             else
             {
@@ -88,57 +89,63 @@ namespace BLL_Clinica.Catalogos
             }
         }
 
-        public void insertar_Empleados(ref cls_Empleados_DAL Obj_EMPLEADOS_DAL)
+
+        public void Insertar_Empleados(ref cls_Empleados_DAL Obj_EMPLEADOS_DAL)
         {
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
 
-            //    try
+                Obj_BD_DAL.sNobreSP = "dbo.SP_insertar_empleados";
+
+                Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                Obj_BD_DAL.dtParametros.Rows.Add("@Nombre", "7", Obj_EMPLEADOS_DAL.sNombre);
+                Obj_BD_DAL.dtParametros.Rows.Add("@primer_apellido", "7", Obj_EMPLEADOS_DAL.sPrimer_apellido);
+                Obj_BD_DAL.dtParametros.Rows.Add("@segundo_apellido", "7", Obj_EMPLEADOS_DAL.sSegundo_apellido);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Tipo_ID", "9", Obj_EMPLEADOS_DAL.bTipo_ID);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Sexo", "7", Obj_EMPLEADOS_DAL.bSexo);
+                Obj_BD_DAL.dtParametros.Rows.Add("@fecha_nacimiento", "8", Convert.ToDateTime(Obj_EMPLEADOS_DAL.sFecha_nacimiento));
+                Obj_BD_DAL.dtParametros.Rows.Add("@Estado", "9", Obj_EMPLEADOS_DAL.bEstado);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Identificacion", "7", Obj_EMPLEADOS_DAL.sIdentificacion);
+               
+                Obj_BD_DAL.dtParametros.Rows.Add("@segundo_apellido", "7", Obj_EMPLEADOS_DAL.sSegundo_apellido);
+                Obj_BD_DAL.dtParametros.Rows.Add("@segundo_apellido", "7", Obj_EMPLEADOS_DAL.sSegundo_apellido);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Telefono_I", "7", Obj_EMPLEADOS_DAL.sTelefonoI);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Telefono_II", "7", Obj_EMPLEADOS_DAL.sTelefonoII);
+
+                Obj_BD_DAL.sIndAxn = "NORMAL";
+
+                Obj_BD_BLL.ExecCommand(ref Obj_BD_DAL);
+
+            //    Obj_Adicciones_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+            //    if (Obj_Adicciones_DAL.sMsjError == string.Empty)
             //    {
-            //        cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
-            //        cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
-
-            //        Obj_BD_DAL.sNobreSP = "dbo.Sp_insertar_empleados";
-
-            //        Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
-
-            //        // Obj_BD_DAL.dtParametros.Rows.Add("@ID_Alergia", "1", Obj_Alergias_DAL.ID_Alergia); NO SE PONE PORQUE ES IDENTITY
-            //        Obj_BD_DAL.dtParametros.Rows.Add("@ID_Doctor", "1", Obj_Alergias_DAL.ID_Doctor);
-            //        Obj_BD_DAL.dtParametros.Rows.Add("@Descripcion", "7", Obj_Alergias_DAL.Descripcion);
-            //        //Obj_BD_DAL.dtParametros.Rows.Add("@Estado", "9", Obj_Alergias_DAL.bEstado);
-
-
-
-            //        Obj_BD_DAL.sIndAxn = "IDENTITY";
-
-            //        Obj_BD_BLL.ExecCommand(ref Obj_BD_DAL);
-
-            //        Obj_Alergias_DAL.sMsjError = Obj_BD_DAL.sMsjError;
-            //        if (Obj_Alergias_DAL.sMsjError == string.Empty)
-            //        {
-            //            Obj_Alergias_DAL.ID_Alergia = Convert.ToInt32(Obj_BD_DAL.sValorScalar);
-            //            Obj_Alergias_DAL.cIndAxn = 'M';
-            //        }
-            //        else
-            //        {
-            //            Obj_Alergias_DAL.cIndAxn = 'N';
-            //        }
-
-
+            //        Obj_Adicciones_DAL.ID_Adiccion = Convert.ToInt32(Obj_BD_DAL.sValorScalar);
+            //        Obj_Adicciones_DAL.cIndAxn = 'M';
             //    }
-            //    catch (Exception ex)
+            //    else
             //    {
-            //        Obj_Alergias_DAL.cIndAxn = 'N';
-            //        Obj_Alergias_DAL.sMsjError = ex.Message.ToString().Trim();
-
+            //        Obj_Adicciones_DAL.cIndAxn = 'N';
             //    }
+
 
             //}
-            #endregion
+            //catch (Exception ex)
+            //{
+            //    Obj_Adicciones_DAL.cIndAxn = 'N';
+            //    Obj_Adicciones_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            //}
+
         }
-
-
-
-
-
     }
+
+
+
+
+
+
 }
 

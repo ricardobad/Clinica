@@ -126,7 +126,7 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_DAL.sNobreSP = "dbo.Sp_insertar_Padecimiento";
 
                 Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
-
+                // la linea de abajo no se pone por que es el valor Identity de la tabla
                 // Obj_BD_DAL.dtParametros.Rows.Add("@ID_Padecimiento", "1", Obj_Padecimientos_DAL.ID_Padecimiento); NO SE PONE PORQUE ES IDENTITY
                 Obj_BD_DAL.dtParametros.Rows.Add("@ID_Doctor", "1", Obj_Padecimientos_DAL.ID_Doctor);
                 Obj_BD_DAL.dtParametros.Rows.Add("@Descripcion", "7", Obj_Padecimientos_DAL.sDescripcion);
