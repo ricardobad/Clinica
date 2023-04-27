@@ -92,7 +92,7 @@ namespace UI_CLINICA.Ventanas.Citas
 
            
 
-            //dtp_Fecha.MinDate.ToString("hh:mm");
+
 
             cmb_Doctor.DataSource = null;
 
@@ -187,6 +187,7 @@ namespace UI_CLINICA.Ventanas.Citas
 
         
         }
-    }
-    
 }
+    
+
+

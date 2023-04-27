@@ -60,6 +60,7 @@
     <Compile Include="Catalogos\cls_Reportes_BLL.cs" />
     <Compile Include="Catalogos\cls_Roles_BLL.cs" />
     <Compile Include="Catalogos\cls_Telefonos_BLL.cs" />
+    <Compile Include="Catalogos\cls_Usuarios_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

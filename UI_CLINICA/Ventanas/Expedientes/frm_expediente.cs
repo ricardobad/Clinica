@@ -22,6 +22,9 @@ namespace UI_CLINICA.Ventanas.Expedientes
         public cls_Pacientes_DAL Obj_Paciente_DAL = new cls_Pacientes_DAL();
         public cls_Pacientes_BLL Obj_Paciente_BLL = new cls_Pacientes_BLL();
         public cls_Provincias_DAL Obj_Provincias_DAL = new cls_Provincias_DAL();
+        cls_Citas_DAL Obj_Citas_DAL = new cls_Citas_DAL();
+        cls_Citas_BLL Obj_Citas_BLL = new cls_Citas_BLL();
+
 
         #endregion
 
@@ -55,6 +58,8 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
         private void frm_expediente_Load(object sender, EventArgs e)
         {
+
+
             if (Obj_Personas_DAL == null)
             {
 
@@ -429,10 +434,72 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
         #region METODOS
 
+        private void CargarDatosCitas()
+        {
+            
 
+
+            Obj_Citas_DAL.ID_Paciente = Convert.ToInt32(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["ID_Paciente"]);
+
+            Obj_Citas_BLL.Filtrar_Citas_Expediente(ref Obj_Citas_DAL);
+
+            if (Obj_Citas_DAL.sMsjError == string.Empty)
+            {
+                DataTable table = new DataTable();
+                table.Columns.Add("ID_Cita");
+                table.Columns.Add("Especialidad");
+                table.Columns.Add("Fecha");
+                table.Columns.Add("Consultorio");
+                table.Columns.Add("Estado");
+
+                foreach (DataRow row in Obj_Citas_DAL.DsDatos.Tables[0].Rows)
+                {
+                    DataRow newRow = table.NewRow();
+                    newRow["ID_Cita"] = row["ID_Cita"];
+                    newRow["Especialidad"] = row["NombreEspecialidad"];
+                    newRow["Fecha"] = row["FechaHoraInicio"];
+                    newRow["Consultorio"] = row["ID_Consultorio"];
+                    switch (row["EstadoCita"])
+                    {
+                        case "0":
+
+                            newRow["Estado"] = "Pendiente";
+                            break;
+                        case "1":
+
+                            newRow["Estado"] = "Confirmada";
+                            break;
+                        case "2":
+                            newRow["Estado"] = "Terminada";
+                            break;
+
+                        default:
+                            newRow["Estado"] = "Cancelada";
+                            break;
+                    }
+                    table.Rows.Add(newRow);
+                }
+
+
+
+
+                dgv_Datos_Citas.DataSource = table;
+
+
+            }
+            else
+            {
+                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de las citas del paciente.Error = [ " +
+                                Obj_Paciente_DAL.sMsjError + " ].",
+                                "ERROR",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+
+        }
         private void CargarDatos()
         {
-
+            CargarDatosCitas();
             DataRow Fila = Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0];
             //Obj_Padecimientos_DAL.ID_Doctor = Convert.ToInt32(primeraFila["ID_Doctor"]);
 
@@ -451,7 +518,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
 
             txt_Identificacion.Text = Obj_Personas_DAL.Identificacion.ToString().Trim();
-            txt_FechaNacimiento.Text = Fila["fecha_nacimiento"].ToString().Trim();
+            txt_FechaNacimiento.Text = Convert.ToDateTime(Fila["fecha_nacimiento"]).Day.ToString() +" / " +Convert.ToDateTime(Fila["fecha_nacimiento"]).Month.ToString() + " / "+ Convert.ToDateTime(Fila["fecha_nacimiento"]).Year.ToString();
 
             cmb_Provincias.SelectedIndex = Convert.ToInt32(Fila["ID_Provincia"])-1;
 
@@ -648,16 +715,53 @@ namespace UI_CLINICA.Ventanas.Expedientes
                                 MessageBoxIcon.Error);
             }
         }
+
+
+
+
+
+
+
+
         #endregion
 
+        private void btn_CargarCita_Click(object sender, EventArgs e)
+        {
+            CargarCita();
+        }
+
+        private void CargarCita()
+        {
+
+            if (dgv_Datos_Citas.Rows.Count > 0)
+            {
+
+                int numFila = dgv_Datos_Citas.CurrentRow.Index;
+                DateTime Fecha = Convert.ToDateTime(Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["FechaHoraInicio"]);
+                txt_IDCita.Text =  Convert.ToString(Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["ID_Cita"]);
+                lbl_infocita.Text = "El día " + Fecha.Day +" de "+ Fecha.ToString("MMMM") + " del año "+Fecha.Year+ " el paciente " +Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["Nombre"]+" "+Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["primer_apellido"]+" "+ Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["segundo_apellido"]+
+                                    "\ncon la identificación " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["Identificacion"]+" se presentó en el consultorio número "+ Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["ID_Consultorio"]+ "\npara su cita con el doctor " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["NombreDoctor"] +" " +Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["PrimerApellido_Doctor"]+ " "+Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["SegundoApellido_Doctor"]+
+                                    ", especialista en " + Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["NombreEspecialidad"]+ "\n\nSe anota la siguiente información acerca de la cita:";
+                txt_InfoCita.Text= Obj_Citas_DAL.DsDatos.Tables[0].Rows[numFila]["notasAdd"].ToString();
+                MessageBox.Show("Información de la cita cargada con éxito",
+                                 "Información o Alerta",
+                                 MessageBoxButtons.OK,
+                                  MessageBoxIcon.Information);
+                tab_Expediente.SelectTab(1);
 
 
 
+            }
+            else
+            {
+                MessageBox.Show("No tiene padecimientos para Editar",
+                                 "Información o Alerta",
+                                 MessageBoxButtons.OK,
+                                  MessageBoxIcon.Information);
 
+            }
+        }
 
-
-
-       
     }
 
 

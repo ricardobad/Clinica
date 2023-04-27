@@ -7,12 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
+using DAL_Clinica.BD;
+using BLL_Clinica.BD;
+using DAL;
+using BLL_Clinica.Catalogos;
+using DAL_Clinica.Catalogos;
 
 namespace UI_CLINICA.Ventanas.Principal
 {
     public partial class frm_loginPaciente : Form
     {
+
+        cls_Personas_DAL Obj_Personas_DAL = new cls_Personas_DAL();
+
         public frm_loginPaciente()
         {
             InitializeComponent();
@@ -43,9 +50,108 @@ namespace UI_CLINICA.Ventanas.Principal
 
         private void bntLoginIngresar_Click(object sender, EventArgs e)
         {
+
+
+            Obj_Personas_DAL.Identificacion = txtLoginIdentificacion.Text;
+
+            CargarDatos();
+
+            
+        }
+
+        private void ExistePersona()
+        {
+            cls_Usuario_DAL Obj_Usuarios_DAL = new cls_Usuario_DAL();
+            cls_Usuarios_BLL Obj_Usuarios_BLL = new cls_Usuarios_BLL();
+
+            Obj_Usuarios_DAL.sIdentificacion = txtLoginIdentificacion.Text;
+            Obj_Usuarios_DAL.Contraseña = txtLoginContraseña.Text;
+            Obj_Usuarios_BLL.Inicio_Sesion(ref Obj_Usuarios_DAL);
+
+            if (Obj_Usuarios_DAL.dsUsuarios.Tables["Inicio Sesion"].Rows[0]["Inicio_Exitoso"].ToString().Trim() == "False")
+            {
+
+                MessageBox.Show("La contraseña es incorrecta, intente de nuevo",
+                                "Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Inicio de sesión éxitoso",
+                                "Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+            
             frm_menupaciente Obj_Men_Empleado = new frm_menupaciente();
+            Obj_Men_Empleado.Obj_Personas_DAL = Obj_Personas_DAL;
             Obj_Men_Empleado.ShowDialog();
         }
+        private void CargarDatos()
+        {
+
+
+            cls_Expedientes_BLL Obj_Expedientes_BLL = new cls_Expedientes_BLL();
+
+            Obj_Expedientes_BLL.Listar_Filtrar_InfoPersona(ref Obj_Personas_DAL);
+
+            if (Obj_Personas_DAL.sMsjError == "No hay ninguna fila en la posición 0.")
+            {
+                MessageBox.Show("La identificación del paciente no existe en el sistema",
+                                "Advertencia",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            else if(Obj_Personas_DAL.sMsjError != string.Empty)
+            {
+                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos del paciente Error = [ " +
+                                Obj_Personas_DAL.sMsjError + " ].",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+            else
+            {
+                switch (Convert.ToInt32(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["Tipo_Persona"]))
+                {
+
+                    case 0:
+
+                        break;
+                    case 1:
+                        ExistePersona();
+
+
+                        break;
+                    case 2:
+
+
+                        break;
+                    case 3:
+
+
+                        break;
+                    case 4:
+                        ExistePersona();
+
+                        break;
+                    case 5:
+                        ExistePersona();
+
+                        break;
+                    default:
+
+                        break;
+                }
+            }
+
+            
+
+            
+
+        }
+
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {

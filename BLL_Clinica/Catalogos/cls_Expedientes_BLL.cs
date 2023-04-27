@@ -26,7 +26,7 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_DAL.sNombreDataTable = "Personas";
 
 
-                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_EMPLEADOS";
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_PACIENTE_EXPEDIENTE";
 
                     Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
 
