@@ -44,13 +44,11 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbMedico = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgv_test = new System.Windows.Forms.DataGridView();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_test)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
@@ -129,6 +127,8 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbReporte.Name = "cmbReporte";
             this.cmbReporte.Size = new System.Drawing.Size(242, 35);
             this.cmbReporte.TabIndex = 29;
+            this.cmbReporte.Text = "Seleccione un reporte";
+            this.cmbReporte.SelectedIndexChanged += new System.EventHandler(this.cmbReporte_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -197,12 +197,13 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.button3.Location = new System.Drawing.Point(442, 176);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 49);
+            this.button3.Size = new System.Drawing.Size(121, 49);
             this.button3.TabIndex = 219;
             this.button3.Text = "Mostrar";
             this.button3.UseVisualStyleBackColor = true;
@@ -227,20 +228,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.groupBox1.Location = new System.Drawing.Point(45, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(625, 500);
+            this.groupBox1.Size = new System.Drawing.Size(668, 500);
             this.groupBox1.TabIndex = 220;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Reporte";
-            // 
-            // dgv_test
-            // 
-            this.dgv_test.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_test.Location = new System.Drawing.Point(746, 209);
-            this.dgv_test.Name = "dgv_test";
-            this.dgv_test.RowHeadersWidth = 62;
-            this.dgv_test.RowTemplate.Height = 28;
-            this.dgv_test.Size = new System.Drawing.Size(240, 150);
-            this.dgv_test.TabIndex = 220;
             // 
             // pnlTitulo
             // 
@@ -251,7 +242,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1096, 44);
+            this.pnlTitulo.Size = new System.Drawing.Size(738, 44);
             this.pnlTitulo.TabIndex = 239;
             // 
             // label7
@@ -293,8 +284,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1096, 620);
-            this.Controls.Add(this.dgv_test);
+            this.ClientSize = new System.Drawing.Size(738, 620);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,7 +295,6 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.Load += new System.EventHandler(this.frmReportes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_test)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -334,6 +323,5 @@ namespace UI_CLINICA.Ventanas.Reportes
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btn_cerrar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dgv_test;
     }
 }

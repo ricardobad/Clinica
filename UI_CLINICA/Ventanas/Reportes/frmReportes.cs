@@ -33,7 +33,11 @@ namespace UI_CLINICA.Ventanas.Reportes
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
-            CargarDatos();
+            // carga fechas por si usuario no selecciona nada
+            FechaInicio = cld_inicio.SelectionStart;
+            FechaFinal = cld_Final.SelectionStart;
+
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -61,10 +65,10 @@ namespace UI_CLINICA.Ventanas.Reportes
 
             if (reporte_DAL.sMsjError == string.Empty)
             {
-                dgv_test.DataSource = null;
-                dgv_test.DataSource = reporte_DAL.DtDatos;
 
-                MessageBox.Show("carga exitosa ");
+                
+               string respuesta =Convert.ToString( reporte_DAL.DtDatos.Rows[0][0]);
+                MessageBox.Show("carga exitosa , las cantidad de citas en esa fecha es de " + respuesta);
 
             }
             else
@@ -77,17 +81,31 @@ namespace UI_CLINICA.Ventanas.Reportes
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-
+            //fechas aplica para todo
             reporte_DAL.FechaInicial = FechaInicio;
             reporte_DAL.FechaFinal = FechaFinal;
-            reporte_BLL.CitasTotales(ref reporte_DAL);
-            CargarDatos();
+
+            //para citas totales
+            if (cmbReporte.SelectedIndex == 0) {
+
+                reporte_BLL.CitasTotales(ref reporte_DAL);
+                CargarDatos();
+
+            }
+
+
+           
+           
         }
 
         private void cld_Final_DateChanged(object sender, DateRangeEventArgs e)
         {
             FechaFinal = cld_Final.SelectionStart;
+        }
+
+        private void cmbReporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button3.Enabled = true;
         }
 
         private void cld_inicio_DateChanged(object sender, DateRangeEventArgs e)

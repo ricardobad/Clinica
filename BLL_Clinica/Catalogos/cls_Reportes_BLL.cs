@@ -21,8 +21,8 @@ namespace BLL_Clinica.Catalogos
         {
             Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["reporte_citas_totales"].ToString();
             Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
-            Obj_BD_DAL.obj_dtParametros.Rows.Add("@fecha_inicial", "12", Obj_Reportes_DAL.FechaInicial);
-            Obj_BD_DAL.obj_dtParametros.Rows.Add("@fecha_final", "12", Obj_Reportes_DAL.FechaFinal);
+            Obj_BD_DAL.obj_dtParametros.Rows.Add("@fecha_inicial", "8", Obj_Reportes_DAL.FechaInicial);
+            Obj_BD_DAL.obj_dtParametros.Rows.Add("@fecha_final", "8", Obj_Reportes_DAL.FechaFinal);
 
             Obj_BD_DAL.sNomTabla = "T_CITAS";
 

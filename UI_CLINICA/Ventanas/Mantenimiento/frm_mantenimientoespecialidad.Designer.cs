@@ -151,13 +151,13 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             // textBox3
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.textBox3.Location = new System.Drawing.Point(185, 217);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 37);
-            this.textBox3.TabIndex = 105;
+            //this.textBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            //this.textBox3.Location = new System.Drawing.Point(185, 217);
+            //this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            //this.textBox3.Name = "textBox3";
+            //this.textBox3.Size = new System.Drawing.Size(160, 37);
+            //this.textBox3.TabIndex = 105;
             // 
             // label4
             // 
