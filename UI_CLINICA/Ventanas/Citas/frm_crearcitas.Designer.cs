@@ -67,6 +67,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label15.Location = new System.Drawing.Point(261, 6);
             this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(237, 47);
             this.label15.Size = new System.Drawing.Size(190, 38);
             this.label15.TabIndex = 231;
             this.label15.Text = "Crear Citas";
@@ -94,6 +95,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.txt_Identificacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Identificacion.MaxLength = 14;
             this.txt_Identificacion.Name = "txt_Identificacion";
+            this.txt_Identificacion.Size = new System.Drawing.Size(176, 37);
             this.txt_Identificacion.Size = new System.Drawing.Size(176, 31);
             this.txt_Identificacion.TabIndex = 180;
             this.txt_Identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
@@ -107,6 +109,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label31.Location = new System.Drawing.Point(65, 414);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(62, 23);
             this.label31.Size = new System.Drawing.Size(50, 19);
             this.label31.TabIndex = 160;
             this.label31.Text = "Hora:";
@@ -119,6 +122,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label8.Location = new System.Drawing.Point(65, 104);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(151, 23);
             this.label8.Size = new System.Drawing.Size(119, 19);
             this.label8.TabIndex = 138;
             this.label8.Text = "Identificación:";
@@ -131,6 +135,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label30.Location = new System.Drawing.Point(65, 332);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(48, 23);
             this.label30.Size = new System.Drawing.Size(39, 19);
             this.label30.TabIndex = 161;
             this.label30.Text = "Día:";
@@ -143,6 +148,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label17.Location = new System.Drawing.Point(65, 256);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 23);
             this.label17.Size = new System.Drawing.Size(63, 19);
             this.label17.TabIndex = 181;
             this.label17.Text = "Doctor:";
@@ -154,6 +160,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.cmb_Doctor.FormattingEnabled = true;
             this.cmb_Doctor.Location = new System.Drawing.Point(56, 288);
             this.cmb_Doctor.Name = "cmb_Doctor";
+            this.cmb_Doctor.Size = new System.Drawing.Size(176, 31);
             this.cmb_Doctor.Size = new System.Drawing.Size(176, 27);
             this.cmb_Doctor.TabIndex = 256;
             // 
@@ -165,6 +172,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label3.Location = new System.Drawing.Point(65, 176);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 23);
             this.label3.Size = new System.Drawing.Size(114, 19);
             this.label3.TabIndex = 257;
             this.label3.Text = "Especialidad:";
@@ -176,6 +184,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.cmb_Especialidad.FormattingEnabled = true;
             this.cmb_Especialidad.Location = new System.Drawing.Point(56, 211);
             this.cmb_Especialidad.Name = "cmb_Especialidad";
+            this.cmb_Especialidad.Size = new System.Drawing.Size(176, 31);
             this.cmb_Especialidad.Size = new System.Drawing.Size(176, 27);
             this.cmb_Especialidad.TabIndex = 258;
             // 
@@ -185,6 +194,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.dtp_Hora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtp_Hora.Location = new System.Drawing.Point(56, 445);
             this.dtp_Hora.Name = "dtp_Hora";
+            this.dtp_Hora.Size = new System.Drawing.Size(304, 32);
             this.dtp_Hora.Size = new System.Drawing.Size(304, 27);
             this.dtp_Hora.TabIndex = 259;
             // 
@@ -193,6 +203,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.dtp_Fecha.Checked = false;
             this.dtp_Fecha.Location = new System.Drawing.Point(56, 363);
             this.dtp_Fecha.Name = "dtp_Fecha";
+            this.dtp_Fecha.Size = new System.Drawing.Size(387, 32);
             this.dtp_Fecha.Size = new System.Drawing.Size(304, 27);
             this.dtp_Fecha.TabIndex = 260;
             // 
@@ -215,6 +226,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label1.Location = new System.Drawing.Point(52, 486);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 23);
             this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 262;
             this.label1.Text = "Consultorio:";
@@ -226,11 +238,13 @@ namespace UI_CLINICA.Ventanas.Citas
             this.cmb_Consultorio.FormattingEnabled = true;
             this.cmb_Consultorio.Location = new System.Drawing.Point(56, 508);
             this.cmb_Consultorio.Name = "cmb_Consultorio";
+            this.cmb_Consultorio.Size = new System.Drawing.Size(176, 31);
             this.cmb_Consultorio.Size = new System.Drawing.Size(176, 27);
             this.cmb_Consultorio.TabIndex = 263;
             // 
             // frm_crearcitas
             // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -256,6 +270,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.Name = "frm_crearcitas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_crearcitas";
+            this.Load += new System.EventHandler(this.frm_crearcitas_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

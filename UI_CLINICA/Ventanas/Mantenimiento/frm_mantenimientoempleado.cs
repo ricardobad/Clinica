@@ -24,7 +24,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         cls_Empleados_DAL Obj_Empleados_DAL = new cls_Empleados_DAL();
         cls_BD_BLL BD_BLL = new cls_BD_BLL();
         cls_BD_DAL BD_DAL = new cls_BD_DAL();
-
+        public cls_Personas_DAL Obj_Personas_DAL;
+        public cls_Provincias_DAL Obj_Provincias_DAL = new cls_Provincias_DAL();
         #endregion
 
         public frm_mantenimientoempleado()
@@ -36,6 +37,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
             txt_busqueda.Text = "";
             CargarDatos_II();
+
+
+
+            cmb_Canton.SelectedIndex = 0;
+            cmb_Provincia.SelectedIndex = 1;
+            CargarComboCanton();
+            CargarComboDistrito();
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -48,14 +57,20 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void CargarDatos_II()
         {
-            
+           
+
+
             Obj_Empleados_DAL.sID_Persona = txt_busqueda.Text.Trim().ToString();
             Obj_Empleados_BLL.listar_filtrar_Empleados(ref Obj_Empleados_DAL);
-
+            
+               
             if (Obj_Empleados_DAL.sMsjError == string.Empty)
             {
                 dgv_Empleados.DataSource = null;
                 dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
+                
+               
+          
             }
             else
             {
@@ -65,31 +80,74 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         }
 
-        //private void CargarDatos()
-        //{
+        private void CargarComboDistrito()
+        {
+            cls_Cantones_DAL Obj_Cantones_DAL = new cls_Cantones_DAL();
+            cls_Direcciones_BLL Obj_Direcciones_BLL = new cls_Direcciones_BLL();
+            cmb_Distrito.DataSource = null;
 
-
-        //    Obj_Empleados_BLL.listar_Empleados(ref Obj_Empleados_DAL);
-        //    if (Obj_Empleados_DAL.sMsjError == string.Empty)
-        //    {
-        //        dgv_Empleados.DataSource = null;
-
-        //        dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
-
-
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Se ha presentado un error al cargar los datos \n\n" + Obj_Empleados_DAL.sMsjError,
-        //            "Error en carga de datos",
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Error);
-
-        //    }
+            Obj_Cantones_DAL.ID_Canton = Obj_Provincias_DAL.dsProvincias.Tables["DIRECCIONES"].Rows[cmb_Canton.SelectedIndex]["ID_Canton"].ToString().Trim();
 
 
 
-        //}
+            Obj_Provincias_DAL.iD_Provincia = (cmb_Provincia.SelectedIndex + 1).ToString().Trim(); //CMB EMPIEZA EN 0 ENTONCES, EL ID PROVINCIA 0 NO EXISTE ENTONCES SE LE SUMA 1
+
+            Obj_Direcciones_BLL.Listar_Direcciones(ref Obj_Provincias_DAL, ref Obj_Cantones_DAL);
+
+            if (Obj_Provincias_DAL.sMsjError == string.Empty)
+            {
+
+                cmb_Distrito.DisplayMember = "DISTRITO";
+                cmb_Distrito.ValueMember = "ID_Provincia";
+                cmb_Distrito.DataSource = Obj_Cantones_DAL.dsCantones.Tables[0];
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de la dirección .Error = [ " +
+                                Obj_Provincias_DAL.sMsjError + " ].",
+                                "ERROR",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarComboCanton()
+        {
+            Obj_Provincias_DAL = new cls_Provincias_DAL();
+
+            cls_Direcciones_BLL Obj_Direcciones_BLL = new cls_Direcciones_BLL();
+            cls_Cantones_DAL Obj_Cantones_DAL = new cls_Cantones_DAL();
+            cmb_Provincia.DataSource = null;
+            cmb_Canton.DataSource = null;
+            cmb_Distrito.DataSource = null;
+            Obj_Cantones_DAL.ID_Canton = "";
+
+            Obj_Provincias_DAL.iD_Provincia = (cmb_Provincia.SelectedIndex + 1).ToString().Trim(); //CMB EMPIEZA EN 0 ENTONCES, EL ID PROVINCIA 0 NO EXISTE ENTONCES SE LE SUMA 1
+            Obj_Direcciones_BLL.Listar_Direcciones(ref Obj_Provincias_DAL, ref Obj_Cantones_DAL);
+
+            if (Obj_Provincias_DAL.sMsjError == string.Empty)
+            {
+
+                cmb_Canton.DisplayMember = "CANTONES";
+                cmb_Canton.ValueMember = "ID_Provincia";
+                cmb_Canton.DataSource = Obj_Provincias_DAL.dsProvincias.Tables[0];
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de la dirección .Error = [ " +
+                                Obj_Provincias_DAL.sMsjError + " ].",
+                                "ERROR",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
 
         #endregion
 
@@ -127,7 +185,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         #endregion
         private void btn_Cargar_Click(object sender, EventArgs e)
         {
-          
+            
+
+
+
 
             if (dgv_Empleados.Rows.Count > 0)
             {
@@ -137,35 +198,33 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+
+                    Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sID_Provincia= Convert.ToString(Convert.ToInt32(Obj_Empleados_DAL.sID_Provincia)-1);
+                    
+                    Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sID_Distrito = dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
                     Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim();//id
                     Obj_Empleados_DAL.sPrimer_apellido = dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim();
                     Obj_Empleados_DAL.sSegundo_apellido = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim();
                     Obj_Empleados_DAL.bTipo_ID = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[3].Value);
-                    Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[4].Value);
-                    Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[5].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
-                    Obj_Empleados_DAL.bEstado = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[7].Value);
-                    Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim();
-                   
-                    Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sID_Distrito= dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sTelefonoI= dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sTelefonoII = dgv_Empleados.SelectedRows[0].Cells[13].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sCorreoI = dgv_Empleados.SelectedRows[0].Cells[14].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sCorreoII = dgv_Empleados.SelectedRows[0].Cells[15].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sNombreUser = dgv_Empleados.SelectedRows[0].Cells[16].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sContrasena = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[18].Value.ToString().Trim();
-                    //if (dgv_Empleados.SelectedRows[0].Cells[18].Value.ToString().Trim() == string.Empty)
-                    //{
-                    //    Obj_Empleados_DAL.iRol_Activo = 0;
-                    //}
+                     Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[4].Value);
+                     Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[5].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
+                     Obj_Empleados_DAL.bEstado = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[7].Value);
+                    // Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
 
-                    //else {
-                    //    Obj_Empleados_DAL.iRol_Activo = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[19].Value.ToString());
-                    //}
-                    
+                    // Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
+                    // Obj_Empleados_DAL.sID_Distrito= dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sTelefonoI= dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sTelefonoII = dgv_Empleados.SelectedRows[0].Cells[13].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sCorreoI = dgv_Empleados.SelectedRows[0].Cells[14].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sCorreoII = dgv_Empleados.SelectedRows[0].Cells[15].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sNombreUser = dgv_Empleados.SelectedRows[0].Cells[16].Value.ToString().Trim();
+                    //// Obj_Empleados_DAL.sContrasena = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
+                     Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
+
 
 
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre.ToString().Trim();    //Pone el ID en el txt correspondiente
@@ -174,9 +233,24 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     txt_Identificacion.Text = Obj_Empleados_DAL.sIdentificacion.Trim();
                     dtp_FechaNacimiento.Value = DateTime.Parse(Obj_Empleados_DAL.sFecha_nacimiento);
                     txt_Otras_Guias.Text = Obj_Empleados_DAL.sOtras_Guias.Trim();
-                    cmb_Provincia.Text = Obj_Empleados_DAL.sID_Provincia.Trim();
-                    cmb_Canton.Text = Obj_Empleados_DAL.sID_Canton.Trim();
-                    cmb_Distrito.Text = Obj_Empleados_DAL.sID_Distrito.Trim();
+                    cmb_Provincia.SelectedIndex = Convert.ToInt32(Obj_Empleados_DAL.sID_Provincia);
+                    CargarComboCanton();
+
+
+                    //DESPUES DE CARGAR CANTONES EN BASE A LA PROVINCIA, VA A BUSCAR EL CANTÓN DE LA PERSONA Y LO COLOCA EN EL INDEX
+
+                    int indiceItem = cmb_Canton.FindStringExact(Obj_Empleados_DAL.sID_Canton);
+
+                    cmb_Canton.SelectedIndex = indiceItem;
+
+
+                    CargarComboDistrito();
+
+                    cmb_Distrito.SelectedIndex = Convert.ToInt32(Obj_Empleados_DAL.sID_Distrito) - 1;
+
+
+                    // cmb_Canton.Text = Obj_Empleados_DAL.sID_Canton.Trim();
+                    // cmb_Distrito.Text = Obj_Empleados_DAL.sID_Distrito.Trim();
                     txt_Telefono_I.Text = Obj_Empleados_DAL.sTelefonoI.Trim();
                     txt_Telefono_II.Text = Obj_Empleados_DAL.sTelefonoII.Trim();
                     txt_Correo_I.Text = Obj_Empleados_DAL.sCorreoI.Trim();
@@ -185,13 +259,18 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     cmb_Sexo.Text = Convert.ToString(Obj_Empleados_DAL.bSexo);
                     cmb_Estado_Empleado.Text = Convert.ToString(Obj_Empleados_DAL.bEstado);
                     txtx_Nomb_Usuario.Text = Obj_Empleados_DAL.sNombreUser.Trim();
-                    txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
+                  //  txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
                     cmb_Rol.Text = Obj_Empleados_DAL.sRol_Descripcion.Trim();
 
 
 
-                    CargarCombox();
+                   // CargarCombox();
                     tbControl1.SelectedTab = tabPage1;
+                  //  int indiceItem = cmb_Canton.FindStringExact(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["Nombre_Canton"].ToString().Trim());
+
+
+
+
                 }
             }
             else
@@ -272,6 +351,24 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             else { 
             
+            
+            }
+        }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void cmb_Provincia_DropDownClosed(object sender, EventArgs e)
+        {
+            CargarComboCanton();
+            CargarComboDistrito();
+        }
+
+        private void cmb_Canton_DropDownClosed(object sender, EventArgs e)
+        {
+            CargarComboDistrito();
             
             }
         }

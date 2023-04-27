@@ -18,10 +18,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
     {
         #region VARIABLES GLOBALES
 
-        cls_Especialidades_DAL DAL_Especialidades = new cls_Especialidades_DAL();
+        cls_Especialidades_DAL Obj_Especialidades_DAL = new cls_Especialidades_DAL();
         cls_BD_BLL BD_BLL = new cls_BD_BLL();
         cls_BD_DAL BD_DAL = new cls_BD_DAL();
-        cls_Especialidades_BLL BLL_Especialidades = new cls_Especialidades_BLL();
+        cls_Especialidades_BLL Obj_Especialidades_BLL = new cls_Especialidades_BLL();
         #endregion
         public frm_mantenimientoespecialidad()
         {
@@ -51,25 +51,28 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void CargarDatos()
         {
 
-            BLL_Especialidades.listar_especialidades(ref DAL_Especialidades );
+            dgvEspecialidades.DataSource = null;
 
-            //aqui se llama al datagrid del formulario
-         
-            if (DAL_Especialidades.sMsjError == string.Empty)
+
+
+            Obj_Especialidades_BLL.listar_especialidades(ref Obj_Especialidades_DAL);
+
+            if (Obj_Especialidades_DAL.sMsjError == string.Empty)
             {
-                dgvNumero.DataSource = null;
-
-                dgvNumero.DataSource = DAL_Especialidades.DtDatos;
-
+                dgvEspecialidades.DataSource = Obj_Especialidades_DAL.dsEspecialidades.Tables[0];
             }
+
             else
             {
-                MessageBox.Show("Se ha presentado un error al cargar los datos \n\n" + DAL_Especialidades.sMsjError,
-                    "Error en carga de datos",
+                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de consultorios. Error = [" +
+                    Obj_Especialidades_DAL.sMsjError + " ].",
+                    "ERROR",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-
             }
+
+            dgvEspecialidades.ReadOnly = true;
+
         }
 
         //private void EliminarDatos()

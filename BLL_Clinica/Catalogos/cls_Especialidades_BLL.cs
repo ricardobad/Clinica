@@ -22,30 +22,25 @@ namespace BLL_Clinica.Catalogos
         #endregion
 
         #region Metodos
-        
-                 // ojo a este ref de abajo, que no se enrede con el de arriba
+
+        // ojo a este ref de abajo, que no se enrede con el de arriba
         public void listar_especialidades(ref cls_Especialidades_DAL Obj_especialidades_DAL)
         {
-
+            
             //aqui se llama el Store Procedure que esta en el APP.Config
-
-            Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_especialidades"].ToString();
+            Obj_BD_DAL.sNomTabla = "tbl_Especialidades";
+            Obj_BD_DAL.sNomSp = "dbo.SP_Listar_Especialidades";
             
             //aqui abajo se pone el nombrre de la tabla
-            Obj_BD_DAL.sNomTabla = "T_ESPECIALIDADES";
+            //Obj_BD_DAL.sNomTabla = "tbl_ESPECIALIDADES";
 
             Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
 
-            if (Obj_BD_DAL.sMsjError == string.Empty)
-            {
-                Obj_especialidades_DAL.sMsjError = string.Empty;
-                Obj_especialidades_DAL.DtDatos = Obj_BD_DAL.obj_ds.Tables[0];
-            }
-            else
-            {
-                Obj_especialidades.sMsjError = Obj_BD_DAL.sMsjError;
-                Obj_especialidades.DtDatos = null;
-            }
+            Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+            Obj_especialidades_DAL.dsEspecialidades = Obj_BD_DAL.obj_ds;
+
+            Obj_especialidades_DAL.sMsjError = Obj_BD_DAL.sMsjError;
 
         }
 

@@ -70,11 +70,11 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
 
                 //Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Consultorio", "INT", Obj_Consultorios_DAL.ID_Consultorio);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Rol", "INT", Obj_Roles_DAL.sIDRol);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Descripcion", "INT", Obj_Roles_DAL.sDescripcion);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Rol", "NVarChar", Obj_Roles_DAL.sIDRol);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Descripcion", "NVarChar", Obj_Roles_DAL.sDescripcion);
                 Obj_BD_DAL.obj_dtParametros.Rows.Add("@Lectura", "BIT", Obj_Roles_DAL.ITipoLE);
                 Obj_BD_DAL.obj_dtParametros.Rows.Add("@Escritura", "BIT", Obj_Roles_DAL.ITipoES);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "BIT", Obj_Roles_DAL.iEstado);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "INT", Obj_Roles_DAL.iEstado);
 
                 Obj_BD_DAL.SIndAxn = "NORMAL";
 
@@ -124,11 +124,11 @@ namespace BLL_Clinica.Catalogos
 
                 Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
 
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Rol", "INT", Obj_Roles_DAL.sIDRol);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Descripcion", "INT", Obj_Roles_DAL.sDescripcion);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@ID_Rol", "NVarChar", Obj_Roles_DAL.sIDRol);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Descripcion", "NVarChar", Obj_Roles_DAL.sDescripcion);
                 Obj_BD_DAL.obj_dtParametros.Rows.Add("@Lectura", "BIT", Obj_Roles_DAL.ITipoLE);
                 Obj_BD_DAL.obj_dtParametros.Rows.Add("@Escritura", "BIT", Obj_Roles_DAL.ITipoES);
-                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "BIT", Obj_Roles_DAL.iEstado);
+                Obj_BD_DAL.obj_dtParametros.Rows.Add("@Estado", "INT", Obj_Roles_DAL.iEstado);
 
                 Obj_BD_DAL.SIndAxn = "NORMAL";
 

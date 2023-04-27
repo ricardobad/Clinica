@@ -107,6 +107,13 @@ namespace BLL_Clinica.BD
                                     break;
                                 }
 
+                            case "12":
+                                {
+
+                                    TipoDatoSQL = SqlDbType.Date;
+                                    break;
+                                }
+
                             default:
                                 break;
                         }

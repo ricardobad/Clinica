@@ -11,7 +11,7 @@ namespace DAL
     {
 
         private int _ID_Adiccion, _ID_Doctor, _iIdPaciente;
-        private string _sMsjError, _Descripcion;
+        private string _sMsjError, _Descripcion, _sAdiccionesTotales;
         private DataTable _dtDatos, _dtParametros;
         private char _cIndAxn;
         private bool _booEstado;
@@ -27,5 +27,6 @@ namespace DAL
         public bool booEstado { get => _booEstado; set => _booEstado = value; }
         public DataSet dsAdicciones { get => _dsAdicciones; set => _dsAdicciones = value; }
         public int iIdPaciente { get => _iIdPaciente; set => _iIdPaciente = value; }
+        public string sAdiccionesTotales { get => _sAdiccionesTotales; set => _sAdiccionesTotales = value; }
     }
 }

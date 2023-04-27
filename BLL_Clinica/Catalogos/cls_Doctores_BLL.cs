@@ -13,17 +13,19 @@ namespace BLL_Clinica.Catalogos
 {
     public class cls_Doctores_BLL
     {
+        cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+        cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+        cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
         public void Listar_Filtrar_Doctores(ref cls_Doctores_DAL Obj_Doctores_DAL)
         {
 
             try
             {
-                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
-                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+                
 
-                Obj_BD_DAL.sNombreDataTable = "Doctores";
+                Obj_BD_DAL.sNombreDataTable = "tbl_DOCTORES";
 
-                if (Obj_Doctores_DAL.Carnet == string.Empty)
+                if (Obj_Doctores_DAL.Carnet == null)
                 {
 
                     Obj_BD_DAL.sNobreSP = "dbo.SP_LISTAR_DOCTORES";
