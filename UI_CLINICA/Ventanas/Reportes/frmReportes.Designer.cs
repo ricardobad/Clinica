@@ -29,7 +29,6 @@ namespace UI_CLINICA.Ventanas.Reportes
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.lblIdentificacion = new System.Windows.Forms.Label();
@@ -45,14 +44,14 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbMedico = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_Reportes = new System.Windows.Forms.DataGridView();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.dgv_Reportes = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Reportes)).BeginInit();
+            this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
             this.SuspendLayout();
@@ -61,21 +60,20 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             this.txtIdentificacion.Enabled = false;
             this.txtIdentificacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdentificacion.Location = new System.Drawing.Point(179, 150);
+            this.txtIdentificacion.Location = new System.Drawing.Point(179, 88);
             this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.ReadOnly = true;
-            this.txtIdentificacion.Size = new System.Drawing.Size(242, 35);
+            this.txtIdentificacion.Size = new System.Drawing.Size(242, 26);
             this.txtIdentificacion.TabIndex = 37;
             // 
             // lblIdentificacion
             // 
             this.lblIdentificacion.AutoSize = true;
             this.lblIdentificacion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdentificacion.Location = new System.Drawing.Point(48, 159);
+            this.lblIdentificacion.Location = new System.Drawing.Point(8, 88);
             this.lblIdentificacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblIdentificacion.Name = "lblIdentificacion";
-            this.lblIdentificacion.Size = new System.Drawing.Size(171, 28);
+            this.lblIdentificacion.Size = new System.Drawing.Size(115, 19);
             this.lblIdentificacion.TabIndex = 36;
             this.lblIdentificacion.Text = "Identificación";
             // 
@@ -91,10 +89,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             "Medicina General",
             "Oftamologia",
             "Ginecologia"});
-            this.cmbEspecialidad.Location = new System.Drawing.Point(179, 102);
+            this.cmbEspecialidad.Location = new System.Drawing.Point(179, 57);
             this.cmbEspecialidad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
-            this.cmbEspecialidad.Size = new System.Drawing.Size(242, 35);
+            this.cmbEspecialidad.Size = new System.Drawing.Size(242, 28);
             this.cmbEspecialidad.TabIndex = 33;
             this.cmbEspecialidad.Text = "Seleccione especialidad";
             // 
@@ -102,10 +100,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             this.lblEspecialidad.AutoSize = true;
             this.lblEspecialidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecialidad.Location = new System.Drawing.Point(48, 110);
+            this.lblEspecialidad.Location = new System.Drawing.Point(8, 57);
             this.lblEspecialidad.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(163, 28);
+            this.lblEspecialidad.Size = new System.Drawing.Size(110, 19);
             this.lblEspecialidad.TabIndex = 32;
             this.lblEspecialidad.Text = "Especialidad";
             // 
@@ -113,10 +111,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             this.lblTipoReporte.AutoSize = true;
             this.lblTipoReporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoReporte.Location = new System.Drawing.Point(29, 63);
+            this.lblTipoReporte.Location = new System.Drawing.Point(8, 27);
             this.lblTipoReporte.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTipoReporte.Name = "lblTipoReporte";
-            this.lblTipoReporte.Size = new System.Drawing.Size(188, 28);
+            this.lblTipoReporte.Size = new System.Drawing.Size(125, 19);
             this.lblTipoReporte.TabIndex = 30;
             this.lblTipoReporte.Text = "Tipo de reporte";
             // 
@@ -129,10 +127,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             "Reporte de citas por especialidad",
             "Reporte de citas por paciente",
             "Reporte de citas por médico"});
-            this.cmbReporte.Location = new System.Drawing.Point(179, 60);
+            this.cmbReporte.Location = new System.Drawing.Point(179, 27);
             this.cmbReporte.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbReporte.Name = "cmbReporte";
-            this.cmbReporte.Size = new System.Drawing.Size(242, 35);
+            this.cmbReporte.Size = new System.Drawing.Size(242, 28);
             this.cmbReporte.TabIndex = 29;
             this.cmbReporte.Text = "Seleccione un reporte";
             this.cmbReporte.SelectedIndexChanged += new System.EventHandler(this.cmbReporte_SelectedIndexChanged);
@@ -141,10 +139,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(382, 268);
+            this.label1.Location = new System.Drawing.Point(420, 168);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 28);
+            this.label1.Size = new System.Drawing.Size(99, 19);
             this.label1.TabIndex = 27;
             this.label1.Text = "Fecha Final";
             // 
@@ -152,16 +150,16 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 268);
+            this.label2.Location = new System.Drawing.Point(144, 168);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 28);
+            this.label2.Size = new System.Drawing.Size(109, 19);
             this.label2.TabIndex = 26;
             this.label2.Text = "Fecha Inicial";
             // 
             // cld_Final
             // 
-            this.cld_Final.Location = new System.Drawing.Point(312, 305);
+            this.cld_Final.Location = new System.Drawing.Point(349, 196);
             this.cld_Final.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.cld_Final.Name = "cld_Final";
             this.cld_Final.TabIndex = 25;
@@ -169,7 +167,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             // cld_inicio
             // 
-            this.cld_inicio.Location = new System.Drawing.Point(38, 305);
+            this.cld_inicio.Location = new System.Drawing.Point(69, 196);
             this.cld_inicio.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.cld_inicio.Name = "cld_inicio";
             this.cld_inicio.TabIndex = 24;
@@ -179,10 +177,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             this.lblMedico.AutoSize = true;
             this.lblMedico.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedico.Location = new System.Drawing.Point(8, 203);
+            this.lblMedico.Location = new System.Drawing.Point(8, 122);
             this.lblMedico.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMedico.Name = "lblMedico";
-            this.lblMedico.Size = new System.Drawing.Size(248, 28);
+            this.lblMedico.Size = new System.Drawing.Size(167, 19);
             this.lblMedico.TabIndex = 38;
             this.lblMedico.Text = "Nombre del médico";
             this.lblMedico.Click += new System.EventHandler(this.label8_Click);
@@ -192,15 +190,12 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbMedico.Enabled = false;
             this.cmbMedico.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMedico.FormattingEnabled = true;
-            this.cmbMedico.Items.AddRange(new object[] {
-            "Reporte de citas totales",
-            "Reporte de citas por especialidad",
-            "Reporte de citas por paciente"});
-            this.cmbMedico.Location = new System.Drawing.Point(179, 195);
+            this.cmbMedico.Location = new System.Drawing.Point(179, 122);
             this.cmbMedico.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbMedico.Name = "cmbMedico";
-            this.cmbMedico.Size = new System.Drawing.Size(242, 35);
+            this.cmbMedico.Size = new System.Drawing.Size(242, 28);
             this.cmbMedico.TabIndex = 39;
+            this.cmbMedico.Text = "Seleccione Carnet medico";
             // 
             // button3
             // 
@@ -208,7 +203,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button3.Location = new System.Drawing.Point(442, 176);
+            this.button3.Location = new System.Drawing.Point(499, 57);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 49);
             this.button3.TabIndex = 219;
@@ -234,12 +229,24 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.groupBox1.Controls.Add(this.lblIdentificacion);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.groupBox1.Location = new System.Drawing.Point(45, 99);
+            this.groupBox1.Location = new System.Drawing.Point(37, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(668, 500);
+            this.groupBox1.Size = new System.Drawing.Size(692, 558);
             this.groupBox1.TabIndex = 220;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Reporte";
+            // 
+            // dgv_Reportes
+            // 
+            this.dgv_Reportes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_Reportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Reportes.Location = new System.Drawing.Point(39, 376);
+            this.dgv_Reportes.Name = "dgv_Reportes";
+            this.dgv_Reportes.ReadOnly = true;
+            this.dgv_Reportes.RowHeadersWidth = 62;
+            this.dgv_Reportes.RowTemplate.Height = 28;
+            this.dgv_Reportes.Size = new System.Drawing.Size(581, 167);
+            this.dgv_Reportes.TabIndex = 240;
             // 
             // pnlTitulo
             // 
@@ -261,29 +268,10 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label7.Location = new System.Drawing.Point(153, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(572, 56);
+            this.label7.Size = new System.Drawing.Size(378, 38);
             this.label7.TabIndex = 240;
             this.label7.Text = "Generador de Reportes";
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
-            // 
-            // dgv_Reportes
-            // 
-            this.dgv_Reportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Reportes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_Reportes.Location = new System.Drawing.Point(442, 16);
-            this.dgv_Reportes.Name = "dgv_Reportes";
-            this.dgv_Reportes.ReadOnly = true;
-            this.dgv_Reportes.RowHeadersWidth = 62;
-            this.dgv_Reportes.RowTemplate.Height = 28;
-            this.dgv_Reportes.Size = new System.Drawing.Size(226, 154);
-            this.dgv_Reportes.TabIndex = 240;
             // 
             // btnCerrar
             // 
@@ -309,7 +297,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             // frmReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(741, 620);
@@ -323,9 +311,9 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.Load += new System.EventHandler(this.frmReportes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Reportes)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Reportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).EndInit();
             this.ResumeLayout(false);

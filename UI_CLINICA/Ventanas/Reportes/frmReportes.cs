@@ -93,6 +93,8 @@ namespace UI_CLINICA.Ventanas.Reportes
                 CargarDatos();
 
             }
+
+           
             //reportes por especialidad ID 1
 
             if (cmbReporte.SelectedIndex==1 && cmbEspecialidad.SelectedIndex == 0) {
@@ -153,6 +155,24 @@ namespace UI_CLINICA.Ventanas.Reportes
                 dgv_Reportes.DataSource = reporte_DAL.DtDatos;
             }
 
+            //para citas por identificacion
+            if (cmbReporte.SelectedIndex == 2)
+            {
+                reporte_DAL.sIdentificacion= txtIdentificacion.Text.Trim().ToString();
+                reporte_BLL.CitasIdentificacion(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+
+            //para citas por medico
+            if (cmbReporte.SelectedIndex == 3) {
+                reporte_DAL.sCarnet = cmbMedico.Text.ToString();
+                reporte_BLL.CitasMedico(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            
+            }
+
 
         }
 
@@ -165,7 +185,24 @@ namespace UI_CLINICA.Ventanas.Reportes
            
             //Habilita segundo combo
             if (cmbReporte.SelectedIndex == 1) { 
-            cmbEspecialidad.Enabled = true;
+                cmbEspecialidad.Enabled = true;
+                txtIdentificacion.Enabled = false;
+            }
+
+            //habilita el campo identificacion
+            if (cmbReporte.SelectedIndex==2) {
+                txtIdentificacion.Enabled = true;
+                cmbEspecialidad.Enabled = false;
+                
+            }
+
+            //habilita el campo de combo de medico
+
+            if (cmbReporte.SelectedIndex == 3) {
+                txtIdentificacion.Enabled = false;
+                cmbEspecialidad.Enabled = false;
+                cmbMedico.Enabled = true;
+                cargarComboDoctores();
             }
 
         }
@@ -174,6 +211,22 @@ namespace UI_CLINICA.Ventanas.Reportes
         {
 
         }
+
+
+        private void cargarComboDoctores()
+        {
+            cls_Doctores_DAL DAL_Doctores = new cls_Doctores_DAL();
+            cls_Doctores_BLL BLL_Doctores = new cls_Doctores_BLL();
+            
+            BLL_Doctores.listarCarnetDoctores(ref DAL_Doctores);
+            cmbMedico.ValueMember = "Carnet";
+            cmbMedico.DisplayMember = "Carnet";
+            cmbMedico.DataSource = DAL_Doctores.DtDatos;
+
+
+        }
+
+        
 
         #region Eventos
         private void cld_inicio_DateChanged(object sender, DateRangeEventArgs e)
