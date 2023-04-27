@@ -243,10 +243,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
                     cmb_Canton.SelectedIndex = indiceItem;
 
-                   // CargarComboDistrito();
 
-                   // cmb_Canton.Text = Obj_Empleados_DAL.sID_Canton.Trim();
-                   // cmb_Distrito.Text = Obj_Empleados_DAL.sID_Distrito.Trim();
+                    CargarComboDistrito();
+
+                    cmb_Distrito.SelectedIndex = Convert.ToInt32(Obj_Empleados_DAL.sID_Distrito) - 1;
+
+
+                    // cmb_Canton.Text = Obj_Empleados_DAL.sID_Canton.Trim();
+                    // cmb_Distrito.Text = Obj_Empleados_DAL.sID_Distrito.Trim();
                     txt_Telefono_I.Text = Obj_Empleados_DAL.sTelefonoI.Trim();
                     txt_Telefono_II.Text = Obj_Empleados_DAL.sTelefonoII.Trim();
                     txt_Correo_I.Text = Obj_Empleados_DAL.sCorreoI.Trim();
@@ -264,7 +268,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     tbControl1.SelectedTab = tabPage1;
                   //  int indiceItem = cmb_Canton.FindStringExact(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["Nombre_Canton"].ToString().Trim());
 
-                    cmb_Canton.SelectedValue = Obj_Empleados_DAL.sID_Canton;
+
 
 
                 }
