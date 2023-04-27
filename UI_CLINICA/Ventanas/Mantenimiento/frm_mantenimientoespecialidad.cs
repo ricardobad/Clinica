@@ -196,7 +196,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             textBox1.Text = "";
             textBox2.Text = "";
             textBox4.Text = "";
-            cmb_Estado.Text = "";
         }
+
+
     }
 }

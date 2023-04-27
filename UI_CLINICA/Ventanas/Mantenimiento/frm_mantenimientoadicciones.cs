@@ -261,9 +261,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 e.Handled = true; // Cancela 
                 erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
             }
-
-
-
         }
 
         private Boolean EspaciosVacioYLimite(TextBox txt)
@@ -301,7 +298,22 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void txt_Filtro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidaTXT(e, txt_Nombre);
+            ValidaTXT(e, txt_Filtro);
+        }
+
+        private void txt_Nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txt_Nombre.Text = "";
+        }
+
+        private void cmb_Estados_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

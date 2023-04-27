@@ -29,13 +29,16 @@ namespace UI_CLINICA.Ventanas.Expedientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_Identificacion = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_Consultar_Expediente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.erp_Principal = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Principal)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_Identificacion
@@ -43,9 +46,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Identificacion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txt_Identificacion.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Identificacion.Location = new System.Drawing.Point(35, 81);
+            this.txt_Identificacion.MaxLength = 14;
             this.txt_Identificacion.Name = "txt_Identificacion";
             this.txt_Identificacion.Size = new System.Drawing.Size(246, 33);
             this.txt_Identificacion.TabIndex = 76;
+            this.txt_Identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
             // 
             // tabPage1
             // 
@@ -97,6 +102,10 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.tabControl1.Size = new System.Drawing.Size(339, 256);
             this.tabControl1.TabIndex = 83;
             // 
+            // erp_Principal
+            // 
+            this.erp_Principal.ContainerControl = this;
+            // 
             // frm_buscarexpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +124,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Principal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +135,6 @@ namespace UI_CLINICA.Ventanas.Expedientes
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Button btn_Consultar_Expediente;
+        private System.Windows.Forms.ErrorProvider erp_Principal;
     }
 }

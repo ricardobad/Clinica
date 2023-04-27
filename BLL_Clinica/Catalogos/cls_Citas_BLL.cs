@@ -226,6 +226,44 @@ namespace BLL_Clinica.Catalogos
 
         }
 
+
+
+
+
+        public void Filtrar_Citas_Expediente(ref cls_Citas_DAL Obj_Citas_DAL)
+        {
+
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "CITAS";
+
+ 
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_Filtrar_Citas_Expediente";
+
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                    Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Citas_DAL.ID_Paciente);
+
+
+                Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+                Obj_Citas_DAL.DsDatos = Obj_BD_DAL.dsDatos;
+                Obj_Citas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Citas_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
+
+
+
+        }
+
     }
 
 }

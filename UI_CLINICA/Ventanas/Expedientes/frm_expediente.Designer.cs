@@ -29,35 +29,31 @@ namespace UI_CLINICA.Ventanas.Expedientes
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_expediente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.tbControl1 = new System.Windows.Forms.TabControl();
+            this.tab_Expediente = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.btn_CargarCita = new System.Windows.Forms.Button();
+            this.dgv_Datos_Citas = new System.Windows.Forms.DataGridView();
+            this.tab_InfoCita = new System.Windows.Forms.TabPage();
+            this.lbl_infocita = new System.Windows.Forms.Label();
+            this.txt_InfoCita = new System.Windows.Forms.TextBox();
+            this.txt_IDCita = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_ActualizarTelefonos = new System.Windows.Forms.Button();
@@ -104,18 +100,20 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Adicciones = new System.Windows.Forms.DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.erp_Principal = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            this.tbControl1.SuspendLayout();
+            this.tab_Expediente.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Datos_Citas)).BeginInit();
+            this.tab_InfoCita.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Padecimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alergias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Adicciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Principal)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -152,177 +150,141 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.label15.TabIndex = 231;
             this.label15.Text = "Expediente";
             // 
-            // tbControl1
+            // tab_Expediente
             // 
-            this.tbControl1.Controls.Add(this.tabPage2);
-            this.tbControl1.Controls.Add(this.tabPage1);
-            this.tbControl1.Controls.Add(this.tabPage3);
-            this.tbControl1.Controls.Add(this.tabPage4);
-            this.tbControl1.Location = new System.Drawing.Point(12, 50);
-            this.tbControl1.Name = "tbControl1";
-            this.tbControl1.SelectedIndex = 0;
-            this.tbControl1.Size = new System.Drawing.Size(723, 611);
-            this.tbControl1.TabIndex = 247;
+            this.tab_Expediente.Controls.Add(this.tabPage2);
+            this.tab_Expediente.Controls.Add(this.tab_InfoCita);
+            this.tab_Expediente.Controls.Add(this.tabPage3);
+            this.tab_Expediente.Controls.Add(this.tabPage4);
+            this.tab_Expediente.Location = new System.Drawing.Point(12, 50);
+            this.tab_Expediente.Name = "tab_Expediente";
+            this.tab_Expediente.SelectedIndex = 0;
+            this.tab_Expediente.Size = new System.Drawing.Size(723, 631);
+            this.tab_Expediente.TabIndex = 247;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.btn_CargarCita);
+            this.tabPage2.Controls.Add(this.dgv_Datos_Citas);
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(715, 577);
+            this.tabPage2.Size = new System.Drawing.Size(715, 597);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Buscar Cita";
             // 
-            // button1
+            // btn_CargarCita
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button1.Location = new System.Drawing.Point(232, 533);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 37);
-            this.button1.TabIndex = 247;
-            this.button1.Text = "Cargar información";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_CargarCita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CargarCita.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CargarCita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.btn_CargarCita.Location = new System.Drawing.Point(232, 533);
+            this.btn_CargarCita.Name = "btn_CargarCita";
+            this.btn_CargarCita.Size = new System.Drawing.Size(231, 37);
+            this.btn_CargarCita.TabIndex = 247;
+            this.btn_CargarCita.Text = "Cargar información";
+            this.btn_CargarCita.UseVisualStyleBackColor = true;
+            this.btn_CargarCita.Click += new System.EventHandler(this.btn_CargarCita_Click);
             // 
-            // dataGridView1
+            // dgv_Datos_Citas
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 30;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn3,
-            this.doctor,
-            this.Column2,
-            this.Column1,
-            this.ID_Cita});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.dataGridView1.Location = new System.Drawing.Point(7, 17);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 513);
-            this.dataGridView1.TabIndex = 246;
+            this.dgv_Datos_Citas.AllowUserToAddRows = false;
+            this.dgv_Datos_Citas.AllowUserToDeleteRows = false;
+            this.dgv_Datos_Citas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Datos_Citas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_Datos_Citas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgv_Datos_Citas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_Datos_Citas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgv_Datos_Citas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Datos_Citas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            this.dgv_Datos_Citas.ColumnHeadersHeight = 30;
+            this.dgv_Datos_Citas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(195)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Datos_Citas.DefaultCellStyle = dataGridViewCellStyle38;
+            this.dgv_Datos_Citas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgv_Datos_Citas.EnableHeadersVisualStyles = false;
+            this.dgv_Datos_Citas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.dgv_Datos_Citas.Location = new System.Drawing.Point(7, 17);
+            this.dgv_Datos_Citas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Datos_Citas.MultiSelect = false;
+            this.dgv_Datos_Citas.Name = "dgv_Datos_Citas";
+            this.dgv_Datos_Citas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Datos_Citas.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
+            this.dgv_Datos_Citas.RowHeadersVisible = false;
+            this.dgv_Datos_Citas.RowHeadersWidth = 62;
+            this.dgv_Datos_Citas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Datos_Citas.Size = new System.Drawing.Size(701, 513);
+            this.dgv_Datos_Citas.TabIndex = 246;
             // 
-            // dataGridViewTextBoxColumn3
+            // tab_InfoCita
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha de la cita";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 161;
+            this.tab_InfoCita.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.tab_InfoCita.Controls.Add(this.lbl_infocita);
+            this.tab_InfoCita.Controls.Add(this.txt_InfoCita);
+            this.tab_InfoCita.Controls.Add(this.txt_IDCita);
+            this.tab_InfoCita.Controls.Add(this.label25);
+            this.tab_InfoCita.Location = new System.Drawing.Point(4, 30);
+            this.tab_InfoCita.Name = "tab_InfoCita";
+            this.tab_InfoCita.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_InfoCita.Size = new System.Drawing.Size(715, 597);
+            this.tab_InfoCita.TabIndex = 0;
+            this.tab_InfoCita.Text = "Información de Cita                           ";
             // 
-            // doctor
+            // lbl_infocita
             // 
-            this.doctor.HeaderText = "Nombre del Doctor  ";
-            this.doctor.MinimumWidth = 8;
-            this.doctor.Name = "doctor";
-            this.doctor.Width = 191;
+            this.lbl_infocita.AutoSize = true;
+            this.lbl_infocita.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_infocita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            this.lbl_infocita.Location = new System.Drawing.Point(17, 104);
+            this.lbl_infocita.Name = "lbl_infocita";
+            this.lbl_infocita.Size = new System.Drawing.Size(264, 19);
+            this.lbl_infocita.TabIndex = 258;
+            this.lbl_infocita.Text = "Debe cargar información de cita";
             // 
-            // Column2
+            // txt_InfoCita
             // 
-            this.Column2.HeaderText = "Especialidad    ";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 149;
+            this.txt_InfoCita.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_InfoCita.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txt_InfoCita.Location = new System.Drawing.Point(11, 250);
+            this.txt_InfoCita.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_InfoCita.Multiline = true;
+            this.txt_InfoCita.Name = "txt_InfoCita";
+            this.txt_InfoCita.Size = new System.Drawing.Size(642, 284);
+            this.txt_InfoCita.TabIndex = 233;
             // 
-            // Column1
+            // txt_IDCita
             // 
-            this.Column1.HeaderText = "Estado";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 88;
-            // 
-            // ID_Cita
-            // 
-            this.ID_Cita.HeaderText = "ID Cita";
-            this.ID_Cita.MinimumWidth = 8;
-            this.ID_Cita.Name = "ID_Cita";
-            this.ID_Cita.Width = 89;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox21);
-            this.tabPage1.Controls.Add(this.textBox15);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(715, 577);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Información de Cita                           ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label1.Location = new System.Drawing.Point(7, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(584, 152);
-            this.label1.TabIndex = 258;
-            this.label1.Text = resources.GetString("label1.Text");
-            // 
-            // textBox21
-            // 
-            this.textBox21.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox21.Location = new System.Drawing.Point(11, 250);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox21.Multiline = true;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(642, 284);
-            this.textBox21.TabIndex = 233;
-            // 
-            // textBox15
-            // 
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox15.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox15.Location = new System.Drawing.Point(88, 20);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(59, 31);
-            this.textBox15.TabIndex = 180;
+            this.txt_IDCita.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_IDCita.Enabled = false;
+            this.txt_IDCita.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IDCita.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txt_IDCita.Location = new System.Drawing.Point(88, 20);
+            this.txt_IDCita.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_IDCita.Name = "txt_IDCita";
+            this.txt_IDCita.ReadOnly = true;
+            this.txt_IDCita.Size = new System.Drawing.Size(59, 31);
+            this.txt_IDCita.TabIndex = 180;
             // 
             // label25
             // 
@@ -372,7 +334,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(715, 577);
+            this.tabPage3.Size = new System.Drawing.Size(715, 597);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Información Personal";
             // 
@@ -404,6 +366,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             // 
             // cmb_Distritos
             // 
+            this.cmb_Distritos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Distritos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Distritos.FormattingEnabled = true;
             this.cmb_Distritos.Items.AddRange(new object[] {
@@ -430,9 +393,9 @@ namespace UI_CLINICA.Ventanas.Expedientes
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(411, 336);
+            this.pictureBox1.Location = new System.Drawing.Point(418, 334);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 238);
+            this.pictureBox1.Size = new System.Drawing.Size(260, 265);
             this.pictureBox1.TabIndex = 272;
             this.pictureBox1.TabStop = false;
             // 
@@ -498,6 +461,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             // 
             // cmb_Cantones
             // 
+            this.cmb_Cantones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Cantones.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Cantones.FormattingEnabled = true;
             this.cmb_Cantones.Items.AddRange(new object[] {
@@ -535,6 +499,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             // 
             // cmb_Provincias
             // 
+            this.cmb_Provincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Provincias.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Provincias.FormattingEnabled = true;
             this.cmb_Provincias.Items.AddRange(new object[] {
@@ -594,9 +559,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Telefono_II.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Telefono_II.Location = new System.Drawing.Point(124, 297);
             this.txt_Telefono_II.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Telefono_II.MaxLength = 18;
             this.txt_Telefono_II.Name = "txt_Telefono_II";
             this.txt_Telefono_II.Size = new System.Drawing.Size(217, 31);
             this.txt_Telefono_II.TabIndex = 284;
+            this.txt_Telefono_II.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Telefono_II_KeyPress);
             // 
             // label9
             // 
@@ -617,9 +584,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Correo_II.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Correo_II.Location = new System.Drawing.Point(360, 297);
             this.txt_Correo_II.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Correo_II.MaxLength = 50;
             this.txt_Correo_II.Name = "txt_Correo_II";
             this.txt_Correo_II.Size = new System.Drawing.Size(218, 31);
             this.txt_Correo_II.TabIndex = 282;
+            this.txt_Correo_II.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Correo_II_KeyPress);
             // 
             // label8
             // 
@@ -639,6 +608,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Direccion.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Direccion.Location = new System.Drawing.Point(37, 430);
             this.txt_Direccion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Direccion.MaxLength = 80;
             this.txt_Direccion.Multiline = true;
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(298, 114);
@@ -675,9 +645,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Telefono_I.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Telefono_I.Location = new System.Drawing.Point(124, 237);
             this.txt_Telefono_I.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Telefono_I.MaxLength = 18;
             this.txt_Telefono_I.Name = "txt_Telefono_I";
             this.txt_Telefono_I.Size = new System.Drawing.Size(217, 31);
             this.txt_Telefono_I.TabIndex = 277;
+            this.txt_Telefono_I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Telefono_I_KeyPress);
             // 
             // label22
             // 
@@ -734,9 +706,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Correo_I.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Correo_I.Location = new System.Drawing.Point(360, 237);
             this.txt_Correo_I.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Correo_I.MaxLength = 50;
             this.txt_Correo_I.Name = "txt_Correo_I";
             this.txt_Correo_I.Size = new System.Drawing.Size(218, 31);
             this.txt_Correo_I.TabIndex = 272;
+            this.txt_Correo_I.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Correo_I_KeyPress);
             // 
             // tabPage4
             // 
@@ -757,7 +731,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.tabPage4.Location = new System.Drawing.Point(4, 30);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(715, 577);
+            this.tabPage4.Size = new System.Drawing.Size(715, 597);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Datos de Clínica";
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
@@ -812,24 +786,24 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Padecimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Padecimientos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgv_Padecimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Padecimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Padecimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dgv_Padecimientos.ColumnHeadersHeight = 30;
             this.dgv_Padecimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Padecimientos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Padecimientos.DefaultCellStyle = dataGridViewCellStyle41;
             this.dgv_Padecimientos.EnableHeadersVisualStyles = false;
             this.dgv_Padecimientos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.dgv_Padecimientos.Location = new System.Drawing.Point(476, 59);
@@ -837,14 +811,14 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Padecimientos.MultiSelect = false;
             this.dgv_Padecimientos.Name = "dgv_Padecimientos";
             this.dgv_Padecimientos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Padecimientos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Padecimientos.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgv_Padecimientos.RowHeadersVisible = false;
             this.dgv_Padecimientos.RowHeadersWidth = 62;
             this.dgv_Padecimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -863,24 +837,24 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Alergias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Alergias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgv_Alergias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alergias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alergias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
             this.dgv_Alergias.ColumnHeadersHeight = 30;
             this.dgv_Alergias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Alergias.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Alergias.DefaultCellStyle = dataGridViewCellStyle44;
             this.dgv_Alergias.EnableHeadersVisualStyles = false;
             this.dgv_Alergias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.dgv_Alergias.Location = new System.Drawing.Point(257, 59);
@@ -888,14 +862,14 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Alergias.MultiSelect = false;
             this.dgv_Alergias.Name = "dgv_Alergias";
             this.dgv_Alergias.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alergias.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alergias.RowHeadersDefaultCellStyle = dataGridViewCellStyle45;
             this.dgv_Alergias.RowHeadersVisible = false;
             this.dgv_Alergias.RowHeadersWidth = 62;
             this.dgv_Alergias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -904,6 +878,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             // 
             // cmb_TipoSangre
             // 
+            this.cmb_TipoSangre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoSangre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_TipoSangre.FormattingEnabled = true;
             this.cmb_TipoSangre.Items.AddRange(new object[] {
@@ -936,10 +911,13 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Peso.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Peso.Location = new System.Drawing.Point(369, 483);
             this.txt_Peso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Peso.MaxLength = 10;
             this.txt_Peso.Name = "txt_Peso";
             this.txt_Peso.ShortcutsEnabled = false;
             this.txt_Peso.Size = new System.Drawing.Size(70, 31);
             this.txt_Peso.TabIndex = 294;
+            this.txt_Peso.HideSelectionChanged += new System.EventHandler(this.txt_Peso_HideSelectionChanged);
+            this.txt_Peso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Peso_KeyPress);
             // 
             // txt_Altura
             // 
@@ -948,9 +926,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.txt_Altura.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Altura.Location = new System.Drawing.Point(276, 483);
             this.txt_Altura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Altura.MaxLength = 10;
             this.txt_Altura.Name = "txt_Altura";
             this.txt_Altura.Size = new System.Drawing.Size(73, 31);
             this.txt_Altura.TabIndex = 292;
+            this.txt_Altura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Altura_KeyPress);
             // 
             // label14
             // 
@@ -975,24 +955,24 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Adicciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_Adicciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgv_Adicciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Adicciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Adicciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle46;
             this.dgv_Adicciones.ColumnHeadersHeight = 30;
             this.dgv_Adicciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Adicciones.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Adicciones.DefaultCellStyle = dataGridViewCellStyle47;
             this.dgv_Adicciones.EnableHeadersVisualStyles = false;
             this.dgv_Adicciones.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.dgv_Adicciones.Location = new System.Drawing.Point(21, 59);
@@ -1000,14 +980,14 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.dgv_Adicciones.MultiSelect = false;
             this.dgv_Adicciones.Name = "dgv_Adicciones";
             this.dgv_Adicciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Adicciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Adicciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle48;
             this.dgv_Adicciones.RowHeadersVisible = false;
             this.dgv_Adicciones.RowHeadersWidth = 62;
             this.dgv_Adicciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1038,13 +1018,17 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.label17.TabIndex = 289;
             this.label17.Text = "Tipo de Sangre:";
             // 
+            // erp_Principal
+            // 
+            this.erp_Principal.ContainerControl = this;
+            // 
             // frm_expediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(749, 693);
-            this.Controls.Add(this.tbControl1);
+            this.Controls.Add(this.tab_Expediente);
             this.Controls.Add(this.pnlTitulo);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1056,11 +1040,11 @@ namespace UI_CLINICA.Ventanas.Expedientes
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            this.tbControl1.ResumeLayout(false);
+            this.tab_Expediente.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Datos_Citas)).EndInit();
+            this.tab_InfoCita.ResumeLayout(false);
+            this.tab_InfoCita.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1069,6 +1053,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Padecimientos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alergias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Adicciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp_Principal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1077,15 +1062,15 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TabControl tbControl1;
+        private System.Windows.Forms.TabControl tab_Expediente;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.DataGridView dgv_Datos_Citas;
+        private System.Windows.Forms.TabPage tab_InfoCita;
+        private System.Windows.Forms.Label lbl_infocita;
+        private System.Windows.Forms.TextBox txt_InfoCita;
+        private System.Windows.Forms.TextBox txt_IDCita;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_CargarCita;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label7;
@@ -1121,17 +1106,13 @@ namespace UI_CLINICA.Ventanas.Expedientes
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_ActualizarDireccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Cita;
         private System.Windows.Forms.Button btn_ActualizarTelefonos;
         private System.Windows.Forms.Button btn_ActualizarCorreos;
         private System.Windows.Forms.ComboBox cmb_Distritos;
         private System.Windows.Forms.TextBox txt_FechaNacimiento;
         private System.Windows.Forms.Button btn_Modificar_Adicciones;
         private System.Windows.Forms.ComboBox cmb_TipoSangre;
+        private System.Windows.Forms.ErrorProvider erp_Principal;
         private System.Windows.Forms.DataGridView dgv_Padecimientos;
         private System.Windows.Forms.DataGridView dgv_Alergias;
         private System.Windows.Forms.Button btn_Modificar_Alergias;

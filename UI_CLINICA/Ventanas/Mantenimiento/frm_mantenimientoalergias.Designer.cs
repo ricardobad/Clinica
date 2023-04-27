@@ -64,10 +64,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button3.Location = new System.Drawing.Point(748, 898);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(499, 584);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 75);
+            this.button3.Size = new System.Drawing.Size(151, 49);
             this.button3.TabIndex = 83;
             this.button3.Text = "Limpiar";
             this.button3.UseVisualStyleBackColor = true;
@@ -77,10 +76,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button2.Location = new System.Drawing.Point(446, 898);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(297, 584);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 75);
+            this.button2.Size = new System.Drawing.Size(151, 49);
             this.button2.TabIndex = 82;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
@@ -91,10 +89,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.button1.Location = new System.Drawing.Point(135, 898);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(90, 584);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 75);
+            this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 81;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
@@ -105,10 +102,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::UI_CLINICA.Properties.Resources.alergia_respiratoria_1_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(696, 80);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(464, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(404, 207);
+            this.pictureBox1.Size = new System.Drawing.Size(271, 136);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 94;
             this.pictureBox1.TabStop = false;
@@ -119,9 +115,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.pnlTitulo.Controls.Add(this.label15);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1120, 68);
+            this.pnlTitulo.Size = new System.Drawing.Size(747, 44);
             this.pnlTitulo.TabIndex = 249;
             // 
             // label15
@@ -129,10 +124,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label15.Location = new System.Drawing.Point(208, 0);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(139, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(656, 56);
+            this.label15.Size = new System.Drawing.Size(435, 38);
             this.label15.TabIndex = 231;
             this.label15.Text = "Mantenimiento de Alergias";
             // 
@@ -141,10 +135,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label2.Location = new System.Drawing.Point(171, 138);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(114, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 36);
+            this.label2.Size = new System.Drawing.Size(33, 23);
             this.label2.TabIndex = 254;
             this.label2.Text = "ID:";
             // 
@@ -153,21 +146,20 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.textBox1.Location = new System.Drawing.Point(244, 134);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Location = new System.Drawing.Point(163, 87);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(96, 42);
+            this.textBox1.Size = new System.Drawing.Size(65, 31);
             this.textBox1.TabIndex = 253;
             // 
             // txt_nombre
             // 
             this.txt_nombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.txt_nombre.Location = new System.Drawing.Point(243, 223);
-            this.txt_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_nombre.Location = new System.Drawing.Point(162, 145);
+            this.txt_nombre.MaxLength = 100;
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(180, 42);
+            this.txt_nombre.Size = new System.Drawing.Size(121, 31);
             this.txt_nombre.TabIndex = 256;
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             this.txt_nombre.Leave += new System.EventHandler(this.textBox2_Leave);
@@ -177,10 +169,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label3.Location = new System.Drawing.Point(86, 226);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(57, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 36);
+            this.label3.Size = new System.Drawing.Size(90, 23);
             this.label3.TabIndex = 255;
             this.label3.Text = "Nombre:";
             // 
@@ -214,8 +205,8 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.dgvNumero.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvNumero.EnableHeadersVisualStyles = false;
             this.dgvNumero.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.dgvNumero.Location = new System.Drawing.Point(39, 460);
-            this.dgvNumero.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.dgvNumero.Location = new System.Drawing.Point(26, 299);
+            this.dgvNumero.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvNumero.MultiSelect = false;
             this.dgvNumero.Name = "dgvNumero";
             this.dgvNumero.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -229,7 +220,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.dgvNumero.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNumero.RowHeadersWidth = 62;
             this.dgvNumero.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNumero.Size = new System.Drawing.Size(1042, 408);
+            this.dgvNumero.Size = new System.Drawing.Size(695, 265);
             this.dgvNumero.TabIndex = 257;
             // 
             // label1
@@ -237,10 +228,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label1.Location = new System.Drawing.Point(128, 349);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(85, 227);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 28);
+            this.label1.Size = new System.Drawing.Size(63, 19);
             this.label1.TabIndex = 288;
             this.label1.Text = "Doctor:";
             // 
@@ -248,10 +239,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             this.cmbDoctores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDoctores.FormattingEnabled = true;
-            this.cmbDoctores.Location = new System.Drawing.Point(243, 342);
-            this.cmbDoctores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbDoctores.Location = new System.Drawing.Point(162, 222);
             this.cmbDoctores.Name = "cmbDoctores";
-            this.cmbDoctores.Size = new System.Drawing.Size(313, 44);
+            this.cmbDoctores.Size = new System.Drawing.Size(210, 30);
             this.cmbDoctores.TabIndex = 287;
             // 
             // cmb_Estados
@@ -261,10 +251,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.cmb_Estados.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmb_Estados.Location = new System.Drawing.Point(243, 280);
-            this.cmb_Estados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmb_Estados.Location = new System.Drawing.Point(162, 182);
             this.cmb_Estados.Name = "cmb_Estados";
-            this.cmb_Estados.Size = new System.Drawing.Size(313, 44);
+            this.cmb_Estados.Size = new System.Drawing.Size(210, 30);
             this.cmb_Estados.TabIndex = 286;
             // 
             // lbl_Estados
@@ -272,10 +261,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.lbl_Estados.AutoSize = true;
             this.lbl_Estados.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Estados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.lbl_Estados.Location = new System.Drawing.Point(130, 288);
-            this.lbl_Estados.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbl_Estados.Location = new System.Drawing.Point(87, 187);
+            this.lbl_Estados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Estados.Name = "lbl_Estados";
-            this.lbl_Estados.Size = new System.Drawing.Size(96, 28);
+            this.lbl_Estados.Size = new System.Drawing.Size(63, 19);
             this.lbl_Estados.TabIndex = 285;
             this.lbl_Estados.Text = "Estado:";
             // 
@@ -283,10 +272,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Location = new System.Drawing.Point(568, 395);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(379, 257);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 51);
+            this.pictureBox2.Size = new System.Drawing.Size(34, 33);
             this.pictureBox2.TabIndex = 284;
             this.pictureBox2.TabStop = false;
             // 
@@ -294,10 +282,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             this.txt_Filtro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Filtro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.txt_Filtro.Location = new System.Drawing.Point(243, 398);
-            this.txt_Filtro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txt_Filtro.Location = new System.Drawing.Point(162, 259);
+            this.txt_Filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Filtro.MaxLength = 100;
             this.txt_Filtro.Name = "txt_Filtro";
-            this.txt_Filtro.Size = new System.Drawing.Size(313, 42);
+            this.txt_Filtro.Size = new System.Drawing.Size(210, 31);
             this.txt_Filtro.TabIndex = 283;
             this.txt_Filtro.TextChanged += new System.EventHandler(this.txt_Filtro_TextChanged_1);
             this.txt_Filtro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Filtro_KeyPress);
@@ -309,10 +298,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             // frm_mantenimientoalergias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(1120, 1054);
+            this.ClientSize = new System.Drawing.Size(747, 598);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbDoctores);
             this.Controls.Add(this.cmb_Estados);
@@ -330,7 +319,6 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_mantenimientoalergias";
             this.Text = "frm_mantenimientoalergias";
             this.Load += new System.EventHandler(this.frm_mantenimientoalergias_Load);
