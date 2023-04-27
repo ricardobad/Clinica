@@ -69,7 +69,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 dgv_Empleados.DataSource = null;
                 dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
                 
-                MessageBox.Show("campos" + Obj_Empleados_DAL.sTelefonoII);
+               
           
             }
             else

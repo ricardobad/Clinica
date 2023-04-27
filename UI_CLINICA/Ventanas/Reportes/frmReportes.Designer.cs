@@ -38,17 +38,19 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbReporte = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.cld_Final = new System.Windows.Forms.MonthCalendar();
+            this.cld_inicio = new System.Windows.Forms.MonthCalendar();
             this.lblMedico = new System.Windows.Forms.Label();
             this.cmbMedico = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_test = new System.Windows.Forms.DataGridView();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btn_cerrar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_test)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_cerrar)).BeginInit();
@@ -62,7 +64,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.txtIdentificacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtIdentificacion.Name = "txtIdentificacion";
             this.txtIdentificacion.ReadOnly = true;
-            this.txtIdentificacion.Size = new System.Drawing.Size(242, 26);
+            this.txtIdentificacion.Size = new System.Drawing.Size(242, 35);
             this.txtIdentificacion.TabIndex = 37;
             // 
             // lblIdentificacion
@@ -72,7 +74,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.lblIdentificacion.Location = new System.Drawing.Point(48, 159);
             this.lblIdentificacion.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblIdentificacion.Name = "lblIdentificacion";
-            this.lblIdentificacion.Size = new System.Drawing.Size(115, 19);
+            this.lblIdentificacion.Size = new System.Drawing.Size(171, 28);
             this.lblIdentificacion.TabIndex = 36;
             this.lblIdentificacion.Text = "Identificación";
             // 
@@ -88,7 +90,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbEspecialidad.Location = new System.Drawing.Point(179, 102);
             this.cmbEspecialidad.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
-            this.cmbEspecialidad.Size = new System.Drawing.Size(242, 28);
+            this.cmbEspecialidad.Size = new System.Drawing.Size(242, 35);
             this.cmbEspecialidad.TabIndex = 33;
             // 
             // lblEspecialidad
@@ -98,7 +100,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.lblEspecialidad.Location = new System.Drawing.Point(48, 110);
             this.lblEspecialidad.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(110, 19);
+            this.lblEspecialidad.Size = new System.Drawing.Size(163, 28);
             this.lblEspecialidad.TabIndex = 32;
             this.lblEspecialidad.Text = "Especialidad";
             // 
@@ -109,7 +111,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.lblTipoReporte.Location = new System.Drawing.Point(29, 63);
             this.lblTipoReporte.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTipoReporte.Name = "lblTipoReporte";
-            this.lblTipoReporte.Size = new System.Drawing.Size(125, 19);
+            this.lblTipoReporte.Size = new System.Drawing.Size(188, 28);
             this.lblTipoReporte.TabIndex = 30;
             this.lblTipoReporte.Text = "Tipo de reporte";
             // 
@@ -125,7 +127,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbReporte.Location = new System.Drawing.Point(179, 60);
             this.cmbReporte.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbReporte.Name = "cmbReporte";
-            this.cmbReporte.Size = new System.Drawing.Size(242, 28);
+            this.cmbReporte.Size = new System.Drawing.Size(242, 35);
             this.cmbReporte.TabIndex = 29;
             // 
             // label1
@@ -135,7 +137,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.label1.Location = new System.Drawing.Point(382, 268);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 19);
+            this.label1.Size = new System.Drawing.Size(145, 28);
             this.label1.TabIndex = 27;
             this.label1.Text = "Fecha Final";
             // 
@@ -146,23 +148,25 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.label2.Location = new System.Drawing.Point(96, 268);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 19);
+            this.label2.Size = new System.Drawing.Size(161, 28);
             this.label2.TabIndex = 26;
             this.label2.Text = "Fecha Inicial";
             // 
-            // monthCalendar2
+            // cld_Final
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(312, 305);
-            this.monthCalendar2.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 25;
+            this.cld_Final.Location = new System.Drawing.Point(312, 305);
+            this.cld_Final.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
+            this.cld_Final.Name = "cld_Final";
+            this.cld_Final.TabIndex = 25;
+            this.cld_Final.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.cld_Final_DateChanged);
             // 
-            // monthCalendar1
+            // cld_inicio
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(38, 305);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 24;
+            this.cld_inicio.Location = new System.Drawing.Point(38, 305);
+            this.cld_inicio.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
+            this.cld_inicio.Name = "cld_inicio";
+            this.cld_inicio.TabIndex = 24;
+            this.cld_inicio.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.cld_inicio_DateChanged);
             // 
             // lblMedico
             // 
@@ -171,7 +175,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.lblMedico.Location = new System.Drawing.Point(8, 203);
             this.lblMedico.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMedico.Name = "lblMedico";
-            this.lblMedico.Size = new System.Drawing.Size(167, 19);
+            this.lblMedico.Size = new System.Drawing.Size(248, 28);
             this.lblMedico.TabIndex = 38;
             this.lblMedico.Text = "Nombre del médico";
             this.lblMedico.Click += new System.EventHandler(this.label8_Click);
@@ -188,7 +192,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.cmbMedico.Location = new System.Drawing.Point(179, 195);
             this.cmbMedico.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbMedico.Name = "cmbMedico";
-            this.cmbMedico.Size = new System.Drawing.Size(242, 28);
+            this.cmbMedico.Size = new System.Drawing.Size(242, 35);
             this.cmbMedico.TabIndex = 39;
             // 
             // button3
@@ -202,6 +206,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.button3.TabIndex = 219;
             this.button3.Text = "Mostrar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // groupBox1
             // 
@@ -210,11 +215,11 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.groupBox1.Controls.Add(this.cmbReporte);
             this.groupBox1.Controls.Add(this.cmbMedico);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.monthCalendar2);
+            this.groupBox1.Controls.Add(this.cld_Final);
             this.groupBox1.Controls.Add(this.lblEspecialidad);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblMedico);
-            this.groupBox1.Controls.Add(this.monthCalendar1);
+            this.groupBox1.Controls.Add(this.cld_inicio);
             this.groupBox1.Controls.Add(this.cmbEspecialidad);
             this.groupBox1.Controls.Add(this.txtIdentificacion);
             this.groupBox1.Controls.Add(this.lblIdentificacion);
@@ -227,6 +232,16 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del Reporte";
             // 
+            // dgv_test
+            // 
+            this.dgv_test.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_test.Location = new System.Drawing.Point(746, 209);
+            this.dgv_test.Name = "dgv_test";
+            this.dgv_test.RowHeadersWidth = 62;
+            this.dgv_test.RowTemplate.Height = 28;
+            this.dgv_test.Size = new System.Drawing.Size(240, 150);
+            this.dgv_test.TabIndex = 220;
+            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
@@ -236,7 +251,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(713, 44);
+            this.pnlTitulo.Size = new System.Drawing.Size(1096, 44);
             this.pnlTitulo.TabIndex = 239;
             // 
             // label7
@@ -246,7 +261,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label7.Location = new System.Drawing.Point(153, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(378, 38);
+            this.label7.Size = new System.Drawing.Size(572, 56);
             this.label7.TabIndex = 240;
             this.label7.Text = "Generador de Reportes";
             this.label7.Click += new System.EventHandler(this.label7_Click_1);
@@ -275,10 +290,11 @@ namespace UI_CLINICA.Ventanas.Reportes
             // 
             // frmReportes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(713, 620);
+            this.ClientSize = new System.Drawing.Size(1096, 620);
+            this.Controls.Add(this.dgv_test);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -289,6 +305,7 @@ namespace UI_CLINICA.Ventanas.Reportes
             this.Load += new System.EventHandler(this.frmReportes_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_test)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
@@ -307,8 +324,8 @@ namespace UI_CLINICA.Ventanas.Reportes
         private System.Windows.Forms.ComboBox cmbReporte;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar cld_Final;
+        private System.Windows.Forms.MonthCalendar cld_inicio;
         private System.Windows.Forms.Label lblMedico;
         private System.Windows.Forms.ComboBox cmbMedico;
         private System.Windows.Forms.Button button3;
@@ -317,5 +334,6 @@ namespace UI_CLINICA.Ventanas.Reportes
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btn_cerrar;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgv_test;
     }
 }
