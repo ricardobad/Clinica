@@ -124,5 +124,146 @@ namespace UI_CLINICA.Ventanas.Pacientes
 
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtx_Nombre.Text == string.Empty || txt_Apellido_I.Text == string.Empty ||
+            txt_Apellido_II.Text == string.Empty || txt_Identificacion.Text == string.Empty ||
+            txt_Otras_Guias.Text == string.Empty || cmb_Provincia.Text == string.Empty ||
+            cmb_Canton.Text == string.Empty || cmb_Distrito.Text == string.Empty ||
+            txt_Telefono_I.Text == string.Empty || txtx_Correo_I.Text == string.Empty ||
+            cmb_Tipo_ID.Text == string.Empty || cmb_Sexo.Text == string.Empty ||
+            cmb_Estado.Text == string.Empty || txtx_Contrasena.Text == string.Empty 
+
+            )
+            {
+                MessageBox.Show("Debe rellenar todos los campos obligatorios",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+
+            }
+
+            if (txtx_Contrasena.Text.Length <= 6)
+            {
+                MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+
+            DateTime A = DateTime.Today;
+            DateTime B = dateTimePicker1.Value;
+
+            if (B > A)
+            {
+                MessageBox.Show("No se aceptan fechas de nacimiento en futuro",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+
+            else
+            {
+
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtx_Nombre.Text = string.Empty;
+            txt_Apellido_I.Text = string.Empty;
+            txt_Apellido_II.Text = string.Empty;
+            txt_Identificacion.Text = string.Empty;
+            dateTimePicker1.Value = DateTime.Now;
+            txt_Otras_Guias.Text = string.Empty;
+            cmb_Provincia.Text = string.Empty; ;
+            cmb_Canton.Text = string.Empty;
+            cmb_Distrito.Text = string.Empty;
+            txt_Telefono_I.Text = string.Empty;
+            txt_Telefono_II.Text = string.Empty;
+            txtx_Correo_I.Text = string.Empty;
+            txtx_Correo_I.Text = string.Empty;
+            cmb_Tipo_ID.Text = string.Empty;
+            cmb_Sexo.Text = string.Empty;
+            cmb_Estado.Text = string.Empty;
+            txtx_Contrasena.Text = string.Empty;
+        }
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32))
+            {
+               // erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                //erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+        }
+
+        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 43) || (e.KeyChar == 45))
+            {
+               // erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+               // erp_Principal.SetError(txt, "Solo se admiten numeros");
+            }
+
+        }
+
+        private void ValidaNumeros2(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
+            {
+                //erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+               // erp_Principal.SetError(txt, "Solo se admiten numeros");
+            }
+
+        }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txtx_Nombre);
+        }
+
+        private void txt_Apellido_I_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Apellido_I);
+        }
+
+        private void txt_Apellido_II_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Apellido_II);
+        }
+
+        private void txt_Telefono_I_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, txt_Telefono_I);
+        }
+
+        private void txt_Telefono_II_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, txt_Telefono_II);
+        }
+
+        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros2(e, txt_Busqueda);
+        }
     }
 }

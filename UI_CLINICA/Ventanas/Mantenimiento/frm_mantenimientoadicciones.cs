@@ -250,7 +250,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         }
 
         private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
-        {
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
             if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32))
             {
                 erp_Principal.Clear();

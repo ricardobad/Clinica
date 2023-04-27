@@ -29,9 +29,9 @@ namespace UI_CLINICA.Ventanas.Citas
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbControl1 = new System.Windows.Forms.TabControl();
             this.Tabpage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
@@ -85,10 +85,10 @@ namespace UI_CLINICA.Ventanas.Citas
             this.Tabpage2.Controls.Add(this.dgv_Citas);
             this.Tabpage2.Controls.Add(this.textBox16);
             this.Tabpage2.Controls.Add(this.label36);
-            this.Tabpage2.Location = new System.Drawing.Point(4, 32);
+            this.Tabpage2.Location = new System.Drawing.Point(4, 28);
             this.Tabpage2.Name = "Tabpage2";
             this.Tabpage2.Padding = new System.Windows.Forms.Padding(3);
-            this.Tabpage2.Size = new System.Drawing.Size(687, 571);
+            this.Tabpage2.Size = new System.Drawing.Size(687, 575);
             this.Tabpage2.TabIndex = 2;
             this.Tabpage2.Text = "Buscar citas por identificación";
             // 
@@ -124,37 +124,37 @@ namespace UI_CLINICA.Ventanas.Citas
             this.dgv_Citas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Citas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Citas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Citas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Citas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_Citas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Citas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Citas.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_Citas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_Citas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.dgv_Citas.Location = new System.Drawing.Point(7, 84);
             this.dgv_Citas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_Citas.MultiSelect = false;
             this.dgv_Citas.Name = "dgv_Citas";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Citas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Citas.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_Citas.RowHeadersWidth = 51;
             this.dgv_Citas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Citas.Size = new System.Drawing.Size(673, 443);
@@ -164,9 +164,11 @@ namespace UI_CLINICA.Ventanas.Citas
             // 
             this.textBox16.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox16.Location = new System.Drawing.Point(146, 27);
+            this.textBox16.MaxLength = 14;
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(192, 39);
+            this.textBox16.Size = new System.Drawing.Size(192, 33);
             this.textBox16.TabIndex = 118;
+            this.textBox16.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
             // 
             // label36
             // 
@@ -175,7 +177,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.label36.Location = new System.Drawing.Point(25, 34);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(145, 23);
+            this.label36.Size = new System.Drawing.Size(115, 19);
             this.label36.TabIndex = 120;
             this.label36.Text = "Identificación";
             // 
@@ -200,20 +202,21 @@ namespace UI_CLINICA.Ventanas.Citas
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.textBox6);
-            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Location = new System.Drawing.Point(4, 28);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(687, 571);
+            this.tabPage1.Size = new System.Drawing.Size(687, 575);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informacion Personal                             ";
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(399, 282);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(163, 31);
+            this.comboBox2.Size = new System.Drawing.Size(163, 27);
             this.comboBox2.TabIndex = 278;
             // 
             // label4
@@ -224,7 +227,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label4.Location = new System.Drawing.Point(395, 251);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 23);
+            this.label4.Size = new System.Drawing.Size(98, 19);
             this.label4.TabIndex = 277;
             this.label4.Text = "Consultorio:";
             // 
@@ -236,7 +239,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label2.Location = new System.Drawing.Point(395, 37);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 23);
+            this.label2.Size = new System.Drawing.Size(184, 19);
             this.label2.TabIndex = 276;
             this.label2.Text = "Información de la cita:";
             // 
@@ -270,18 +273,19 @@ namespace UI_CLINICA.Ventanas.Citas
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
             this.checkBox1.Location = new System.Drawing.Point(40, 495);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(255, 27);
+            this.checkBox1.Size = new System.Drawing.Size(206, 23);
             this.checkBox1.TabIndex = 273;
             this.checkBox1.Text = "Confirmación de pago";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(40, 445);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(176, 31);
+            this.comboBox1.Size = new System.Drawing.Size(176, 27);
             this.comboBox1.TabIndex = 272;
             // 
             // label1
@@ -292,7 +296,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label1.Location = new System.Drawing.Point(36, 408);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 23);
+            this.label1.Size = new System.Drawing.Size(140, 19);
             this.label1.TabIndex = 271;
             this.label1.Text = "Estado de la cita:";
             // 
@@ -301,7 +305,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.dateTimePicker3.Checked = false;
             this.dateTimePicker3.Location = new System.Drawing.Point(40, 282);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(304, 32);
+            this.dateTimePicker3.Size = new System.Drawing.Size(304, 27);
             this.dateTimePicker3.TabIndex = 270;
             // 
             // dateTimePicker2
@@ -310,16 +314,17 @@ namespace UI_CLINICA.Ventanas.Citas
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePicker2.Location = new System.Drawing.Point(40, 364);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(304, 32);
+            this.dateTimePicker2.Size = new System.Drawing.Size(304, 27);
             this.dateTimePicker2.TabIndex = 269;
             // 
             // comboBox5
             // 
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(40, 144);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(176, 31);
+            this.comboBox5.Size = new System.Drawing.Size(176, 27);
             this.comboBox5.TabIndex = 268;
             // 
             // label3
@@ -330,17 +335,18 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label3.Location = new System.Drawing.Point(49, 109);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(141, 23);
+            this.label3.Size = new System.Drawing.Size(114, 19);
             this.label3.TabIndex = 267;
             this.label3.Text = "Especialidad:";
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(40, 206);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(176, 31);
+            this.comboBox3.Size = new System.Drawing.Size(176, 27);
             this.comboBox3.TabIndex = 266;
             // 
             // label17
@@ -351,7 +357,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label17.Location = new System.Drawing.Point(49, 174);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 23);
+            this.label17.Size = new System.Drawing.Size(63, 19);
             this.label17.TabIndex = 265;
             this.label17.Text = "Doctor:";
             // 
@@ -363,7 +369,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label30.Location = new System.Drawing.Point(49, 251);
             this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(48, 23);
+            this.label30.Size = new System.Drawing.Size(39, 19);
             this.label30.TabIndex = 263;
             this.label30.Text = "Día:";
             // 
@@ -375,7 +381,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label8.Location = new System.Drawing.Point(49, 37);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 23);
+            this.label8.Size = new System.Drawing.Size(119, 19);
             this.label8.TabIndex = 261;
             this.label8.Text = "Identificación:";
             // 
@@ -387,7 +393,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label31.Location = new System.Drawing.Point(49, 333);
             this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(62, 23);
+            this.label31.Size = new System.Drawing.Size(50, 19);
             this.label31.TabIndex = 262;
             this.label31.Text = "Hora:";
             // 
@@ -398,9 +404,11 @@ namespace UI_CLINICA.Ventanas.Citas
             this.textBox6.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox6.Location = new System.Drawing.Point(40, 61);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox6.MaxLength = 14;
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(176, 37);
+            this.textBox6.Size = new System.Drawing.Size(176, 31);
             this.textBox6.TabIndex = 264;
+            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_2_KeyPress);
             // 
             // pnlTitulo
             // 
@@ -420,13 +428,13 @@ namespace UI_CLINICA.Ventanas.Citas
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label15.Location = new System.Drawing.Point(261, 6);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(312, 47);
+            this.label15.Size = new System.Drawing.Size(250, 38);
             this.label15.TabIndex = 231;
             this.label15.Text = "Modificar Citas";
             // 
             // frm_modificarcitas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(747, 685);

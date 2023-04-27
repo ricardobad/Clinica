@@ -209,7 +209,7 @@ namespace UI_CLINICA.Ventanas.Roles
                 //  erp_Mensajes.Clear();
                 Obj_Roles_DAL.sIDRol = txt_IDRol.Text.Trim();
                 Obj_Roles_DAL.sDescripcion = txt_Descripcion.Text.Trim();
-                if (cbo_Estado.SelectedItem == "Activo")
+                if (cbo_Estado.SelectedItem.ToString() == "Activo")
                 {
                     Obj_Roles_DAL.iEstado = 1;
                 }

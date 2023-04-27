@@ -235,12 +235,12 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
             if (txt_Nombre.Text == string.Empty || txt_Apellido_I.Text == string.Empty ||
             txt_Apellido_II.Text == string.Empty || txt_Identificacion.Text == string.Empty ||
-            txt_Otras_Guias.Text == string.Empty|| cmb_Provincia.Text == string.Empty ||
-            cmb_Canton.Text ==string.Empty || cmb_Distrito.Text == string.Empty ||
-            txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty||
-            cmb_Tipo_ID.Text == string.Empty ||cmb_Sexo.Text == string.Empty||
-            cmb_Estado_Empleado.Text == string.Empty|| txtx_Nomb_Usuario.Text == string.Empty||
-            txt_Contrasena.Text == string.Empty|| cmb_Rol.Text == string.Empty
+            txt_Otras_Guias.Text == string.Empty || cmb_Provincia.Text == string.Empty ||
+            cmb_Canton.Text == string.Empty || cmb_Distrito.Text == string.Empty ||
+            txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty ||
+            cmb_Tipo_ID.Text == string.Empty || cmb_Sexo.Text == string.Empty ||
+            cmb_Estado_Empleado.Text == string.Empty || txtx_Nomb_Usuario.Text == string.Empty ||
+            txt_Contrasena.Text == string.Empty || cmb_Rol.Text == string.Empty
 
             )
             {
@@ -251,10 +251,104 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             }
 
+            if (txt_Contrasena.Text.Length <= 6)
+            {
+                MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+
+            DateTime A = new DateTime(2008, 01, 01);
+            DateTime B = dtp_FechaNacimiento.Value;
+
+            if (B > A)
+            {
+                MessageBox.Show("No se aceptan menores de 15 años",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+
             else { 
             
             
             }
+        }
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32))
+            {
+                //erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+              //  erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+        }
+
+        private void ValidaNU(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32) || (char.IsDigit(e.KeyChar)))
+            {
+                //erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+              //  erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+        }
+
+        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 43) || (e.KeyChar == 45))
+            {
+              //  erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+              //  erp_Principal.SetError(txt, "Solo se admiten numeros");
+            }
+
+        }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Nombre);
+        }
+
+        private void txt_Apellido_1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Apellido_I);
+        }
+
+        private void txt_Apellido_2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Apellido_II);
+        }
+
+        private void txt_Telefono_1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, txt_Telefono_I);
+        }
+
+        private void txt_NombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNU(e, txtx_Nomb_Usuario);
+        }
+
+        private void txt_Telefono_2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, txt_Telefono_II);
         }
     }
 }
