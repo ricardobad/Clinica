@@ -153,7 +153,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
                 {
                     cmb_TipoSangre.SelectedIndex = 0;
                 }
-                else if(Obj_Paciente_DAL.DtDatos.Rows[0]["Tipo de Sangre"].ToString().Trim() == "B")
+                else if (Obj_Paciente_DAL.DtDatos.Rows[0]["Tipo de Sangre"].ToString().Trim() == "B")
                 {
                     cmb_TipoSangre.SelectedIndex = 1;
                 }
@@ -161,7 +161,7 @@ namespace UI_CLINICA.Ventanas.Expedientes
                 {
                     cmb_TipoSangre.SelectedIndex = 2;
                 }
-                else 
+                else
                 {
                     cmb_TipoSangre.SelectedIndex = 3;
                 }
@@ -204,12 +204,6 @@ namespace UI_CLINICA.Ventanas.Expedientes
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
-
-
-
-
-
-
         }
 
         private void btn_ActualizarCorreos_Click(object sender, EventArgs e)
@@ -296,6 +290,68 @@ namespace UI_CLINICA.Ventanas.Expedientes
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {        
+            if (char.IsNumber(e.KeyChar) || (e.KeyChar == 8)|| (e.KeyChar == 99) || (e.KeyChar == 109))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+        }
+        private void txt_Telefono_I_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Telefono_I);
+        }
+
+        private void txt_Telefono_II_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Telefono_II);
+        }
+
+        private void ValidaPeso(KeyPressEventArgs e, TextBox txt)
+        {
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 107) || (e.KeyChar == 103) || (e.KeyChar == 108))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+        }
+        private void txt_Altura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaAltura(e, txt_Altura);
+        }
+
+        private void txt_Peso_HideSelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void ValidaAltura(KeyPressEventArgs e, TextBox txt)
+        {
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 107) || (e.KeyChar == 76) || (e.KeyChar == 71) || (e.KeyChar == 250))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+        }
+        private void txt_Peso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaPeso(e, txt_Peso);
         }
     }
 }

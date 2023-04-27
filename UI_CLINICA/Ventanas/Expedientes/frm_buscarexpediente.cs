@@ -91,9 +91,26 @@ namespace UI_CLINICA.Ventanas.Expedientes
             }
         }
 
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsNumber(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45 ))
+            {
+                erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
 
 
 
+        }
 
+        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Identificacion);
+        }
     }
 }

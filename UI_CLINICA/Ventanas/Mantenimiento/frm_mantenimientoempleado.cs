@@ -256,5 +256,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             
             }
         }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

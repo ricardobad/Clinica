@@ -167,5 +167,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+           
+        }
     }
 }

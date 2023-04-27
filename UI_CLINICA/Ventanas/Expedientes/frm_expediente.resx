@@ -414,4 +414,7 @@ Se anotó la siguiente información acerca de la cita:
         S9k/tkE/8psoe8FT4cXwOuh7BPOW55/9gP2B/eJR0GRlhx3+D2zGcKkEwp7YAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="erp_Principal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
