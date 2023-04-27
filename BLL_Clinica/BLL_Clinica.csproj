@@ -55,6 +55,7 @@
     <Compile Include="Catalogos\cls_Expedientes_BLL.cs" />
     <Compile Include="Catalogos\cls_Pacientes_BLL.cs" />
     <Compile Include="Catalogos\cls_Padecimientos_BLL.cs" />
+    <Compile Include="Catalogos\cls_Reportes_BLL.cs" />
     <Compile Include="Catalogos\cls_Roles_BLL.cs" />
     <Compile Include="Catalogos\cls_Telefonos_BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

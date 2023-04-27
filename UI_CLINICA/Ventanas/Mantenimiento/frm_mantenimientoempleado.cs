@@ -48,14 +48,18 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void CargarDatos_II()
         {
-            
+           
             Obj_Empleados_DAL.sID_Persona = txt_busqueda.Text.Trim().ToString();
             Obj_Empleados_BLL.listar_filtrar_Empleados(ref Obj_Empleados_DAL);
-
+            
+               
             if (Obj_Empleados_DAL.sMsjError == string.Empty)
             {
                 dgv_Empleados.DataSource = null;
                 dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
+                
+                MessageBox.Show("campos" + Obj_Empleados_DAL.sTelefonoII);
+          
             }
             else
             {
@@ -155,17 +159,9 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     Obj_Empleados_DAL.sCorreoI = dgv_Empleados.SelectedRows[0].Cells[14].Value.ToString().Trim();
                     Obj_Empleados_DAL.sCorreoII = dgv_Empleados.SelectedRows[0].Cells[15].Value.ToString().Trim();
                     Obj_Empleados_DAL.sNombreUser = dgv_Empleados.SelectedRows[0].Cells[16].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sContrasena = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[18].Value.ToString().Trim();
-                    //if (dgv_Empleados.SelectedRows[0].Cells[18].Value.ToString().Trim() == string.Empty)
-                    //{
-                    //    Obj_Empleados_DAL.iRol_Activo = 0;
-                    //}
-
-                    //else {
-                    //    Obj_Empleados_DAL.iRol_Activo = Convert.ToInt32(dgv_Empleados.SelectedRows[0].Cells[19].Value.ToString());
-                    //}
-                    
+                   // Obj_Empleados_DAL.sContrasena = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
+                  
 
 
                     txt_Nombre.Text = Obj_Empleados_DAL.sNombre.ToString().Trim();    //Pone el ID en el txt correspondiente
@@ -185,7 +181,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     cmb_Sexo.Text = Convert.ToString(Obj_Empleados_DAL.bSexo);
                     cmb_Estado_Empleado.Text = Convert.ToString(Obj_Empleados_DAL.bEstado);
                     txtx_Nomb_Usuario.Text = Obj_Empleados_DAL.sNombreUser.Trim();
-                    txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
+                  //  txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
                     cmb_Rol.Text = Obj_Empleados_DAL.sRol_Descripcion.Trim();
 
 
@@ -255,6 +251,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             
             
             }
+        }
+
+        private void txt_Nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

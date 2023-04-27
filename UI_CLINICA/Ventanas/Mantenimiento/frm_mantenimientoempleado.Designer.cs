@@ -262,7 +262,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             // 
             this.cmb_Distrito.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_Distrito.FormattingEnabled = true;
-            this.cmb_Distrito.Location = new System.Drawing.Point(376, 109);
+            this.cmb_Distrito.Location = new System.Drawing.Point(369, 108);
             this.cmb_Distrito.Name = "cmb_Distrito";
             this.cmb_Distrito.Size = new System.Drawing.Size(139, 44);
             this.cmb_Distrito.TabIndex = 283;
@@ -272,10 +272,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Correo_II.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Correo_II.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo_II.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Correo_II.Location = new System.Drawing.Point(383, 243);
+            this.txt_Correo_II.Location = new System.Drawing.Point(404, 247);
             this.txt_Correo_II.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Correo_II.Name = "txt_Correo_II";
-            this.txt_Correo_II.Size = new System.Drawing.Size(208, 42);
+            this.txt_Correo_II.Size = new System.Drawing.Size(188, 42);
             this.txt_Correo_II.TabIndex = 282;
             // 
             // label14
@@ -313,7 +313,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label13.Location = new System.Drawing.Point(412, 87);
+            this.label13.Location = new System.Drawing.Point(388, 83);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 28);
@@ -391,7 +391,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label1.Location = new System.Drawing.Point(422, 219);
+            this.label1.Location = new System.Drawing.Point(431, 214);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 28);
@@ -426,10 +426,10 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Correo_I.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_Correo_I.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Correo_I.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txt_Correo_I.Location = new System.Drawing.Point(376, 176);
+            this.txt_Correo_I.Location = new System.Drawing.Point(404, 176);
             this.txt_Correo_I.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Correo_I.Name = "txt_Correo_I";
-            this.txt_Correo_I.Size = new System.Drawing.Size(208, 42);
+            this.txt_Correo_I.Size = new System.Drawing.Size(184, 42);
             this.txt_Correo_I.TabIndex = 265;
             // 
             // txt_Carnet
@@ -448,7 +448,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(58)))), ((int)(((byte)(89)))));
-            this.label20.Location = new System.Drawing.Point(426, 152);
+            this.label20.Location = new System.Drawing.Point(431, 155);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(119, 28);
@@ -614,10 +614,11 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             this.txt_Nombre.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_Nombre.Location = new System.Drawing.Point(8, 35);
             this.txt_Nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_Nombre.MaxLength = 100;
+            this.txt_Nombre.MaxLength = 50;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(139, 42);
             this.txt_Nombre.TabIndex = 180;
+            this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // txt_Apellido_I
             // 
