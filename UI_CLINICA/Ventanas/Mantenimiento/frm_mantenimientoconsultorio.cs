@@ -164,7 +164,7 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
             {
                 erp_Mensajes.Clear();
                 Obj_Consultorios_DAL.iNumero = Convert.ToInt32(txt_Consul_Num.Text.Trim());
-                if (cbox_Estado.SelectedItem == "Activo")
+                if (cbox_Estado.SelectedItem.ToString() == "Activo")
                 {
                     Obj_Consultorios_DAL.iEstado = 1;
                 }

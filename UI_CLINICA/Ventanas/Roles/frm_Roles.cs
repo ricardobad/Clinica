@@ -233,6 +233,7 @@ namespace UI_CLINICA.Ventanas.Roles
                 }
 
                 if (cbo_Estado.SelectedItem == "Activo")
+                if (cbo_Estado.SelectedItem.ToString() == "Activo")
                 {
                     Obj_Roles_DAL.iEstado = 1;
                 }

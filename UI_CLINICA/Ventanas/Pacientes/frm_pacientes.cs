@@ -207,5 +207,15 @@ namespace UI_CLINICA.Ventanas.Pacientes
         {
             this.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFinalizar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

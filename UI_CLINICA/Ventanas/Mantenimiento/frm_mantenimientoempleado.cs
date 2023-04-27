@@ -57,26 +57,26 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void CargarDatos_II()
         {
-           
+
 
 
             Obj_Empleados_DAL.sID_Persona = txt_busqueda.Text.Trim().ToString();
             Obj_Empleados_BLL.listar_filtrar_Empleados(ref Obj_Empleados_DAL);
-            
-               
+
+
             if (Obj_Empleados_DAL.sMsjError == string.Empty)
             {
                 dgv_Empleados.DataSource = null;
                 dgv_Empleados.DataSource = Obj_Empleados_DAL.DtDatos;
-                
-                MessageBox.Show("campos" + Obj_Empleados_DAL.sTelefonoII);
-          
+
+
+
             }
             else
             {
                 MessageBox.Show("Se ha presentado un error al cargar los datos" + Obj_Empleados_DAL.sMsjError, "Error en carga de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
         }
 
@@ -175,24 +175,24 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             cmb_Sexo.DataSource = null;
 
-          //  cmb_Sexo.DataSource = Obj_Empleados_DAL.bSexo;
+            //  cmb_Sexo.DataSource = Obj_Empleados_DAL.bSexo;
 
-         //   cmb_Sexo.DisplayMember = "Sexo";
-         //   cmb_Sexo.ValueMember = "Sexo";
+            //   cmb_Sexo.DisplayMember = "Sexo";
+            //   cmb_Sexo.ValueMember = "Sexo";
         }
 
 
         #endregion
         private void btn_Cargar_Click(object sender, EventArgs e)
         {
-            
+
 
 
 
 
             if (dgv_Empleados.Rows.Count > 0)
             {
-                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim() +  " "
+                if (MessageBox.Show("Desea realmente editar el Empleado [ " + dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim() + " "
                     + dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim() + " ] ...?",//seleccionar la celda marcada con el nombre de la region
                         "Información o Alerta",
                         MessageBoxButtons.YesNo,
@@ -200,30 +200,30 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                 {
 
                     Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[9].Value.ToString().Trim();
-                    Obj_Empleados_DAL.sID_Provincia= Convert.ToString(Convert.ToInt32(Obj_Empleados_DAL.sID_Provincia)-1);
-                    
+                    Obj_Empleados_DAL.sID_Provincia = Convert.ToString(Convert.ToInt32(Obj_Empleados_DAL.sID_Provincia) - 1);
+
                     Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
                     Obj_Empleados_DAL.sID_Distrito = dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
                     Obj_Empleados_DAL.sNombre = dgv_Empleados.SelectedRows[0].Cells[0].Value.ToString().Trim();//id
                     Obj_Empleados_DAL.sPrimer_apellido = dgv_Empleados.SelectedRows[0].Cells[1].Value.ToString().Trim();
                     Obj_Empleados_DAL.sSegundo_apellido = dgv_Empleados.SelectedRows[0].Cells[2].Value.ToString().Trim();
                     Obj_Empleados_DAL.bTipo_ID = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[3].Value);
-                     Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[4].Value);
-                     Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[5].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
-                     Obj_Empleados_DAL.bEstado = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[7].Value);
+                    Obj_Empleados_DAL.bSexo = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[4].Value);
+                    Obj_Empleados_DAL.sFecha_nacimiento = dgv_Empleados.SelectedRows[0].Cells[5].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sIdentificacion = dgv_Empleados.SelectedRows[0].Cells[6].Value.ToString().Trim();
+                    Obj_Empleados_DAL.bEstado = Convert.ToByte(dgv_Empleados.SelectedRows[0].Cells[7].Value);
                     // Obj_Empleados_DAL.sID_Provincia = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sOtras_Guias = dgv_Empleados.SelectedRows[0].Cells[8].Value.ToString().Trim();
 
                     // Obj_Empleados_DAL.sID_Canton = dgv_Empleados.SelectedRows[0].Cells[10].Value.ToString().Trim();
                     // Obj_Empleados_DAL.sID_Distrito= dgv_Empleados.SelectedRows[0].Cells[11].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sTelefonoI= dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sTelefonoI = dgv_Empleados.SelectedRows[0].Cells[12].Value.ToString().Trim();
                     Obj_Empleados_DAL.sTelefonoII = dgv_Empleados.SelectedRows[0].Cells[13].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sCorreoI = dgv_Empleados.SelectedRows[0].Cells[14].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sCorreoII = dgv_Empleados.SelectedRows[0].Cells[15].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sNombreUser = dgv_Empleados.SelectedRows[0].Cells[16].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sCorreoI = dgv_Empleados.SelectedRows[0].Cells[14].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sCorreoII = dgv_Empleados.SelectedRows[0].Cells[15].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sNombreUser = dgv_Empleados.SelectedRows[0].Cells[16].Value.ToString().Trim();
                     //// Obj_Empleados_DAL.sContrasena = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
-                     Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
+                    Obj_Empleados_DAL.sRol_Descripcion = dgv_Empleados.SelectedRows[0].Cells[17].Value.ToString().Trim();
 
 
 
@@ -259,14 +259,14 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
                     cmb_Sexo.Text = Convert.ToString(Obj_Empleados_DAL.bSexo);
                     cmb_Estado_Empleado.Text = Convert.ToString(Obj_Empleados_DAL.bEstado);
                     txtx_Nomb_Usuario.Text = Obj_Empleados_DAL.sNombreUser.Trim();
-                  //  txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
+                    //  txt_Contrasena.Text = Obj_Empleados_DAL.sContrasena.Trim();
                     cmb_Rol.Text = Obj_Empleados_DAL.sRol_Descripcion.Trim();
 
 
 
-                   // CargarCombox();
+                    // CargarCombox();
                     tbControl1.SelectedTab = tabPage1;
-                  //  int indiceItem = cmb_Canton.FindStringExact(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["Nombre_Canton"].ToString().Trim());
+                    //  int indiceItem = cmb_Canton.FindStringExact(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["Nombre_Canton"].ToString().Trim());
 
 
 
@@ -288,13 +288,13 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void button2_Click(object sender, EventArgs e)
         {//LIMPIAR
-            txt_Nombre.Text = string.Empty;    
-            txt_Apellido_I.Text = string.Empty;     
+            txt_Nombre.Text = string.Empty;
+            txt_Apellido_I.Text = string.Empty;
             txt_Apellido_II.Text = string.Empty;
             txt_Identificacion.Text = string.Empty;
             dtp_FechaNacimiento.Value = DateTime.Now;
             txt_Otras_Guias.Text = string.Empty;
-            cmb_Provincia.Text = string.Empty;;
+            cmb_Provincia.Text = string.Empty; ;
             cmb_Canton.Text = string.Empty;
             cmb_Distrito.Text = string.Empty;
             txt_Telefono_I.Text = string.Empty;
@@ -314,12 +314,12 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
             if (txt_Nombre.Text == string.Empty || txt_Apellido_I.Text == string.Empty ||
             txt_Apellido_II.Text == string.Empty || txt_Identificacion.Text == string.Empty ||
-            txt_Otras_Guias.Text == string.Empty|| cmb_Provincia.Text == string.Empty ||
-            cmb_Canton.Text ==string.Empty || cmb_Distrito.Text == string.Empty ||
-            txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty||
-            cmb_Tipo_ID.Text == string.Empty ||cmb_Sexo.Text == string.Empty||
-            cmb_Estado_Empleado.Text == string.Empty|| txtx_Nomb_Usuario.Text == string.Empty||
-            txt_Contrasena.Text == string.Empty|| cmb_Rol.Text == string.Empty
+            txt_Otras_Guias.Text == string.Empty || cmb_Provincia.Text == string.Empty ||
+            cmb_Canton.Text == string.Empty || cmb_Distrito.Text == string.Empty ||
+            txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty ||
+            cmb_Tipo_ID.Text == string.Empty || cmb_Sexo.Text == string.Empty ||
+            cmb_Estado_Empleado.Text == string.Empty || txtx_Nomb_Usuario.Text == string.Empty ||
+            txt_Contrasena.Text == string.Empty || cmb_Rol.Text == string.Empty
 
             )
             {
@@ -330,9 +330,28 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
             }
 
-            else { 
-            
-            
+            if (txt_Contrasena.Text.Length <= 6)
+            {
+                MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+
+            DateTime A = new DateTime(2008, 01, 01);
+            DateTime B = dtp_FechaNacimiento.Value;
+
+            if (B > A)
+            {
+                MessageBox.Show("No se aceptan menores de 15 años",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
+
+            else {
+
+
             }
         }
 
@@ -350,6 +369,80 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void cmb_Canton_DropDownClosed(object sender, EventArgs e)
         {
             CargarComboDistrito();
+
+        }
+    
+
+        private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32))
+            {
+                //erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+              //  erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+        }
+
+        private void ValidaNU(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32) || (char.IsDigit(e.KeyChar)))
+            {
+                //erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+              //  erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+        }
+
+        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 43) || (e.KeyChar == 45))
+            {
+              //  erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+              //  erp_Principal.SetError(txt, "Solo se admiten numeros");
+            }
+
+        }
+
+     
+
+        private void txt_Apellido_1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Apellido_I);
+        }
+
+        private void txt_Apellido_2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaTXT(e, txt_Apellido_II);
+        }
+
+        private void txt_Telefono_1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, txt_Telefono_I);
+        }
+
+        private void txt_NombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNU(e, txtx_Nomb_Usuario);
+        }
+
+        private void txt_Telefono_2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, txt_Telefono_II);
         }
     }
 }
