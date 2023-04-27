@@ -67,12 +67,15 @@ namespace UI_CLINICA.Ventanas.Roles
                 Obj_Roles_DAL.sIDRol = string.Empty;
                 Obj_Roles_DAL.sDescripcion = string.Empty;
                 Obj_Roles_DAL.iEstado = Convert.ToInt32(string.Empty);
+                Obj_Roles_DAL.ITipoES = 0;
+                Obj_Roles_DAL.ITipoLE = 0;
 
             }
             else //"Modificar
             {
                 if (dgvRoles.Rows.Count > 0)
                 {
+                    
                     if (MessageBox.Show("Desea Realmente Editar el Rol [ " + dgvRoles.SelectedRows[0].Cells[0].Value.ToString().Trim() + " ]...???",
                 "Confirmación",
                 MessageBoxButtons.YesNo,
@@ -81,7 +84,7 @@ namespace UI_CLINICA.Ventanas.Roles
                         Obj_Roles_DAL.sIDRol = dgvRoles.SelectedRows[0].Cells[0].Value.ToString().Trim();
                         Obj_Roles_DAL.sDescripcion = dgvRoles.SelectedRows[0].Cells[1].Value.ToString().Trim();
 
-                        if (dgvRoles.SelectedRows[0].Cells[2].Value.ToString().Trim() == "true")
+                        if (dgvRoles.SelectedRows[0].Cells[2].Value.ToString()  == "true")
                         {
                             Obj_Roles_DAL.ITipoLE = 1;
                         }
@@ -89,7 +92,7 @@ namespace UI_CLINICA.Ventanas.Roles
                         {
                             Obj_Roles_DAL.ITipoLE = 0;
                         }
-                        if (dgvRoles.SelectedRows[0].Cells[3].Value.ToString().Trim() == "true")
+                        if (dgvRoles.SelectedRows[0].Cells[3].Value == "true")
                         {
                             Obj_Roles_DAL.ITipoES = 1;
                         }
@@ -98,7 +101,7 @@ namespace UI_CLINICA.Ventanas.Roles
                             Obj_Roles_DAL.ITipoES = 0;
                         }
                         
-                        if (dgvRoles.SelectedRows[0].Cells[4].Value.ToString().Trim() == "True")
+                        if (dgvRoles.SelectedRows[0].Cells[4].Value.ToString().Trim() == "1")
                         {
                             cbo_Estado.SelectedItem = "Activo";
                             Obj_Roles_DAL.iEstado = 1;
@@ -209,6 +212,26 @@ namespace UI_CLINICA.Ventanas.Roles
                 //  erp_Mensajes.Clear();
                 Obj_Roles_DAL.sIDRol = txt_IDRol.Text.Trim();
                 Obj_Roles_DAL.sDescripcion = txt_Descripcion.Text.Trim();
+                
+
+                    if(cbox_Escritura.Checked == true)
+                {
+                    Obj_Roles_DAL.ITipoES = 1;
+                }
+                else
+                {
+                    Obj_Roles_DAL.ITipoES = 0;
+                }
+
+                if (cbox_Lectura.Checked == true)
+                {
+                    Obj_Roles_DAL.ITipoLE = 1;
+                }
+                else
+                {
+                    Obj_Roles_DAL.ITipoLE = 0;
+                }
+
                 if (cbo_Estado.SelectedItem == "Activo")
                 {
                     Obj_Roles_DAL.iEstado = 1;
@@ -217,6 +240,8 @@ namespace UI_CLINICA.Ventanas.Roles
                 {
                     Obj_Roles_DAL.iEstado = 0;
                 }
+
+
             }
 
 
