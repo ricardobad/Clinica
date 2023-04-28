@@ -286,6 +286,12 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         }
 
+        private void CargarSexo() { 
+        
+        
+        
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {//LIMPIAR
             txt_Nombre.Text = string.Empty;

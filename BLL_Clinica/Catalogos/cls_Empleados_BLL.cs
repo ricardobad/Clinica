@@ -33,10 +33,7 @@ namespace BLL_Clinica.Catalogos
 
 
             Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["listar_personas"].ToString();
-            //   Obj_BD_DAL.sNomSpIII = ConfigurationManager.AppSettings["listar_correos"].ToString();
-            //  Obj_BD_DAL.sNomSpIV = ConfigurationManager.AppSettings["listar_direcciones"].ToString();
-            //  Obj_BD_DAL.sNomSpV = ConfigurationManager.AppSettings["listar_telefonos"].ToString();
-            //  Obj_BD_DAL.sNomSpVI = ConfigurationManager.AppSettings["listar_distritos"].ToString();
+         
 
 
 
