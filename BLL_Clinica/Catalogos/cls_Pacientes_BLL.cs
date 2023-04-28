@@ -86,5 +86,101 @@ namespace BLL_Clinica.Catalogos
 
             }
         }
+
+
+
+
+        public void Listar_Pacientes(ref cls_Pacientes_DAL Obj_Pacientes_DAL)
+        {
+
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "Pacientes";
+
+                if (Obj_Pacientes_DAL.sIdentificacion == string.Empty)
+                {
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_listar_mant_pacientes";
+
+                }
+                else
+                {
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_filtrar_mant_pacientes";
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                    Obj_BD_DAL.dtParametros.Rows.Add("@Identificacion", "7", Obj_Pacientes_DAL.sIdentificacion);
+                }
+                    
+
+                
+
+                Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+                Obj_Pacientes_DAL.dsPacientes = Obj_BD_DAL.dsDatos;
+                Obj_Pacientes_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Pacientes_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
+
+        }
+
+
+
+
+        public void Insertar_Pacientes(ref cls_Personas_DAL Obj_Personas_DAL)
+        {
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "Pacientes";
+
+
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_INSERTAR_PERSONAS";
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                Obj_BD_DAL.dtParametros.Rows.Add("@Nombre", "7", Obj_Personas_DAL.Nombre);
+                Obj_BD_DAL.dtParametros.Rows.Add("@primer_apellido", "7", Obj_Personas_DAL.primer_apellido);
+                Obj_BD_DAL.dtParametros.Rows.Add("@segundo_apellido", "7", Obj_Personas_DAL.segundo_apellido);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Tipo_ID", "9", Obj_Personas_DAL.Tipo_ID);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Sexo", "9", Obj_Personas_DAL.Sexo);
+                Obj_BD_DAL.dtParametros.Rows.Add("@fecha_nacimiento", "8", Obj_Personas_DAL.fecha_nacimiento);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Identificacion", "7", Obj_Personas_DAL.Identificacion);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Estado", "9", Obj_Personas_DAL.Estado);
+                Obj_BD_DAL.dtParametros.Rows.Add("@Tipo_Persona", "7", 1);
+                Obj_BD_DAL.dtParametros.Rows.Add("@fecha_ingreso", "8", DateTime.Now);
+
+
+                Obj_BD_DAL.sIndAxn = "NORMAL";
+
+                Obj_BD_BLL.ExecCommand(ref Obj_BD_DAL);
+
+
+
+                Obj_Personas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Personas_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
+
+
+
+
+        }
+
+
     }
 }

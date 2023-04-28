@@ -37,10 +37,6 @@ namespace BLL_Clinica.Catalogos
                 Obj_Personas_DAL.dsPersonas = Obj_BD_DAL.dsDatos;
                 
 
-                if((Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0])["Nombre"] == null)
-                {
-                    Obj_Personas_DAL.sMsjError = "No se encontró a la persona en el sistema";
-                }
 
                 Obj_Personas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
 

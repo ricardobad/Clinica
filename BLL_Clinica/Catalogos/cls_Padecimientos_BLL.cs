@@ -142,18 +142,16 @@ namespace BLL_Clinica.Catalogos
                 if (Obj_Padecimientos_DAL.sMsjError == string.Empty)
                 {
                     Obj_Padecimientos_DAL.ID_Padecimiento = Convert.ToInt32(Obj_BD_DAL.sValorScalar);
-                    Obj_Padecimientos_DAL.cIndAxn = 'M';
+
                 }
                 else
                 {
-                    Obj_Padecimientos_DAL.cIndAxn = 'N';
                 }
 
 
             }
             catch (Exception ex)
             {
-                Obj_Padecimientos_DAL.cIndAxn = 'N';
                 Obj_Padecimientos_DAL.sMsjError = ex.Message.ToString().Trim();
 
             }
