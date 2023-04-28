@@ -13,6 +13,7 @@ using DAL;
 using BLL_Clinica.Catalogos;
 using DAL_Clinica.Catalogos;
 
+
 namespace UI_CLINICA.Ventanas.Citas
 {
     public partial class frm_crearcitas : Form
@@ -189,4 +190,3 @@ namespace UI_CLINICA.Ventanas.Citas
         }
     }
     
-}
