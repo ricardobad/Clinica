@@ -358,31 +358,31 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            //if (txt_Nombre.Text == string.Empty || txt_Apellido_I.Text == string.Empty ||
-            //txt_Apellido_II.Text == string.Empty || txt_Identificacion.Text == string.Empty ||
-            //txt_Otras_Guias.Text == string.Empty || cmb_Provincia.Text == string.Empty ||
-            //cmb_Canton.Text == string.Empty || cmb_Distrito.Text == string.Empty ||
-            //txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty ||
-            //cmb_Tipo_ID.Text == string.Empty || cmb_Sexo.Text == string.Empty ||
-            //cmb_Estado_Empleado.Text == string.Empty || txtx_Nomb_Usuario.Text == string.Empty ||
-            //txt_Contrasena.Text == string.Empty || cmb_Rol.Text == string.Empty
+            if (txt_Nombre.Text == string.Empty || txt_Apellido_I.Text == string.Empty ||
+            txt_Apellido_II.Text == string.Empty || txt_Identificacion.Text == string.Empty ||
+            txt_Otras_Guias.Text == string.Empty || cmb_Provincia.Text == string.Empty ||
+            cmb_Canton.Text == string.Empty || cmb_Distrito.Text == string.Empty ||
+            txt_Telefono_I.Text == string.Empty || txt_Correo_I.Text == string.Empty ||
+            cmb_Tipo_ID.Text == string.Empty || cmb_Sexo.Text == string.Empty ||
+            cmb_Estado_Empleado.Text == string.Empty || txtx_Nomb_Usuario.Text == string.Empty ||
+            txt_Contrasena.Text == string.Empty || cmb_Rol.Text == string.Empty
 
-            //)
-            //{
-            //    MessageBox.Show("Debe rellenar todos los campos obligatorios",
-            //                            "Información o Alerta",
-            //                            MessageBoxButtons.OK,
-            //                             MessageBoxIcon.Information);
+            )
+            {
+                MessageBox.Show("Debe rellenar todos los campos obligatorios",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
 
-            //}
+            }
 
-            //if (txt_Contrasena.Text.Length <= 6)
-            //{
-            //    MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
-            //                            "Información o Alerta",
-            //                            MessageBoxButtons.OK,
-            //                             MessageBoxIcon.Information);
-            //}
+            if (txt_Contrasena.Text.Length <= 6)
+            {
+                MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
+                                        "Información o Alerta",
+                                        MessageBoxButtons.OK,
+                                         MessageBoxIcon.Information);
+            }
 
             DateTime A = new DateTime(2008, 01, 01);
             DateTime B = dtp_FechaNacimiento.Value;
@@ -560,6 +560,55 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         private void txt_Telefono_2_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidaNumeros(e, txt_Telefono_II);
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            // para modificacion, similar a insertar, se traen los datos
+            Obj_Empleados_DAL.sIdentificacion = txt_Identificacion.Text.ToString().Trim();
+            Obj_Empleados_DAL.sNombre = txt_Nombre.Text.ToString().Trim();
+            Obj_Empleados_DAL.sPrimer_apellido = txt_Apellido_I.Text.ToString().Trim();
+            Obj_Empleados_DAL.sSegundo_apellido = txt_Apellido_II.Text.ToString().Trim();
+            Obj_Empleados_DAL.B_TIPO_ID1 = Convert.ToBoolean(cmb_Tipo_ID.SelectedIndex);
+            Obj_Empleados_DAL.B_SEXO1 = Convert.ToBoolean(cmb_Sexo.SelectedIndex);
+            Obj_Empleados_DAL.sFecha_nacimiento = dtp_FechaNacimiento.Value.ToString();
+            //nos saltamos fecha de ingreso
+            Obj_Empleados_DAL.B_ESTADO1 = Convert.ToBoolean(cmb_Estado_Empleado.SelectedIndex);
+            Obj_Empleados_DAL.sTipoPersona = "2";
+            Obj_Empleados_DAL.sTelefonoI = txt_Telefono_I.Text.ToString().Trim();
+            Obj_Empleados_DAL.sTelefonoII = txt_Telefono_II.Text.ToString().Trim();
+            Obj_Empleados_DAL.sCorreoI = txt_Correo_I.Text.ToString().Trim();
+            Obj_Empleados_DAL.sCorreoII = txt_Correo_II.Text.ToString().Trim();
+            Obj_Empleados_DAL.sID_Canton = cmb_Canton.Text;
+            Obj_Empleados_DAL.sID_Provincia = cmb_Provincia.Text;
+            Obj_Empleados_DAL.sID_Distrito = cmb_Distrito.Text;
+            Obj_Empleados_DAL.sOtras_Guias = txt_Otras_Guias.Text.ToString().Trim();
+            Obj_Empleados_DAL.sContrasena = txt_Contrasena.Text.ToString().Trim();
+            Obj_Empleados_DAL.sNombreUser = txtx_Nomb_Usuario.Text.ToString().Trim();
+            Obj_Empleados_DAL.sRol_Descripcion = cmb_Rol.Text;
+            Obj_Empleados_DAL.iRol_Activo = 1;
+            //consulta cual ID PROVINCIA de acuerdo al nombrre
+            Obj_Empleados_BLL.obtenerProvincia(ref Obj_Empleados_DAL);
+            //re asigna el ID de la provincia
+            Obj_Empleados_DAL.sID_Provincia = Obj_Empleados_DAL.DtDatos.Rows[0][0].ToString();
+            //consulta a Distristo
+            Obj_Empleados_BLL.obtenerDistrito(ref Obj_Empleados_DAL);
+            Obj_Empleados_DAL.sID_Distrito = Obj_Empleados_DAL.DtDatos.Rows[0][0].ToString();
+
+            //Cantones
+            Obj_Empleados_BLL.obtenerCanton(ref Obj_Empleados_DAL);
+            Obj_Empleados_DAL.sID_Canton = Obj_Empleados_DAL.DtDatos.Rows[0][0].ToString();
+
+            //llamado a metodos de Modificacion
+            Obj_Empleados_BLL.modificarEmpleado(ref Obj_Empleados_DAL);
+            Obj_Empleados_BLL.modificartelefonosEmpleado(ref Obj_Empleados_DAL);
+            Obj_Empleados_BLL.modificarCorreosEmpleado(ref Obj_Empleados_DAL);
+            Obj_Empleados_BLL.modificarDireccionesEmpleado(ref Obj_Empleados_DAL);
+            Obj_Empleados_BLL.modificarUsuarioEmpleado(ref Obj_Empleados_DAL);
+
+            MessageBox.Show("Usuario Modificado con exito");
+
+
         }
 
 

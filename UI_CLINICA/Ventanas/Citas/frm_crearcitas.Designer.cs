@@ -98,7 +98,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.txt_Identificacion.Size = new System.Drawing.Size(176, 37);
             this.txt_Identificacion.Size = new System.Drawing.Size(176, 31);
             this.txt_Identificacion.TabIndex = 180;
-            this.txt_Identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
+  //          this.txt_Identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
             this.txt_Identificacion.Leave += new System.EventHandler(this.txt_Identificacion_Leave);
             // 
             // label31

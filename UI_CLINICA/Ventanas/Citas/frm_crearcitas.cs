@@ -193,25 +193,25 @@ namespace UI_CLINICA.Ventanas.Citas
 
 
 
-        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
-        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
-            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
-            {
-                //erp_Principal.Clear();
-                e.Handled = false; // Permite // Continua 
-            }
-            else
-            {
-                e.Handled = true; // Cancela 
-                                  //  erp_Principal.SetError(txt, "Solo se admiten numeros");
-            }
+//        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+//        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+//            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
+//            {
+//                //erp_Principal.Clear();
+//                e.Handled = false; // Permite // Continua 
+//            }
+//            else
+//            {
+//                e.Handled = true; // Cancela 
+//                                  //  erp_Principal.SetError(txt, "Solo se admiten numeros");
+//            }
 
-        }
-        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidaNumeros(e, txt_Identificacion);
-        }
-    }
-}
+//        }
+//        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
+//        {
+//            ValidaNumeros(e, txt_Identificacion);
+//        }
+//    }
+//}
     
 
