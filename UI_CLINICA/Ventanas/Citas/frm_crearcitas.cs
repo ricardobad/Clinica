@@ -13,6 +13,7 @@ using DAL;
 using BLL_Clinica.Catalogos;
 using DAL_Clinica.Catalogos;
 
+
 namespace UI_CLINICA.Ventanas.Citas
 {
     public partial class frm_crearcitas : Form
@@ -41,38 +42,48 @@ namespace UI_CLINICA.Ventanas.Citas
                 cls_Consultorios_DAL Obj_Consultorios_DAL = new cls_Consultorios_DAL();
                 cls_Consultorios_BLL Obj_Consultorios_BLL = new cls_Consultorios_BLL();
 
-                Obj_Citas_DAL.ID_Cita = 1;
-                //Falta meter ID Paciente, para eso hay que leer el txt_Identificacion, buscarla en la BD en Pacientes, si existe, sacar el ID Paciente y meterlo en Insertar Citas, si No, tirar error
-                Obj_Especialidades_DAL.ID_Especialidad = Convert.ToInt32(cmb_Especialidad.Text);
-                Obj_Especialidades_BLL.listar_especialidades(ref Obj_Especialidades_DAL); //cuidado se el cambia el nombre en el BLL ya que no es listar/filtrar por lo que veo
-                DataRow drEspecialidad = Obj_Especialidades_DAL.dsEspecialidades.Tables["Especialidades"].Rows[1];
-                Obj_Citas_DAL.ID_Especialidad = Convert.ToInt32(drEspecialidad["ID_Especialidad"]);
-                Obj_Doctores_DAL.ID_Doctor = Convert.ToInt32(cmb_Doctor.Text);
-                Obj_Doctores_BLL.Listar_Filtrar_Doctores(ref Obj_Doctores_DAL);
-                DataRow drDoctores = Obj_Doctores_DAL.dsDoctores.Tables["Doctores"].Rows[0];
-                Obj_Citas_DAL.ID_Doctor = Convert.ToInt32(drDoctores["ID_Doctor"]);
-                Obj_Citas_DAL.FechaHoraInicio = dtp_Fecha.Value.Date.AddHours(dtp_Hora.Value.Hour).AddMinutes(dtp_Hora.Value.Minute).AddSeconds(dtp_Hora.Value.Second);
-                Obj_Consultorios_DAL.ID_Consultorio = Convert.ToInt32(cmb_Consultorio.Text);
-                Obj_Consultorios_BLL.Listar_Filtrar_Consultorios(ref Obj_Consultorios_DAL);
-                DataRow drConsultorio = Obj_Consultorios_DAL.DsConsultorios.Tables["Consultorios"].Rows[1];
-                Obj_Citas_DAL.ID_Consultorio = Convert.ToInt32(drEspecialidad["ID_Consultorio"]);
+                String sFecha_Concatena;
+                DateTime dtDiaCita;
 
-                Obj_Citas_BLL.Crear_Citas(ref Obj_Citas_DAL);
+                Obj_Citas_DAL.ID_Paciente = Convert.ToInt32(txt_Identificacion.Text.Trim());
+                Obj_Citas_DAL.ID_Especialidad = Convert.ToInt32(cmb_Especialidad.SelectedValue);
+                Obj_Citas_DAL.ID_Doctor = Convert.ToInt32(cmb_Doctor.SelectedValue);
+                Obj_Citas_DAL.ID_Consultorio = Convert.ToInt32(cmb_Consultorio.SelectedValue);
 
-                if (Obj_Citas_DAL.sMsjError == string.Empty)
+                //Obj_Citas_DAL.FechaCreacionCita = dtp_Fecha.Value.Date; // ToString().Trim()+"/"+dtp_Fecha.Value.Month.ToString().Trim()+"/"+ dtp_Fecha.Value.Year.ToString().Trim();
+                //Obj_Citas_DAL.FechaHoraInicio = Convert.ToDateTime(cbx_HoraCita.SelectedItem.ToString().Trim());
+                //sFecha_Concatena = dtDiaCita.ToString().Trim();
+                sFecha_Concatena = dtp_Fecha.Value.Day.ToString().Trim() + "/" + dtp_Fecha.Value.Month.ToString().Trim() + "/" + dtp_Fecha.Value.Year.ToString().Trim() + " " + cbx_HoraCita.SelectedItem;
+                Obj_Citas_DAL.FechaHoraInicio = Convert.ToDateTime(sFecha_Concatena.ToString());
+                Obj_Citas_DAL.EstadoCita = 1;
+
+                MessageBox.Show(Obj_Citas_DAL.FechaCreacionCita.ToString());
+
+
+
+                if (MessageBox.Show("Desea Realmente agendar la cita para la fecha y hora: " + Obj_Citas_DAL.FechaCreacionCita + "???",
+                                "ERROR",
+                                MessageBoxButtons.YesNoCancel,
+                                MessageBoxIcon.Error) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Nueva Cita creada exitosamente...!!!",
-                                    "Proceso Éxitoso",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
 
-                }
-                else
-                {
-                    MessageBox.Show("Se presentó un error en la creación de la cita .\n\nError: [" + Obj_Citas_DAL.sMsjError + " ].",
-                                    "Error",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                    Obj_Citas_BLL.Crear_Citas(ref Obj_Citas_DAL);
+
+                    if (Obj_Citas_DAL.sMsjError == string.Empty)
+                    {
+                        MessageBox.Show("Nueva Cita creada exitosamente...!!!",
+                                        "Proceso Éxitoso",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se presentó un error en la creación de la cita .\n\nError: [" + Obj_Citas_DAL.sMsjError + " ].",
+                                        "Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                    }
                 }
             }
 
@@ -87,8 +98,10 @@ namespace UI_CLINICA.Ventanas.Citas
             cls_Consultorios_DAL Obj_Consultorios_DAL = new cls_Consultorios_DAL();
             cls_Consultorios_BLL Obj_Consultorios_BLL = new cls_Consultorios_BLL();
 
+
+
             dtp_Fecha.MinDate = DateTime.Now;
-            dtp_Hora.MinDate = DateTime.Now;
+           ;
 
 
 
@@ -163,6 +176,8 @@ namespace UI_CLINICA.Ventanas.Citas
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
             }
+
+            
         }
 
 
@@ -185,28 +200,32 @@ namespace UI_CLINICA.Ventanas.Citas
             CargarCombos();
         }
 
-
-
-
-        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
-        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
-            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
-            {
-                //erp_Principal.Clear();
-                e.Handled = false; // Permite // Continua 
-            }
-            else
-            {
-                e.Handled = true; // Cancela 
-                                  //  erp_Principal.SetError(txt, "Solo se admiten numeros");
-            }
-
-        }
-        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ValidaNumeros(e, txt_Identificacion);
+        
         }
     }
-}
+    
+
+
+
+//        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+//        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+//            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
+//            {
+//                //erp_Principal.Clear();
+//                e.Handled = false; // Permite // Continua 
+//            }
+//            else
+//            {
+//                e.Handled = true; // Cancela 
+//                                  //  erp_Principal.SetError(txt, "Solo se admiten numeros");
+//            }
+
+//        }
+//        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
+//        {
+//            ValidaNumeros(e, txt_Identificacion);
+//        }
+//    }
+//}
     
 

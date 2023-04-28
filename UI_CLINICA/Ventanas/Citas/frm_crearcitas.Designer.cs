@@ -41,11 +41,11 @@ namespace UI_CLINICA.Ventanas.Citas
             this.cmb_Doctor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cmb_Especialidad = new System.Windows.Forms.ComboBox();
-            this.dtp_Hora = new System.Windows.Forms.DateTimePicker();
             this.dtp_Fecha = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_Consultorio = new System.Windows.Forms.ComboBox();
+            this.cbx_HoraCita = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +98,7 @@ namespace UI_CLINICA.Ventanas.Citas
             this.txt_Identificacion.Size = new System.Drawing.Size(176, 37);
             this.txt_Identificacion.Size = new System.Drawing.Size(176, 31);
             this.txt_Identificacion.TabIndex = 180;
-            this.txt_Identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
+  //          this.txt_Identificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Identificacion_KeyPress);
             this.txt_Identificacion.Leave += new System.EventHandler(this.txt_Identificacion_Leave);
             // 
             // label31
@@ -188,24 +188,16 @@ namespace UI_CLINICA.Ventanas.Citas
             this.cmb_Especialidad.Size = new System.Drawing.Size(176, 27);
             this.cmb_Especialidad.TabIndex = 258;
             // 
-            // dtp_Hora
-            // 
-            this.dtp_Hora.Checked = false;
-            this.dtp_Hora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_Hora.Location = new System.Drawing.Point(56, 445);
-            this.dtp_Hora.Name = "dtp_Hora";
-            this.dtp_Hora.Size = new System.Drawing.Size(304, 32);
-            this.dtp_Hora.Size = new System.Drawing.Size(304, 27);
-            this.dtp_Hora.TabIndex = 259;
-            // 
             // dtp_Fecha
             // 
             this.dtp_Fecha.Checked = false;
+            this.dtp_Fecha.CustomFormat = "dd/MM/ yyyy";
+            this.dtp_Fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Fecha.Location = new System.Drawing.Point(56, 363);
             this.dtp_Fecha.Name = "dtp_Fecha";
-            this.dtp_Fecha.Size = new System.Drawing.Size(387, 32);
-            this.dtp_Fecha.Size = new System.Drawing.Size(304, 27);
+            this.dtp_Fecha.Size = new System.Drawing.Size(367, 32);
             this.dtp_Fecha.TabIndex = 260;
+            this.dtp_Fecha.Value = new System.DateTime(2023, 4, 28, 0, 0, 0, 0);
             // 
             // pictureBox1
             // 
@@ -242,6 +234,32 @@ namespace UI_CLINICA.Ventanas.Citas
             this.cmb_Consultorio.Size = new System.Drawing.Size(176, 27);
             this.cmb_Consultorio.TabIndex = 263;
             // 
+            // cbx_HoraCita
+            // 
+            this.cbx_HoraCita.FormattingEnabled = true;
+            this.cbx_HoraCita.Items.AddRange(new object[] {
+            "08:00:00 AM",
+            "08:30:00 AM",
+            "09:00:00 AM",
+            "09:30:00 AM",
+            "10:00:00 AM",
+            "10:30:00 AM",
+            "11:00:00 AM",
+            "11:30:00 AM",
+            "01:00:00 PM",
+            "01:30:00 PM",
+            "02:00:00 PM",
+            "02:30:00 PM",
+            "03:00:00 PM",
+            "03:30:00 PM",
+            "04:00:00 PM",
+            "04:30 PM"});
+            this.cbx_HoraCita.Location = new System.Drawing.Point(56, 440);
+            this.cbx_HoraCita.Name = "cbx_HoraCita";
+            this.cbx_HoraCita.Size = new System.Drawing.Size(213, 31);
+            this.cbx_HoraCita.TabIndex = 264;
+            this.cbx_HoraCita.Text = "SELECCIONE HORA";
+            // 
             // frm_crearcitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -249,11 +267,11 @@ namespace UI_CLINICA.Ventanas.Citas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.ClientSize = new System.Drawing.Size(747, 685);
+            this.Controls.Add(this.cbx_HoraCita);
             this.Controls.Add(this.cmb_Consultorio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtp_Fecha);
-            this.Controls.Add(this.dtp_Hora);
             this.Controls.Add(this.cmb_Especialidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmb_Doctor);
@@ -292,10 +310,10 @@ namespace UI_CLINICA.Ventanas.Citas
         private System.Windows.Forms.ComboBox cmb_Doctor;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmb_Especialidad;
-        private System.Windows.Forms.DateTimePicker dtp_Hora;
         private System.Windows.Forms.DateTimePicker dtp_Fecha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmb_Consultorio;
+        private System.Windows.Forms.ComboBox cbx_HoraCita;
     }
 }

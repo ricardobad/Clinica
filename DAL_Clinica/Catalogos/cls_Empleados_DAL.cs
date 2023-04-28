@@ -16,7 +16,8 @@ namespace DAL_Clinica.Catalogos
             _sOtras_Guias, _sID_Canton, _sID_Distrito, _sID_Provincia, _sContrasena, _sTelefonoI, _sTelefonoII, _sCorreoI, _sCorreoII;
         private DataTable _dtDatos, _dtParametros;
         private int _iID_Direccion, _iRol_Activo;
-        private string _sIdentificacion, _sNombreUser, _sRol_Descripcion;
+        private string _sIdentificacion, _sNombreUser, _sRol_Descripcion, _sTipoPersona;
+        private bool B_TIPO_ID, B_SEXO, B_ESTADO;
 
 
         #endregion
@@ -48,6 +49,10 @@ namespace DAL_Clinica.Catalogos
         public string sNombreUser { get => _sNombreUser; set => _sNombreUser = value; }
         public string sRol_Descripcion { get => _sRol_Descripcion; set => _sRol_Descripcion = value; }
         public int iRol_Activo { get => _iRol_Activo; set => _iRol_Activo = value; }
+        public string sTipoPersona { get => _sTipoPersona; set => _sTipoPersona = value; }
+        public bool B_TIPO_ID1 { get => B_TIPO_ID; set => B_TIPO_ID = value; }
+        public bool B_SEXO1 { get => B_SEXO; set => B_SEXO = value; }
+        public bool B_ESTADO1 { get => B_ESTADO; set => B_ESTADO = value; }
 
 
 

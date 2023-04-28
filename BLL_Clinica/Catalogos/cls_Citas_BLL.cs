@@ -122,26 +122,23 @@ namespace BLL_Clinica.Catalogos
 
                 // Obj_BD_DAL.dtParametros.Rows.Add("@ID_Padecimiento", "1", Obj_Padecimientos_DAL.ID_Padecimiento); NO SE PONE PORQUE ES IDENTITY
                 Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Citas_DAL.ID_Paciente);
-                Obj_BD_DAL.dtParametros.Rows.Add("@FechaHoraInicio", "8", Obj_Citas_DAL.FechaHoraInicio);
-                Obj_BD_DAL.dtParametros.Rows.Add("@FechaHoraFin", "8", Obj_Citas_DAL.FechaHoraFin);
+                Obj_BD_DAL.dtParametros.Rows.Add("@FechaHoraInicio", "8", Convert.ToString(Obj_Citas_DAL.FechaHoraInicio));
                 Obj_BD_DAL.dtParametros.Rows.Add("@EstadoCita", "13", Obj_Citas_DAL.EstadoCita);
-                Obj_BD_DAL.dtParametros.Rows.Add("@notasAdd", "7", Obj_Citas_DAL.NotasAdd);
                 Obj_BD_DAL.dtParametros.Rows.Add("@ID_Especialidad", "1", Obj_Citas_DAL.ID_Especialidad);
                 Obj_BD_DAL.dtParametros.Rows.Add("@ID_Consultorio", "1", Obj_Citas_DAL.ID_Consultorio);
                 Obj_BD_DAL.dtParametros.Rows.Add("@ID_Doctor", "1", Obj_Citas_DAL.ID_Doctor);
-                Obj_BD_DAL.dtParametros.Rows.Add("@FechCreacionCita", "12", Obj_Citas_DAL.FechaCreacionCita);
 
 
 
 
-                Obj_BD_DAL.sIndAxn = "IDENTITY";
+                Obj_BD_DAL.sIndAxn = "NORMAL";
 
                 Obj_BD_BLL.ExecCommand(ref Obj_BD_DAL);
-
+                Obj_Citas_DAL.DsDatos = Obj_BD_DAL.dsDatos;
                 Obj_Citas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
                 if (Obj_Citas_DAL.sMsjError == string.Empty)
                 {
-                    Obj_Citas_DAL.ID_Cita = Convert.ToInt32(Obj_BD_DAL.sValorScalar);
                     Obj_Citas_DAL.cIndAxn = 'M';
                 }
                 else
