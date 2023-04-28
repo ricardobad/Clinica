@@ -113,9 +113,11 @@ namespace BLL_Clinica.Catalogos
                 if (Obj_Alergias_DAL.Descripcion == string.Empty)
                 {
 
-                    Obj_BD_DAL.sNobreSP = "dbo.Sp_Listar_Alergias";
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_LISTAR_ALERGIAS_EXPEDIENTE";
 
-                    Obj_BD_DAL.dtParametros = null;
+                    Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                    Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Alergias_DAL.iIdPaciente);
 
 
 
@@ -225,6 +227,41 @@ namespace BLL_Clinica.Catalogos
 
             }
 
+        }
+
+
+        public void Modificar_Alergias_Pacientes(ref cls_Alergias_DAL Obj_Alergias_DAL)
+        {
+            try
+            {
+                cls_BD_II_DAL Obj_BD_DAL = new cls_BD_II_DAL();
+                cls_BD_II_BLL Obj_BD_BLL = new cls_BD_II_BLL();
+
+                Obj_BD_DAL.sNombreDataTable = "T_ALERGIAS_PACIENTES";
+
+
+                Obj_BD_DAL.sNobreSP = "dbo.SP_MODIFICAR_ALERGIAS_PACIENTE";
+
+                Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
+
+                Obj_BD_DAL.dtParametros.Rows.Add("@ID_Paciente", "1", Obj_Alergias_DAL.iIdPaciente);
+
+                Obj_BD_DAL.dtParametros.Rows.Add("@Alergias", "7", Obj_Alergias_DAL.sAlergiasTotales);
+
+                Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+
+                Obj_Alergias_DAL.dsAlergias = Obj_BD_DAL.dsDatos;
+                Obj_Alergias_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Obj_Alergias_DAL.sMsjError = ex.Message.ToString().Trim();
+
+            }
         }
         #endregion
     }

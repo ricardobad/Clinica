@@ -63,5 +63,35 @@ namespace BLL_Clinica.Catalogos
         }
 
 
+
+
+
+        public void listarCarnetDoctores(ref cls_Doctores_DAL ObJ_DOCTORES_DAL) {
+
+            cls_BD_DAL Obj_BD_DAL = new cls_BD_DAL();
+            cls_BD_BLL Obj_BD_BLL = new cls_BD_BLL();
+            cls_Doctores_DAL Obj_Doctores_DAL = new cls_Doctores_DAL();
+
+
+            Obj_BD_DAL.sNomSp = ConfigurationManager.AppSettings["combo_doctores"].ToString();
+            Obj_BD_BLL.crearDTparametros(ref Obj_BD_DAL);
+           
+          
+
+            Obj_BD_DAL.sNomTabla = "ComboDOCTORES";
+
+            Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
+            if (Obj_BD_DAL.sMsjError == string.Empty)
+            {
+                Obj_Doctores_DAL.sMsjError = string.Empty;
+                Obj_Doctores_DAL.DtDatos = Obj_BD_DAL.obj_ds.Tables[0];
+                ObJ_DOCTORES_DAL.DtDatos = Obj_BD_DAL.obj_ds.Tables[0];
+            }
+            else
+            {
+                Obj_BD_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+                Obj_Doctores_DAL.DtDatos = null;
+            }
+        }
     }
 }

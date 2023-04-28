@@ -11,9 +11,9 @@ namespace DAL
     {
 
         private int _ID_Direccion;
-        private string _sMsjError, _ID_Provincia, _ID_Canton, _ID_Distrito, _Otras_Guias;
+        private string _sMsjError, _ID_Provincia, _ID_Canton, _ID_Distrito, _Otras_Guias, _sIdentificacion;
         private DataTable _dtDatos, _dtParametros;
-
+        private DataSet _dsDirecciones;
         public int ID_Direccion { get => _ID_Direccion; set => _ID_Direccion = value; }
         public string ID_Provincia { get => _ID_Provincia; set => _ID_Provincia = value; }
         public string ID_Canton { get => _ID_Canton; set => _ID_Canton = value; }
@@ -22,6 +22,7 @@ namespace DAL
         public string sMsjError { get => _sMsjError; set => _sMsjError = value; }
         public DataTable DtDatos { get => _dtDatos; set => _dtDatos = value; }
         public DataTable DtParametros { get => _dtParametros; set => _dtParametros = value; }
-
+        public DataSet dsDirecciones { get => _dsDirecciones; set => _dsDirecciones = value; }
+        public string sIdentificacion { get => _sIdentificacion; set => _sIdentificacion = value; }
     }
 }

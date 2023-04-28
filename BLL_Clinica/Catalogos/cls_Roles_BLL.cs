@@ -14,6 +14,7 @@ namespace BLL_Clinica.Catalogos
 {
     public class cls_Roles_BLL
     {
+       
         public void Listar_Filtrar_Roles(ref cls_Roles_DAL Obj_Roles_DAL)
         {
 
@@ -44,7 +45,8 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
 
                 Obj_Roles_DAL.dsRoles = Obj_BD_DAL.obj_ds;
-
+//agregada x ricardo para listar roles en combobox de empleados
+               Obj_Roles_DAL.dtDatos = Obj_BD_DAL.obj_ds.Tables[0];
                 Obj_Roles_DAL.sMsjError = Obj_BD_DAL.sMsjError;
 
 

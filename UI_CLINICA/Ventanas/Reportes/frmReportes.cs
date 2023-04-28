@@ -7,11 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL_Clinica.BD;
+using DAL;
+using DAL_Clinica.BD;
+using BLL_Clinica.Catalogos;
+using DAL_Clinica.Catalogos;
 
 namespace UI_CLINICA.Ventanas.Reportes
 {
     public partial class frmReportes : Form
     {
+
+        #region Globales
+        cls_Reportes_BLL reporte_BLL = new cls_Reportes_BLL();
+       public cls_Reportes_DAL reporte_DAL = new cls_Reportes_DAL();
+        cls_BD_BLL BD_BLL = new cls_BD_BLL();
+        cls_BD_DAL BD_DAL = new cls_BD_DAL();
+        public DateTime FechaInicio, FechaFinal;
+        
+        #endregion
+
         public frmReportes()
         {
             InitializeComponent();
@@ -19,6 +34,10 @@ namespace UI_CLINICA.Ventanas.Reportes
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            // carga fechas por si usuario no selecciona nada
+            FechaInicio = cld_inicio.SelectionStart;
+            FechaFinal = cld_Final.SelectionStart;
+
 
         }
 
@@ -41,5 +60,185 @@ namespace UI_CLINICA.Ventanas.Reportes
         {
 
         }
+
+
+        private void CargarDatos() {
+
+            if (reporte_DAL.sMsjError == string.Empty)
+            {
+
+                
+               reporte_DAL.sRespuesta =Convert.ToString( reporte_DAL.DtDatos.Rows[0][0]);
+                MessageBox.Show("carga exitosa , las cantidad de citas en esa fecha es de " + reporte_DAL.sRespuesta);
+
+            }
+            else
+            {
+                MessageBox.Show("Se ha presentado un error al cargar los datos" + reporte_DAL.sMsjError, "Error en carga de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //fechas aplica para todo
+            reporte_DAL.FechaInicial = FechaInicio;
+            reporte_DAL.FechaFinal = FechaFinal;
+
+            //para citas totales
+            if (cmbReporte.SelectedIndex == 0) {
+
+                reporte_BLL.CitasTotales(ref reporte_DAL);
+                CargarDatos();
+
+            }
+
+           
+            //reportes por especialidad ID 1
+
+            if (cmbReporte.SelectedIndex==1 && cmbEspecialidad.SelectedIndex == 0) {
+                //asigna 1 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 1;
+               
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 2
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 1)
+            {
+                //asigna 2 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 2;
+               
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 3
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 2)
+            {
+                //asigna 3 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 3;
+               
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 4
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 3)
+            {
+                //asigna 4 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 4;
+              
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+            //reportes por especialidad ID 5
+
+            if (cmbReporte.SelectedIndex == 1 && cmbEspecialidad.SelectedIndex == 4)
+            {
+                //asigna 5 a la primer especialidad 
+                reporte_DAL.ID_Especialidad = 5;
+
+
+                reporte_BLL.CitasEspecialidad(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+
+            //para citas por identificacion
+            if (cmbReporte.SelectedIndex == 2)
+            {
+                reporte_DAL.sIdentificacion= txtIdentificacion.Text.Trim().ToString();
+                reporte_BLL.CitasIdentificacion(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            }
+
+            //para citas por medico
+            if (cmbReporte.SelectedIndex == 3) {
+                reporte_DAL.sCarnet = cmbMedico.Text.ToString();
+                reporte_BLL.CitasMedico(ref reporte_DAL);
+                dgv_Reportes.DataSource = null;
+                dgv_Reportes.DataSource = reporte_DAL.DtDatos;
+            
+            }
+
+
+        }
+
+     
+        private void cmbReporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            //habilita boton mostrar
+            button3.Enabled = true;
+           
+            //Habilita segundo combo
+            if (cmbReporte.SelectedIndex == 1) { 
+                cmbEspecialidad.Enabled = true;
+                txtIdentificacion.Enabled = false;
+            }
+
+            //habilita el campo identificacion
+            if (cmbReporte.SelectedIndex==2) {
+                txtIdentificacion.Enabled = true;
+                cmbEspecialidad.Enabled = false;
+                
+            }
+
+            //habilita el campo de combo de medico
+
+            if (cmbReporte.SelectedIndex == 3) {
+                txtIdentificacion.Enabled = false;
+                cmbEspecialidad.Enabled = false;
+                cmbMedico.Enabled = true;
+                cargarComboDoctores();
+            }
+
+        }
+
+        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void cargarComboDoctores()
+        {
+            cls_Doctores_DAL DAL_Doctores = new cls_Doctores_DAL();
+            cls_Doctores_BLL BLL_Doctores = new cls_Doctores_BLL();
+            
+            BLL_Doctores.listarCarnetDoctores(ref DAL_Doctores);
+            cmbMedico.ValueMember = "Carnet";
+            cmbMedico.DisplayMember = "Carnet";
+            cmbMedico.DataSource = DAL_Doctores.DtDatos;
+
+
+        }
+
+        
+
+        #region Eventos
+        private void cld_inicio_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            FechaInicio = cld_inicio.SelectionStart;
+        }
+        private void cld_Final_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            FechaFinal = cld_Final.SelectionStart;
+        }
+        #endregion
+
+
     }
 }

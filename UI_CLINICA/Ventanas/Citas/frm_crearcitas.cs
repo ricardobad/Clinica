@@ -103,9 +103,9 @@ namespace UI_CLINICA.Ventanas.Citas
             dtp_Fecha.MinDate = DateTime.Now;
            ;
 
-           
 
-            //dtp_Fecha.MinDate.ToString("hh:mm");
+
+
 
             cmb_Doctor.DataSource = null;
 
@@ -132,27 +132,27 @@ namespace UI_CLINICA.Ventanas.Citas
             }
 
 
-                cmb_Consultorio.DataSource = null;
+            cmb_Consultorio.DataSource = null;
 
-                Obj_Consultorios_DAL.ID_Consultorio = 0;
+            Obj_Consultorios_DAL.ID_Consultorio = 0;
 
-                Obj_Consultorios_BLL.Listar_Filtrar_Consultorios(ref Obj_Consultorios_DAL);
+            Obj_Consultorios_BLL.Listar_Filtrar_Consultorios(ref Obj_Consultorios_DAL);
 
-                if (Obj_Consultorios_DAL.sMsjError == string.Empty)
-                {
+            if (Obj_Consultorios_DAL.sMsjError == string.Empty)
+            {
                 cmb_Consultorio.DataSource = Obj_Consultorios_DAL.DsConsultorios.Tables[0];
                 cmb_Consultorio.DisplayMember = "NUMERO";
                 cmb_Consultorio.ValueMember = "ID_CONSULTORIO";
 
-                }
-                else
-                {
-                    MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de Consultorios.Error = [ " +
-                                    Obj_Doctores_DAL.sMsjError + " ].",
-                                    "ERROR",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Se presento un error a la hora de ejecutar el listado de los datos de Consultorios.Error = [ " +
+                                Obj_Doctores_DAL.sMsjError + " ].",
+                                "ERROR",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
 
 
             cmb_Especialidad.DataSource = null;
@@ -184,23 +184,48 @@ namespace UI_CLINICA.Ventanas.Citas
         #region FECHAS
 
 
-        
+
 
 
         #endregion
 
 
         private void txt_Identificacion_Leave(object sender, EventArgs e)
-            {
+        {
 
-            }
+        }
 
-            private void frm_crearcitas_Load(object sender, EventArgs e)
-            {
-                CargarCombos();
-            }
+        private void frm_crearcitas_Load(object sender, EventArgs e)
+        {
+            CargarCombos();
+        }
 
         
         }
     }
     
+
+
+
+//        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+//        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+//            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
+//            {
+//                //erp_Principal.Clear();
+//                e.Handled = false; // Permite // Continua 
+//            }
+//            else
+//            {
+//                e.Handled = true; // Cancela 
+//                                  //  erp_Principal.SetError(txt, "Solo se admiten numeros");
+//            }
+
+//        }
+//        private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
+//        {
+//            ValidaNumeros(e, txt_Identificacion);
+//        }
+//    }
+//}
+    
+

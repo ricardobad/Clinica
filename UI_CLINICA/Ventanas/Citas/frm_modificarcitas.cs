@@ -41,7 +41,7 @@ namespace UI_CLINICA.Ventanas.Citas
         private void CargarDatos()
         {
 
-            //BLL_Citas.listar_Citas(ref DAL_Citas);
+            BLL_Citas.Listar_Filtrar_Citas(ref DAL_Citas);
 
             //aqui se llama al datagrid del formulario
 
@@ -68,6 +68,30 @@ namespace UI_CLINICA.Ventanas.Citas
         private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ValidaNumeros(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsDigit(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45))
+            {
+               // erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+               // erp_Principal.SetError(txt, "Solo se admiten numeros");
+            }
+
+        }
+            private void txt_Identificacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, textBox16);
+        }
+
+        private void txt_Identificacion_2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNumeros(e, textBox6);
         }
     }
 }

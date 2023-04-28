@@ -26,7 +26,7 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_DAL.sNombreDataTable = "Personas";
 
 
-                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_EMPLEADOS";
+                    Obj_BD_DAL.sNobreSP = "dbo.SP_FILTRAR_PACIENTE_EXPEDIENTE";
 
                     Obj_BD_BLL.CrearDTParametros(ref Obj_BD_DAL);
 
@@ -35,12 +35,14 @@ namespace BLL_Clinica.Catalogos
                 Obj_BD_BLL.ExecDataAdapter(ref Obj_BD_DAL);
 
                 Obj_Personas_DAL.dsPersonas = Obj_BD_DAL.dsDatos;
-                Obj_Personas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
+                
 
                 if((Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0])["Nombre"] == null)
                 {
                     Obj_Personas_DAL.sMsjError = "No se encontró a la persona en el sistema";
                 }
+
+                Obj_Personas_DAL.sMsjError = Obj_BD_DAL.sMsjError;
 
 
             }

@@ -170,5 +170,34 @@ namespace UI_CLINICA.Ventanas.Mantenimiento
         {
 
         }
+
+        private void ValidaNU(KeyPressEventArgs e, TextBox txt)
+        {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 32) || (char.IsDigit(e.KeyChar)))
+            {
+                //erp_Principal.Clear();
+                e.Handled = false; // Permite // Continua 
+            }
+            else
+            {
+                e.Handled = true; // Cancela 
+                //erp_Principal.SetError(txt, "Está presionando una tecla no permitida para esta caja de texto ");
+            }
+
+        }
+
+        private void txt_Numero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidaNU(e, textBox2);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox4.Text = "";
+        }
+
+
     }
 }
