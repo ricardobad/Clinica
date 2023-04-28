@@ -148,6 +148,8 @@ namespace UI_CLINICA.Ventanas.Pacientes
 
                     btn_Crear.Text = "Modificar";
                     tbControl1.SelectTab(0);
+                    txt_Identificacion.Enabled = false;
+                    txt_Identificacion.ReadOnly = true;
 
                 }
             }
@@ -170,7 +172,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             cmb_Canton.Text == string.Empty || cmb_Distrito.Text == string.Empty ||
             txt_Telefono_I.Text == string.Empty || txtx_Correo_I.Text == string.Empty ||
             cmb_Tipo_ID.Text == string.Empty || cmb_Sexo.Text == string.Empty ||
-            cmb_Estado.Text == string.Empty || txtx_Contrasena.Text == string.Empty 
+            cmb_Estado.Text == string.Empty  
 
             )
             {
@@ -182,15 +184,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
             }
             else
             {
-                if (txtx_Contrasena.Text.Length <= 6)
-                {
-                    MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
-                                            "Información o Alerta",
-                                            MessageBoxButtons.OK,
-                                             MessageBoxIcon.Information);
-                }
-                else
-                {
+                
 
                     DateTime A = DateTime.Today;
                     DateTime B = dateTimePicker1.Value;
@@ -206,61 +200,163 @@ namespace UI_CLINICA.Ventanas.Pacientes
 
                     else
                     {
+
+                        cls_Direcciones_DAL Obj_Direcciones_DAL = new cls_Direcciones_DAL();
+                        cls_Direcciones_BLL Obj_Direcciones_BLL = new cls_Direcciones_BLL();
+                        cls_Telefonos_BLL Obj_Telefonos_BLL = new cls_Telefonos_BLL();
+                        Obj_Personas_DAL = new cls_Personas_DAL();
+                        cls_Telefonos_DAL Obj_Telefonos_DAL = new cls_Telefonos_DAL();
+                        cls_Correos_DAL Obj_Correo_DAL = new cls_Correos_DAL();
+                        cls_Correos_BLL Obj_Correos_BLL = new cls_Correos_BLL();
+                        cls_Usuarios_BLL Obj_Usuarios_BLL = new cls_Usuarios_BLL();
+                        cls_Usuario_DAL Obj_Usuarios_DAL = new cls_Usuario_DAL();
+
+
+                        Obj_Personas_DAL.Nombre = txtx_Nombre.Text;
+                        Obj_Personas_DAL.primer_apellido = txt_Apellido_I.Text;
+                        Obj_Personas_DAL.segundo_apellido = txt_Apellido_II.Text;
+                        Obj_Personas_DAL.Tipo_ID = Convert.ToBoolean(cmb_Tipo_ID.SelectedIndex);
+                        Obj_Personas_DAL.Sexo = Convert.ToBoolean(cmb_Sexo.SelectedIndex);
+                        Obj_Personas_DAL.fecha_nacimiento = dateTimePicker1.Value;
+
+
+                        Obj_Personas_DAL.Identificacion = txt_Identificacion.Text;
+                        Obj_Personas_DAL.Estado = Convert.ToBoolean(cmb_Estado.SelectedIndex);
+
+                        Obj_Direcciones_DAL.ID_Canton = Obj_Provincias_DAL.dsProvincias.Tables["DIRECCIONES"].Rows[cmb_Canton.SelectedIndex]["ID_Canton"].ToString().Trim();
+                        Obj_Direcciones_DAL.ID_Provincia = (cmb_Provincia.SelectedIndex + 1).ToString().Trim();
+                        Obj_Direcciones_DAL.ID_Distrito = (cmb_Distrito.SelectedIndex + 1).ToString().Trim();
+                        Obj_Direcciones_DAL.Otras_Guias = txt_Otras_Guias.Text;
+                        Obj_Direcciones_DAL.sIdentificacion = txt_Identificacion.Text;
+
+
+                        Obj_Telefonos_DAL.Telefono = txt_Telefono_I.Text;
+                        Obj_Telefonos_DAL.telefono_II = txt_Telefono_II.Text;
+                        Obj_Telefonos_DAL.sIdentificacion = txt_Identificacion.Text;
+
+                        Obj_Correo_DAL.Correo = txtx_Correo_I.Text;
+                        Obj_Correo_DAL.correo_II = txt_Correo_II.Text;
+                        Obj_Correo_DAL.sIdentificacion = txt_Identificacion.Text;
+
+                        Obj_Usuarios_DAL.Nombre_Usuario = "0";
+                        Obj_Usuarios_DAL.ID_Rol = "Paciente";
+                        Obj_Usuarios_DAL.sIdentificacion = txt_Identificacion.Text;
+                        Obj_Usuarios_DAL.Contraseña = txtx_Contrasena.Text;
+
+
+                        Obj_Telefonos_BLL.Filtrar_Telefonos(ref Obj_Telefonos_DAL);
+                        Obj_Correos_BLL.Filtrar_Correos(ref Obj_Correo_DAL);
+
+                        try
+                        {
+                            if (Obj_Telefonos_DAL.dsTelefonos.Tables["Telefonos"].Rows[0]["Identificacion"].ToString().Trim() != string.Empty)
+                            {
+                                if (Obj_Telefonos_DAL.dsTelefonos.Tables["Telefonos"].Rows[0]["Identificacion"].ToString().Trim() == txt_Identificacion.Text)
+                                {
+
+
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El teléfono 1 ya ha sido registrado",
+                                                "Error",
+                                                MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Error);
+                                    return;
+                                }
+                                
+                            }
+
+                        }
+                        catch
+                        {
+
+                        }
+                        try
+                        {
+                            if (Obj_Correo_DAL.dsCorreos.Tables["Correos"].Rows[0]["Identificacion"].ToString().Trim() != string.Empty)
+                            {
+                                if(Obj_Correo_DAL.dsCorreos.Tables["Correos"].Rows[0]["Identificacion"].ToString().Trim() == txt_Identificacion.Text)
+                                {
+
+
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El correo 1 ya ha sido registrado",
+                                                "Error",
+                                                MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Error);
+
+                                    return;
+
+                                }
+                                
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+
                         if (btn_Crear.Text == "Crear")
                         {
-                            cls_Direcciones_DAL Obj_Direcciones_DAL = new cls_Direcciones_DAL();
-                            cls_Direcciones_BLL Obj_Direcciones_BLL = new cls_Direcciones_BLL();
-                            cls_Telefonos_BLL Obj_Telefonos_BLL = new cls_Telefonos_BLL();
-                            Obj_Personas_DAL = new cls_Personas_DAL();
-                            cls_Telefonos_DAL Obj_Telefonos_DAL = new cls_Telefonos_DAL();
-                            cls_Correos_DAL Obj_Correo_DAL = new cls_Correos_DAL();
-                            cls_Correos_BLL Obj_Correos_BLL = new cls_Correos_BLL();
-                            cls_Usuarios_BLL Obj_Usuarios_BLL = new cls_Usuarios_BLL();
-                            cls_Usuario_DAL Obj_Usuarios_DAL = new cls_Usuario_DAL();
 
 
-                            Obj_Personas_DAL.Nombre = txtx_Nombre.Text;
-                            Obj_Personas_DAL.primer_apellido = txt_Apellido_I.Text;
-                            Obj_Personas_DAL.segundo_apellido = txt_Apellido_II.Text;
-                            Obj_Personas_DAL.Tipo_ID = Convert.ToBoolean(cmb_Tipo_ID.SelectedIndex);
-                            Obj_Personas_DAL.Sexo = Convert.ToBoolean(cmb_Sexo.SelectedIndex);
-                            Obj_Personas_DAL.fecha_nacimiento = dateTimePicker1.Value;
 
+                            if (txtx_Contrasena.Text.Length <= 6)
+                            {
+                                MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
+                                                        "Información o Alerta",
+                                                        MessageBoxButtons.OK,
+                                                         MessageBoxIcon.Information);
+                                return;
+                            }
+                            //Obj_Pacientes_BLL.CrearPacientes(ref Obj_Personas_DAL, ref Obj_Direcciones_DAL, ref Obj_Telefonos_DAL, ref Obj_Correo_DAL, ref Obj_Usuarios_DAL);
 
-                            Obj_Personas_DAL.Identificacion = txt_Identificacion.Text;
-                            Obj_Personas_DAL.Estado = Convert.ToBoolean(cmb_Estado.SelectedIndex);
+                            //if(Obj_Personas_DAL.sMsjError == string.Empty)
+                            //{
+                            //    MessageBox.Show("Paciente insertado con éxito",
+                            //        "Información o Alerta",
+                            //         MessageBoxButtons.OK,
+                            //        MessageBoxIcon.Information);
 
-                            Obj_Direcciones_DAL.ID_Canton = Obj_Provincias_DAL.dsProvincias.Tables["DIRECCIONES"].Rows[cmb_Canton.SelectedIndex]["ID_Canton"].ToString().Trim();
-                            Obj_Direcciones_DAL.ID_Provincia = (cmb_Provincia.SelectedIndex + 1).ToString().Trim();
-                            Obj_Direcciones_DAL.ID_Distrito = (cmb_Distrito.SelectedIndex + 1).ToString().Trim();
-                            Obj_Direcciones_DAL.Otras_Guias = txt_Otras_Guias.Text;
-                            Obj_Direcciones_DAL.sIdentificacion = txt_Identificacion.Text;
+                            //}
+                            //else
+                            //{
+                            //    MessageBox.Show("ERROR "+ Obj_Personas_DAL.sMsjError,
+                            //                                       "Información o Alerta",
+                            //                                        MessageBoxButtons.OK,
+                            //                                       MessageBoxIcon.Information);
+                            //}
 
-
-                            Obj_Telefonos_DAL.Telefono = txt_Telefono_I.Text;
-                            Obj_Telefonos_DAL.telefono_II = txt_Telefono_II.Text;
-                            Obj_Telefonos_DAL.sIdentificacion = txt_Identificacion.Text;
-
-                            Obj_Correo_DAL.Correo = txtx_Correo_I.Text;
-                            Obj_Correo_DAL.correo_II = txt_Correo_II.Text;
-                            Obj_Correo_DAL.sIdentificacion = txt_Identificacion.Text;
-
-                            Obj_Usuarios_DAL.Nombre_Usuario = "0";
-                            Obj_Usuarios_DAL.ID_Rol = "Paciente";
-                            Obj_Usuarios_DAL.sIdentificacion = txt_Identificacion.Text;
-                            Obj_Usuarios_DAL.Contraseña = txtx_Contrasena.Text;
 
 
                             Obj_Pacientes_BLL.Insertar_Pacientes(ref Obj_Personas_DAL);
+
+                            if (Obj_Personas_DAL.sMsjError.Contains("Violation of PRIMARY KEY"))
+                            {
+                                MessageBox.Show("La identificación ya ha sido registrada",
+                                                "Error",
+                                                MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Error);
+
+                                return;
+                            }
                             Obj_Direcciones_BLL.Crea_Direcciones(ref Obj_Direcciones_DAL);
+
                             Obj_Telefonos_BLL.Crea_Telefonos(ref Obj_Telefonos_DAL);
                             Obj_Correos_BLL.Crea_Correos(ref Obj_Correo_DAL);
                             Obj_Usuarios_BLL.Crea_Usuario(ref Obj_Usuarios_DAL);
 
-                            if (Obj_Personas_DAL.sMsjError == string.Empty&& Obj_Direcciones_DAL.sMsjError == string.Empty && Obj_Telefonos_DAL.sMsjError == string.Empty && Obj_Correo_DAL.sMsjError == string.Empty)
+                            
+
+                            if (Obj_Personas_DAL.sMsjError == string.Empty && Obj_Direcciones_DAL.sMsjError == string.Empty && Obj_Telefonos_DAL.sMsjError == string.Empty && Obj_Correo_DAL.sMsjError == string.Empty && Obj_Usuarios_DAL.sMsjError == string.Empty)
                             {
 
-                                MessageBox.Show("Paciente insertado con éxito",
+                                MessageBox.Show("Paciente creado con éxito",
                                                 "Información o Alerta",
                                                 MessageBoxButtons.OK,
                                                  MessageBoxIcon.Information);
@@ -273,8 +369,65 @@ namespace UI_CLINICA.Ventanas.Pacientes
                                 MessageBox.Show("Ocurrió un error al insertar el paciente, intente de nuevo más tarde",
                                                 "Información o Alerta",
                                                 MessageBoxButtons.OK,
-                                                 MessageBoxIcon.Information);
+                                                 MessageBoxIcon.Error);
                             }
+
+
+
+                        }
+                        else
+                        {
+                            if (chk_contrasena.Checked == false)
+                            {
+                                if (txtx_Contrasena.Text.Length <= 6)
+                                {
+                                    MessageBox.Show("La contraseña debe tener un minimo de 6 caracteres",
+                                                            "Información o Alerta",
+                                                            MessageBoxButtons.OK,
+                                                             MessageBoxIcon.Information);
+                                    return;
+                                }
+
+                                else
+                                {
+                                    Obj_Usuarios_BLL.Modificar_Usuario(ref Obj_Usuarios_DAL);
+                                }
+                            }
+
+                            Obj_Pacientes_BLL.Modificar_Pacientes(ref Obj_Personas_DAL);
+
+                            Obj_Direcciones_BLL.ModificarDireccion(ref Obj_Direcciones_DAL);
+                            Obj_Telefonos_BLL.Modificar_Telefonos(ref Obj_Telefonos_DAL);
+
+                            Obj_Correos_BLL.Modificar_Correos(ref Obj_Correo_DAL);
+
+
+                            
+
+                            if (Obj_Personas_DAL.sMsjError == string.Empty && Obj_Direcciones_DAL.sMsjError == string.Empty && Obj_Telefonos_DAL.sMsjError == string.Empty && Obj_Correo_DAL.sMsjError == string.Empty)
+                            {
+
+                                MessageBox.Show("Paciente modificado con éxito",
+                                                "Información o Alerta",
+                                                MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Information);
+                                Limpiar();
+                                CargarDatos_II();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ocurrió un error al insertar el paciente, intente de nuevo más tarde",
+                                                "Información o Alerta",
+                                                MessageBoxButtons.OK,
+                                                 MessageBoxIcon.Error);
+                            }
+
+                            
+
+
+
+
 
 
 
@@ -286,7 +439,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
 
                     }
 
-                }
+                
 
 
 
@@ -372,6 +525,7 @@ namespace UI_CLINICA.Ventanas.Pacientes
         private void button1_Click(object sender, EventArgs e)
         {
             Limpiar();
+
         }
         private void Limpiar()
         {
@@ -394,7 +548,8 @@ namespace UI_CLINICA.Ventanas.Pacientes
             cmb_Estado.Text = string.Empty;
             txtx_Contrasena.Text = string.Empty;
             btn_Crear.Text = "Crear";
-
+            txt_Identificacion.Enabled = true;
+            txt_Identificacion.ReadOnly = false;
 
         }
         private void ValidaTXT(KeyPressEventArgs e, TextBox txt)

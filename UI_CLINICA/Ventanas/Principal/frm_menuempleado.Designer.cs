@@ -154,7 +154,7 @@ namespace UI_CLINICA.Ventanas.Principal
             this.btnPacientesCrear.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btnPacientesCrear.Size = new System.Drawing.Size(200, 27);
             this.btnPacientesCrear.TabIndex = 8;
-            this.btnPacientesCrear.Text = "Modificar";
+            this.btnPacientesCrear.Text = "Crear/Modificar";
             this.btnPacientesCrear.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPacientesCrear.UseVisualStyleBackColor = true;
             this.btnPacientesCrear.Click += new System.EventHandler(this.btnPacientesCrear_Click);

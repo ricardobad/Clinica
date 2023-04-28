@@ -62,10 +62,24 @@ namespace UI_CLINICA.Ventanas.Expedientes
 
             if (Obj_Personas_DAL == null)
             {
-
+                
             }
             else
             {
+
+                if (Convert.ToInt32(Obj_Personas_DAL.dsPersonas.Tables["Personas"].Rows[0]["Tipo_Persona"])==1)
+                {
+                    dgv_Adicciones.Enabled = false;
+                    dgv_Alergias.Enabled = false;
+                    dgv_Padecimientos.Enabled = false;
+                    btn_Modificar_Adicciones.Enabled = false;
+                    btn_Modificar_Alergias.Enabled = false;
+                    btn_Modificar_Padecimientos.Enabled = false;
+                    txt_Altura.Enabled = false;
+                    txt_Peso.Enabled = false;
+                    cmb_TipoSangre.Enabled = false;
+                    btn_ModificarDatosPaciente.Enabled = false;
+                }
                 cmb_Cantones.SelectedIndex = 0;
                 cmb_Provincias.SelectedIndex = 1;
 
