@@ -88,28 +88,29 @@ namespace UI_CLINICA.Ventanas.Principal
                                 "Sistema",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
+
+                frm_menuempleado Obj_Men_Empleado = new frm_menuempleado();
+                Obj_Men_Empleado.ShowDialog();
             }
 
-            frm_menuempleado Obj_Men_Empleado = new frm_menuempleado();
-            Obj_Men_Empleado.ShowDialog();
+            
 
 
         }
 
         private void txtLoginIdentificacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidaTXT(e, txtLoginIdentificacion);
+
         }
 
         private void txtLoginContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-            ValidaTXT(e, txtLoginIdentificacion);
         }
 
 
         private void ValidaTXT(KeyPressEventArgs e, TextBox txt)
         {        // LETRAS en teclado       ///Tecla borrar     //Tecla de espacio
-            if (char.IsNumber(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45) || (e.KeyChar == 95))
+            if (char.IsLetter(e.KeyChar) || (e.KeyChar == 8) || (e.KeyChar == 45) || (e.KeyChar == 95))
             {
                 erp_Principal.Clear();
                 e.Handled = false; // Permite // Continua 
